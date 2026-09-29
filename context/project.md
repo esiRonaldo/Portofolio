@@ -17,7 +17,7 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 ## Design
 
 - Layout: editorial grid, sticky top nav with active section, max width 1200px.
-- Fonts: Inter + JetBrains Mono, self-hosted (GDPR).
+- Fonts: Inter (self-hosted via @fontsource-variable/inter, GDPR); system mono for now.
 - Colors: zinc neutrals, teal accent (#0F766E light / #2DD4BF dark).
 - Tokens: 2 layers — primitives → semantic CSS variables used by Tailwind.
 - Theme: 2-state toggle, starts from system preference, remembered.
@@ -25,11 +25,13 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 - Motion: subtle, opacity/transform only, off under reduced motion.
 - Accessibility: WCAG 2.2 AA. Design with German text length in mind.
 
-## Before launch
+## Before launch (review at end of first version)
 
-Impressum + Datenschutz pages; choose contact sending service.
+- Impressum + Datenschutz pages.
+- Choose contact sending service.
+- CV download: needed or not? If yes, use a PDF version without phone number/photo (EN + DE).
 
 ## Status
 
-Current step: step 5 done — foundation (tokens, theme, i18n, storage, App skeleton, tests).
-Next: step 6 — shared shell/navigation (SiteHeader, nav, active section, ThemeToggle, LanguageSwitch).
+Current step: step 7 done — HeroSection (CV-based text, facts panel, GitHub + LinkedIn links). XING URL pending.
+Next: step 8 — About + Skills.

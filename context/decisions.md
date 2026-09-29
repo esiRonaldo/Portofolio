@@ -16,3 +16,8 @@
 - 2026-09-29 — Theme doesn't live-follow OS changes after load; no temporary toggles in step 5 — simpler; toggles come with the header (step 6).
 - 2026-09-29 — Vitest `execArgv: ['--no-experimental-webstorage']` — Node 25's built-in empty localStorage hides jsdom's; flag is harmless on Node 24.
 - 2026-09-29 — No empty <header>/<footer> in the skeleton — landmarks are added with their content (step 6+).
+- 2026-09-29 — Nav uses native `#id` anchors + CSS smooth scroll, no JS scrolling — browser handles URL, focus, reduced motion.
+- 2026-09-29 — Active link styled via `aria-[current=true]:` — visual state and screen-reader state can't diverge.
+- 2026-09-29 — Theme toggle = fixed label + aria-pressed; language switch = one button showing the other language (with `lang`).
+- 2026-09-29 — Hero: primary CTA → #experience, text-only profile links (no brand icons), same-tab external links.
+- 2026-09-29 — Profile links in `src/profile.ts` (shared by hero, contact, footer). XING added when URL is confirmed.

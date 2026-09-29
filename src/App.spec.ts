@@ -16,6 +16,16 @@ describe('App', () => {
     expect(mount(App).findAll('h1')).toHaveLength(1)
   })
 
+  it('has a target on the page for every header link', () => {
+    const wrapper = mount(App)
+    const hrefs = wrapper.findAll('header a').map((link) => link.attributes('href') ?? '')
+
+    expect(hrefs.length).toBeGreaterThan(0)
+    for (const href of hrefs) {
+      expect(wrapper.find(href).exists(), `missing target for ${href}`).toBe(true)
+    }
+  })
+
   it('shows German text after switching the language', async () => {
     const wrapper = mount(App)
     setLocale('de')

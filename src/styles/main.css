@@ -44,7 +44,24 @@
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
 }
 
+/* One-time entrance: fade in and rise 8px. Use as `motion-safe:animate-rise`. */
+@theme {
+  --animate-rise: rise 500ms cubic-bezier(0.2, 0, 0, 1) both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+}
+
 @layer base {
+  /* Keep anchor targets and focused elements clear of the sticky header (h-16 = 4rem). */
+  html {
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply bg-canvas font-sans text-fg antialiased;
   }
