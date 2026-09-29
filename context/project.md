@@ -7,12 +7,15 @@ The site itself is the main work sample (no public or shareable employer project
 
 ## Sections (single page, hash anchors)
 
-Hero → About → Experience → Projects → Skills → Contact. Footer: Impressum, Datenschutz, source link.
+Hero → About → Experience → Projects → Skills → Contact. All sections: heading on top, content full width, no divider lines.
+Footer: centered "© year Ehsan Fani | All rights reserved." (Impressum/Datenschutz/source links come later).
 
 - Hero: role "Software Developer (Frontend/Fullstack)", "Open to new roles" line, portrait photo on the right.
 - Experience: horizontal 3-column timeline (icon, dates, role, company, one short line shortened from the first CV bullet).
 - Projects v1: this portfolio as a case study. Optional full-stack side project later.
-- Contact: form (UI + validation only until a sending service is chosen), LinkedIn, XING. No email address, no phone number.
+- Skills: two groups (Frontend = main focus; Backend, Tools & More) with colorful Devicon logos.
+- Contact: full-width form (UI + validation only until a sending service is chosen), text-only "Submit",
+  icon-only GitHub/LinkedIn/XING (brand colors) in the button row, back-to-top arrow below. No email address, no phone number.
 
 ## Design
 
@@ -63,5 +66,6 @@ Tech
 
 ## Status
 
-Current step: step 12 done — SiteFooter. Legal pages and SEO reverted/postponed (both on the Before launch list).
-Next: to be decided — CI setup or end-of-v1 review.
+Current step: design iteration done and pushed (a9deef9, 2026-09-29): photo, icons, Experience timeline, Skills logos,
+Contact/footer rework, email removed. Perf audit (no fixes needed) and a11y audit done as reports only.
+Next: to be decided — a11y fixes (input borders 1.4.11, required fields, pill contrast, translated title), CI, or end-of-v1 review.
