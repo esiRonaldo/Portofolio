@@ -36,6 +36,14 @@ Content & legal
 - User review of own-written copy: Projects highlights, Contact texts (EN + DE).
 - Repo name typo "Portofolio" — rename before sharing the link?
 
+SEO (postponed — do as one step; plan + concepts in the local session note of 2026-09-29)
+
+- Can be done any time: meta description (≤160 chars), title "Ehsan Fani — Software Developer (Frontend/Fullstack)",
+  Open Graph basics (og:type/title/description/locale), own favicon instead of the Vite logo, test guarding the metadata.
+- Needs the domain: canonical, `og:url`, `og:image` (+ 1200×630 image), `robots.txt` + `sitemap.xml`, optional JSON-LD `Person`.
+- After deploy: Lighthouse (LCP, CLS, INP) and a LinkedIn/XING link-preview test.
+- Keep metadata static in index.html, no SEO library (preview bots don't run JavaScript).
+
 Manual checks (in the browser)
 
 - Nav highlights "Contact" when scrolled to the page bottom (estimated OK up to ~1450px window height, footer adds ~100px).
@@ -53,5 +61,5 @@ Tech
 
 ## Status
 
-Current step: step 12 done — SiteFooter. Responsive postponed to the end-of-v1 review.
-Next: to be decided — legal pages (needs address + hosting decisions) or end-of-v1 review.
+Current step: step 12 done — SiteFooter. Legal pages and SEO reverted/postponed (both on the Before launch list).
+Next: to be decided — CI setup or end-of-v1 review.
