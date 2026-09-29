@@ -46,10 +46,12 @@ Manual checks (in the browser)
 
 Tech
 
-- Responsive layout (desktop-first so far: fixed 12-column grids).
+- Responsive layout — decide if needed (desktop-only so far: fixed 12-column grids, header doesn't fit on phones).
+  Planned approach if yes: mobile-first classes, desktop unchanged; header menu button below `md`
+  (aria-expanded, closes on link/Escape); one-column sections below `lg`; 16px gutter; check at 320/375/768/1280px, EN + DE.
 - Switch to Node 24 LTS before CI (Node 25 gives EBADENGINE warnings; test `--no-experimental-webstorage` flag).
 
 ## Status
 
-Current step: step 12 done — SiteFooter (©, email + profiles, back to top). Legal + source links come with their pages.
-Next: step 13 — to be decided (legal pages or responsive layout).
+Current step: step 12 done — SiteFooter. Responsive postponed to the end-of-v1 review.
+Next: to be decided — legal pages (needs address + hosting decisions) or end-of-v1 review.

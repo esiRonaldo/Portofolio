@@ -31,3 +31,4 @@
 - 2026-09-29 — Form: `novalidate` + own translated errors (keys stored, not texts), aria-invalid/describedby, focus first invalid field, `role="status"` confirmation. German copy addresses the reader with "Sie".
 - 2026-09-29 — Added `danger` color role (red-700 / red-400) for form errors — keeps components free of `dark:` classes.
 - 2026-09-29 — Footer ships without Impressum/Datenschutz/source links — no links to pages that don't exist yet; added with those pages.
+- 2026-09-29 — Responsive layout postponed — decide at the end-of-v1 review whether mobile is needed; plan kept in project.md.
