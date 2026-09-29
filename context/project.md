@@ -1,17 +1,21 @@
 # Project context (last reviewed: 2026-09-29)
 
 ## Goal
+
 Portfolio linked from CV/GitHub. Shows frontend strength + full-stack experience.
 The site itself is the main work sample (no public or shareable employer projects).
 
 ## Sections (single page, hash anchors)
+
 Hero → About → Experience → Projects → Skills → Contact. Footer: Impressum, Datenschutz, source link.
+
 - Hero: role "Software Developer (Frontend/Fullstack)", "Open to new roles" line, no photo for now.
 - Experience: CV wording only.
 - Projects v1: this portfolio as a case study. Optional full-stack side project later.
 - Contact: form (sending service not chosen), LinkedIn, XING, email. No phone number.
 
 ## Design
+
 - Layout: editorial grid, sticky top nav with active section, max width 1200px.
 - Fonts: Inter + JetBrains Mono, self-hosted (GDPR).
 - Colors: zinc neutrals, teal accent (#0F766E light / #2DD4BF dark).
@@ -22,8 +26,10 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 - Accessibility: WCAG 2.2 AA. Design with German text length in mind.
 
 ## Before launch
+
 Impressum + Datenschutz pages; choose contact sending service.
 
 ## Status
-Current step: 3a done — Vue 3 + TypeScript via Vite template (demo still in place).
-Next: add one tool per step — Tailwind → Vue I18n → Prettier → ESLint → Vitest — each explained before installing.
+
+Current step: step 3 done — Vue 3 + TS, Vue I18n, Tailwind v4, Prettier, ESLint, Vitest (Vite demo still in place).
+Next: prompt 4 — foundation plan (remove demo, tokens, i18n/theme structure).

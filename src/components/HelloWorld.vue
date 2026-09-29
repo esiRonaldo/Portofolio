@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import heroImg from '../assets/hero.png'
 import viteLogo from '../assets/vite.svg'
 import vueLogo from '../assets/vue.svg'
 
 const count = ref(0)
+const { t, locale } = useI18n()
+
+function toggleLanguage() {
+  locale.value = locale.value === 'en' ? 'de' : 'en'
+}
 </script>
 
 <template>
@@ -15,11 +21,12 @@ const count = ref(0)
       <img :src="viteLogo" class="vite" alt="Vite logo" />
     </div>
     <div>
-      <h1>Get started</h1>
+      <h1>{{ t('demo.title') }}</h1>
       <p>Edit <code>src/App.vue</code> and save to test <code>HMR</code></p>
     </div>
-    <button type="button" class="counter" @click="count++">
-      Count is {{ count }}
+    <button type="button" class="counter" @click="count++">Count is {{ count }}</button>
+    <button type="button" class="counter uppercase" @click="toggleLanguage">
+      {{ t('demo.switchLanguage') }}
     </button>
   </section>
 
