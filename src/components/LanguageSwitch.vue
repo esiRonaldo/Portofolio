@@ -12,9 +12,10 @@ const target = computed<Locale>(() => (locale.value === 'de' ? 'en' : 'de'))
   <button
     type="button"
     :lang="target"
-    class="rounded-md px-2 py-1.5 text-sm font-medium text-fg-muted hover:bg-surface hover:text-fg"
+    class="inline-flex items-center gap-1.5 rounded-md px-2 py-1.5 text-sm font-medium text-fg-muted hover:bg-surface hover:text-fg"
     @click="setLocale(target)"
   >
+    <img src="/icons/globe.svg" alt="" class="size-4 dark:invert" />
     {{ t('language.switch') }}
   </button>
 </template>

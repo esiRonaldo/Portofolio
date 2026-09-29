@@ -13,15 +13,19 @@ const year = new Date().getFullYear()
     >
       <p>© {{ year }} Ehsan Fani</p>
 
-      <ul :aria-label="t('footer.linksLabel')" class="flex gap-6">
+      <ul :aria-label="t('footer.linksLabel')" class="flex gap-2">
         <li>
-          <a :href="`mailto:${email}`" class="underline underline-offset-4 hover:text-fg">
-            {{ t('contact.emailLabel') }}
+          <a
+            :href="`mailto:${email}`"
+            :title="t('contact.emailLabel')"
+            class="block rounded-md p-2 hover:bg-surface"
+          >
+            <img src="/icons/mail.svg" :alt="t('contact.emailLabel')" class="size-5 dark:invert" />
           </a>
         </li>
         <li v-for="link in socialLinks" :key="link.name">
-          <a :href="link.href" class="underline underline-offset-4 hover:text-fg">
-            {{ link.name }}
+          <a :href="link.href" :title="link.name" class="block rounded-md p-2 hover:bg-surface">
+            <img :src="link.icon" :alt="link.name" class="size-5 dark:invert" />
           </a>
         </li>
       </ul>

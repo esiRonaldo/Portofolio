@@ -23,9 +23,9 @@ describe('HeroSection', () => {
   it('links to every public profile', () => {
     const links = mount(HeroSection).findAll('ul a')
 
-    expect(links.map((link) => [link.text(), link.attributes('href')])).toEqual(
-      socialLinks.map((link) => [link.name, link.href]),
-    )
+    expect(
+      links.map((link) => [link.get('img').attributes('alt'), link.attributes('href')]),
+    ).toEqual(socialLinks.map((link) => [link.name, link.href]))
   })
 
   it('pairs each fact label with its value', () => {

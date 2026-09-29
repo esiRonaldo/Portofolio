@@ -7,7 +7,12 @@ import ContactSection from './ContactSection.vue'
 describe('ContactSection', () => {
   it('lists email and profile links as contact channels', () => {
     const channels = mount(ContactSection).get('ul[aria-label="Contact channels"]')
-    const links = channels.findAll('a').map((a) => [a.text(), a.attributes('href')])
+    const links = channels
+      .findAll('a')
+      .map((a) => [
+        a.find('img').exists() ? a.get('img').attributes('alt') : a.text(),
+        a.attributes('href'),
+      ])
 
     expect(links).toEqual([
       [email, `mailto:${email}`],

@@ -33,3 +33,4 @@
 - 2026-09-29 — Footer ships without Impressum/Datenschutz/source links — no links to pages that don't exist yet; added with those pages.
 - 2026-09-29 — Responsive layout postponed — decide at the end-of-v1 review whether mobile is needed; plan kept in project.md.
 - 2026-09-29 — SEO postponed to a later step — reminder with the full scope in project.md.
+- 2026-09-29 — Icons (replaces "text-only profile links"): downloaded SVGs in public/icons/ used as `<img>` with alt as the link name; profile links icon-only, email text kept in Contact, globe + name on the language button. `dark:invert` for dark theme. LinkedIn icon from Simple Icons v13.21.0 (removed later at the brand's request).

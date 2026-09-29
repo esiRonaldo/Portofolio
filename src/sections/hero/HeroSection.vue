@@ -36,10 +36,10 @@ const facts = ['experience', 'frontend', 'backend', 'location'] as const
         </a>
       </div>
 
-      <ul :aria-label="t('hero.linksLabel')" class="mt-8 flex gap-6 text-sm">
+      <ul :aria-label="t('hero.linksLabel')" class="mt-8 -ml-2 flex gap-2">
         <li v-for="link in socialLinks" :key="link.name">
-          <a :href="link.href" class="text-fg-muted underline underline-offset-4 hover:text-fg">
-            {{ link.name }}
+          <a :href="link.href" :title="link.name" class="block rounded-md p-2 hover:bg-surface">
+            <img :src="link.icon" :alt="link.name" class="size-5 dark:invert" />
           </a>
         </li>
       </ul>
