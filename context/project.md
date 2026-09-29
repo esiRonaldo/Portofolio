@@ -10,7 +10,7 @@ The site itself is the main work sample (no public or shareable employer project
 Hero → About → Experience → Projects → Skills → Contact. Footer: Impressum, Datenschutz, source link.
 
 - Hero: role "Software Developer (Frontend/Fullstack)", "Open to new roles" line, portrait photo on the right.
-- Experience: CV wording only.
+- Experience: horizontal 3-column timeline (icon, dates, role, company, one short line shortened from the first CV bullet).
 - Projects v1: this portfolio as a case study. Optional full-stack side project later.
 - Contact: form (UI + validation only until a sending service is chosen), LinkedIn, XING. No email address, no phone number.
 
@@ -33,7 +33,7 @@ Content & legal
 - Choose contact sending service (form is validation-only until then; the service must not expose the email address).
 - CV download: needed or not? If yes, use a PDF version without phone number/photo (EN + DE).
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
-- User review of own-written copy: Projects highlights, Contact texts (EN + DE).
+- User review of own-written copy: Projects highlights, Contact texts, shortened Experience lines (EN + DE).
 - Hero facts box (Experience / Frontend / Backend / Location card, right of the hero text) removed for now —
   re-add with updated experience; old version in commit 0ac5c85 (HeroSection.vue + hero.facts in en/de.ts).
 - Repo name typo "Portofolio" — rename before sharing the link?

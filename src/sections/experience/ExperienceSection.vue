@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import PageSection from '../../components/PageSection.vue'
 import { localize } from '../../i18n'
 import { jobs } from './experience'
-
-const { t } = useI18n()
 
 /** '2022-04' → '04/2022' (same format as the CV, in both languages). */
 function monthYear(value: string): string {
@@ -14,38 +11,35 @@ function monthYear(value: string): string {
 </script>
 
 <template>
-  <PageSection id="experience">
+  <PageSection id="experience" wide>
     <!-- Ordered list: newest first, so the order itself carries meaning. -->
-    <ol class="space-y-12 border-l border-line">
-      <li v-for="job in jobs" :key="job.company" class="relative pl-8">
+    <ol class="grid grid-cols-3 gap-16">
+      <li v-for="(job, index) in jobs" :key="job.company" class="relative flex gap-5">
+        <!-- Dashed connector with a dot, across the gap to the next job. -->
         <span
+          v-if="index < jobs.length - 1"
           aria-hidden="true"
-          class="absolute top-2 -left-1.25 size-2.5 rounded-full bg-accent"
-        />
+          class="absolute top-7 left-full w-16 border-t-2 border-dashed border-line"
+        >
+          <span
+            class="absolute -top-1.25 left-1/2 size-2 -translate-x-1/2 rounded-full bg-accent"
+          />
+        </span>
 
-        <div class="flex items-baseline justify-between gap-6">
-          <h3 class="text-lg font-semibold">{{ localize(job.role) }}</h3>
-          <p class="shrink-0 text-sm text-fg-muted tabular-nums">
+        <div class="flex size-14 shrink-0 items-center justify-center rounded-full bg-accent/10">
+          <img :src="job.icon" alt="" class="size-6 dark:invert" />
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold text-accent tabular-nums">
             <time :datetime="job.start">{{ monthYear(job.start) }}</time>
             –
             <time :datetime="job.end">{{ monthYear(job.end) }}</time>
           </p>
+          <h3 class="mt-1 text-lg font-semibold">{{ localize(job.role) }}</h3>
+          <p class="text-sm font-medium text-accent">{{ job.company }}</p>
+          <p class="mt-3 text-sm leading-relaxed text-fg-muted">{{ localize(job.summary) }}</p>
         </div>
-        <p class="mt-1 text-fg-muted">{{ job.company }} · {{ localize(job.location) }}</p>
-
-        <ul class="mt-4 list-disc space-y-2 pl-5 leading-relaxed marker:text-line">
-          <li v-for="highlight in localize(job.highlights)" :key="highlight">{{ highlight }}</li>
-        </ul>
-
-        <ul :aria-label="t('experience.stackLabel')" class="mt-4 flex flex-wrap gap-2 text-xs">
-          <li
-            v-for="tech in job.stack"
-            :key="tech"
-            class="rounded-md border border-line bg-surface px-2 py-0.5 text-fg-muted"
-          >
-            {{ tech }}
-          </li>
-        </ul>
       </li>
     </ol>
   </PageSection>

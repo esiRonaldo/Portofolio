@@ -26,9 +26,6 @@ export default {
       value: 'English (fluent), German (B2), Persian (native)',
     },
   },
-  experience: {
-    stackLabel: 'Technologies',
-  },
   projects: {
     highlightsLabel: 'What it shows',
     stackLabel: 'Technologies',

@@ -3,8 +3,9 @@ import { useI18n } from 'vue-i18n'
 import type { SectionId } from '../sections/sections'
 
 // Shared layout for the page sections: heading in the left 4 columns, content (slot) in the right 8.
+// `wide`: heading on top, content across the full width (e.g. the Experience timeline).
 // The heading is the section's nav label, so the two can't drift apart.
-defineProps<{ id: SectionId }>()
+defineProps<{ id: SectionId; wide?: boolean }>()
 
 const { t } = useI18n()
 </script>
@@ -13,12 +14,17 @@ const { t } = useI18n()
   <section
     :id="id"
     :aria-labelledby="`${id}-title`"
-    class="grid grid-cols-12 gap-12 border-t border-line py-24"
+    class="border-t border-line py-24"
+    :class="{ 'grid grid-cols-12 gap-12': !wide }"
   >
-    <h2 :id="`${id}-title`" class="col-span-4 text-3xl font-semibold tracking-tight">
+    <h2
+      :id="`${id}-title`"
+      class="text-3xl font-semibold tracking-tight"
+      :class="{ 'col-span-4': !wide }"
+    >
       {{ t(`nav.${id}`) }}
     </h2>
-    <div class="col-span-8">
+    <div :class="wide ? 'mt-12' : 'col-span-8'">
       <slot />
     </div>
   </section>

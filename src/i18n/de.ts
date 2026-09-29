@@ -29,9 +29,6 @@ const de: typeof en = {
       value: 'Deutsch (B2), Englisch (fließend), Persisch (Muttersprache)',
     },
   },
-  experience: {
-    stackLabel: 'Technologien',
-  },
   projects: {
     highlightsLabel: 'Was es zeigt',
     stackLabel: 'Technologien',
