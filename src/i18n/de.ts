@@ -42,8 +42,6 @@ const de: typeof en = {
   },
   contact: {
     backToTop: 'Nach oben',
-    channelsTitle: 'Sie finden mich auf',
-    formTitle: 'Nachricht schreiben',
     fields: {
       name: 'Name',
       email: 'E-Mail',
@@ -54,7 +52,7 @@ const de: typeof en = {
       email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
       tooShort: 'Bitte schreiben Sie mindestens 10 Zeichen.',
     },
-    submit: 'Nachricht senden',
+    submit: 'Absenden',
     sent: 'Danke! Der Versand ist noch nicht eingerichtet. Bitte kontaktieren Sie mich vorerst über LinkedIn oder XING.',
   },
   nav: {

@@ -4,12 +4,11 @@ import { socialLinks } from '../../profile'
 import ContactSection from './ContactSection.vue'
 
 describe('ContactSection', () => {
-  it('links every profile by name and shows no email address', () => {
+  it('links every profile with a named icon and shows no email address', () => {
     const wrapper = mount(ContactSection)
-    const links = wrapper.findAll('li a')
+    const links = wrapper.get('form').findAll('li a')
 
-    expect(wrapper.findAll('h3').map((h) => h.text())).toContain('Find me on')
-    expect(links.map((a) => [a.text(), a.attributes('href')])).toEqual(
+    expect(links.map((a) => [a.get('img').attributes('alt'), a.attributes('href')])).toEqual(
       socialLinks.map((link) => [link.name, link.href]),
     )
     expect(wrapper.find('a[href^="mailto:"]').exists()).toBe(false)
@@ -21,8 +20,6 @@ describe('ContactSection', () => {
   })
 
   it('contains the contact form', () => {
-    expect(mount(ContactSection).get('form').attributes('aria-labelledby')).toBe(
-      'contact-form-title',
-    )
+    expect(mount(ContactSection).find('form').exists()).toBe(true)
   })
 })

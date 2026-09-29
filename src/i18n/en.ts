@@ -39,8 +39,6 @@ export default {
   },
   contact: {
     backToTop: 'Back to top',
-    channelsTitle: 'Find me on',
-    formTitle: 'Write a message',
     fields: {
       name: 'Name',
       email: 'Email',
@@ -51,7 +49,7 @@ export default {
       email: 'Please enter a valid email address.',
       tooShort: 'Please write at least 10 characters.',
     },
-    submit: 'Send message',
+    submit: 'Submit',
     sent: "Thanks! Sending isn't connected yet, so please reach me on LinkedIn or XING for now.",
   },
   nav: {

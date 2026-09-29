@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { nextTick, reactive, ref, useTemplateRef } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { socialLinks } from '../../profile'
 
 // UI and validation only: no sending mechanism is chosen yet. A valid form just shows a note.
 
@@ -58,13 +59,10 @@ async function submit() {
   <form
     ref="form"
     novalidate
-    aria-labelledby="contact-form-title"
     class="rounded-xl border border-line bg-surface p-8"
     @submit.prevent="submit"
   >
-    <h3 id="contact-form-title" class="text-lg font-semibold">{{ t('contact.formTitle') }}</h3>
-
-    <div class="mt-6 grid grid-cols-2 gap-6">
+    <div class="grid grid-cols-2 gap-6">
       <div v-for="field in fields" :key="field" :class="{ 'col-span-2': field === 'message' }">
         <label :for="`contact-${field}`" class="block text-sm font-medium">
           {{ t(`contact.fields.${field}`) }}
@@ -101,6 +99,20 @@ async function submit() {
       <p role="status" class="text-sm text-fg-muted">
         <template v-if="sent">{{ t('contact.sent') }}</template>
       </p>
+
+      <!-- Profile links, icon-only: the img alt names each link. Only GitHub's logo is black → inverted in dark. -->
+      <ul class="ml-auto flex gap-1">
+        <li v-for="link in socialLinks" :key="link.name">
+          <a :href="link.href" :title="link.name" class="block rounded-md p-2 hover:bg-canvas">
+            <img
+              :src="link.icon"
+              :alt="link.name"
+              class="size-6"
+              :class="{ 'dark:invert': link.name === 'GitHub' }"
+            />
+          </a>
+        </li>
+      </ul>
     </div>
   </form>
 </template>
