@@ -4,3 +4,4 @@
 - 2026-09-29 — 2-state theme toggle — simpler than System/Light/Dark, still respects system.
 - 2026-09-29 — Self-hosted fonts — Google Fonts CDN is a GDPR risk in Germany.
 - 2026-09-29 — context/ is committed, sessions/ stays local — context is safe and shows the process.
+- 2026-09-29 — Grow the setup one tool per step (Vite vue-ts template first) — full create-vue scaffold felt too complex; each tool is learned before the next.

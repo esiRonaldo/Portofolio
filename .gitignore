@@ -9,3 +9,17 @@ sessions/
 
 # OS
 .DS_Store
+
+# Dependencies & build output
+node_modules
+dist
+dist-ssr
+*.local
+
+# Logs
+*.log
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea

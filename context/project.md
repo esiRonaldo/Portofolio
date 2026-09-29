@@ -25,4 +25,5 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 Impressum + Datenschutz pages; choose contact sending service.
 
 ## Status
-Current step: context setup done (prompt 2). Next: scaffold plan (prompt 3).
+Current step: 3a done — Vue 3 + TypeScript via Vite template (demo still in place).
+Next: add one tool per step — Tailwind → Vue I18n → Prettier → ESLint → Vitest — each explained before installing.
