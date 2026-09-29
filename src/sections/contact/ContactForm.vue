@@ -89,10 +89,7 @@ async function submit() {
     </div>
 
     <div class="mt-6 flex items-center gap-6">
-      <button
-        type="submit"
-        class="rounded-md bg-accent px-5 py-2.5 font-medium text-on-accent hover:opacity-90"
-      >
+      <button type="submit" class="font-semibold text-accent underline-offset-4 hover:underline">
         {{ t('contact.submit') }}
       </button>
       <!-- Always rendered, so screen readers announce the text when it appears. -->

@@ -10,7 +10,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <section :id="id" :aria-labelledby="`${id}-title`" class="border-t border-line py-24">
+  <section :id="id" :aria-labelledby="`${id}-title`" class="py-24">
     <h2 :id="`${id}-title`" class="text-3xl font-semibold tracking-tight">
       {{ t(`nav.${id}`) }}
     </h2>

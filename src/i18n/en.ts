@@ -52,6 +52,9 @@ export default {
     submit: 'Submit',
     sent: "Thanks! Sending isn't connected yet, so please reach me on LinkedIn or XING for now.",
   },
+  footer: {
+    rights: 'All rights reserved.',
+  },
   nav: {
     label: 'Main',
     about: 'About',

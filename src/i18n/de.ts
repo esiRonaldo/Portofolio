@@ -55,6 +55,9 @@ const de: typeof en = {
     submit: 'Absenden',
     sent: 'Danke! Der Versand ist noch nicht eingerichtet. Bitte kontaktieren Sie mich vorerst über LinkedIn oder XING.',
   },
+  footer: {
+    rights: 'Alle Rechte vorbehalten.',
+  },
   nav: {
     label: 'Hauptnavigation',
     about: 'Über mich',
