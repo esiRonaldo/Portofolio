@@ -16,6 +16,7 @@
   --accent: var(--color-teal-700);
   --on-accent: var(--color-white);
   --focus: var(--color-teal-600);
+  --danger: var(--color-red-700);
 }
 
 .dark {
@@ -28,6 +29,7 @@
   --accent: var(--color-teal-400);
   --on-accent: var(--color-zinc-950);
   --focus: var(--color-teal-400);
+  --danger: var(--color-red-400);
 }
 
 /* Expose the roles as Tailwind utilities: bg-canvas, text-fg, border-line, … */
@@ -40,6 +42,7 @@
   --color-accent: var(--accent);
   --color-on-accent: var(--on-accent);
   --color-focus: var(--focus);
+  --color-danger: var(--danger);
 
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
 }

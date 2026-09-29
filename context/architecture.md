@@ -28,7 +28,7 @@ src/
 
 - `@custom-variant dark (&:where(.dark, .dark *))`.
 - Semantic vars in `:root` / `.dark` built from Tailwind's zinc/teal palette; exposed via `@theme inline`
-  as `canvas, surface, fg, fg-muted, line, accent, on-accent, focus`. Components use `bg-canvas text-fg`,
+  as `canvas, surface, fg, fg-muted, line, accent, on-accent, focus, danger`. Components use `bg-canvas text-fg`,
   no `dark:` classes. Add roles only when needed.
 - Spacing, type scale, radii, shadows: Tailwind defaults. Font: Inter via `@fontsource-variable/inter`.
   No JetBrains Mono for now (system mono).

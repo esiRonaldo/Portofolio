@@ -38,6 +38,10 @@ const de: typeof en = {
   experience: {
     stackLabel: 'Technologien',
   },
+  projects: {
+    highlightsLabel: 'Was es zeigt',
+    stackLabel: 'Technologien',
+  },
   skills: {
     primary: 'Schwerpunkt',
     certifications: 'Zertifikate',
@@ -47,6 +51,28 @@ const de: typeof en = {
       tools: 'Tools & Methoden',
       basics: 'Grundkenntnisse',
     },
+  },
+  contact: {
+    intro:
+      'Ich bin offen für neue Positionen in der Frontend- oder Fullstack-Entwicklung. Am schnellsten erreichen Sie mich per E-Mail.',
+    channelsLabel: 'Kontaktwege',
+    emailLabel: 'E-Mail',
+    formTitle: 'Nachricht schreiben',
+    formNote:
+      'Beim Senden öffnet sich Ihr E-Mail-Programm mit der ausgefüllten Nachricht. Auf dieser Website wird nichts gespeichert.',
+    fields: {
+      name: 'Name',
+      email: 'E-Mail',
+      message: 'Nachricht',
+    },
+    errors: {
+      required: 'Bitte füllen Sie dieses Feld aus.',
+      email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+      tooShort: 'Bitte schreiben Sie mindestens 10 Zeichen.',
+    },
+    submit: 'Im E-Mail-Programm öffnen',
+    sent: 'Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, schreiben Sie bitte an die Adresse oben.',
+    subject: 'Portfolio-Kontakt von {name}',
   },
   nav: {
     label: 'Hauptnavigation',

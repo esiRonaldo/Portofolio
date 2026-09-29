@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import PageSection from './components/PageSection.vue'
 import SiteHeader from './components/SiteHeader.vue'
 import { useActiveSection } from './composables/useActiveSection'
 import AboutSection from './sections/about/AboutSection.vue'
+import ContactSection from './sections/contact/ContactSection.vue'
 import ExperienceSection from './sections/experience/ExperienceSection.vue'
 import HeroSection from './sections/hero/HeroSection.vue'
+import ProjectsSection from './sections/projects/ProjectsSection.vue'
 import SkillsSection from './sections/skills/SkillsSection.vue'
 import { sections } from './sections/sections'
 
@@ -29,9 +30,8 @@ const activeSection = useActiveSection(sections)
 
     <AboutSection />
     <ExperienceSection />
-    <!-- Empty until built in steps 10 and 11. -->
-    <PageSection id="projects" />
+    <ProjectsSection />
     <SkillsSection />
-    <PageSection id="contact" />
+    <ContactSection />
   </main>
 </template>

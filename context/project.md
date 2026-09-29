@@ -12,7 +12,7 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 - Hero: role "Software Developer (Frontend/Fullstack)", "Open to new roles" line, no photo for now.
 - Experience: CV wording only.
 - Projects v1: this portfolio as a case study. Optional full-stack side project later.
-- Contact: form (sending service not chosen), LinkedIn, XING, email. No phone number.
+- Contact: form (opens email app via mailto: until a sending service is chosen), LinkedIn, XING, email. No phone number.
 
 ## Design
 
@@ -27,11 +27,29 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 
 ## Before launch (review at end of first version)
 
-- Impressum + Datenschutz pages.
-- Choose contact sending service.
+Content & legal
+
+- Impressum + Datenschutz pages (Impressum needs an address — decide how to handle privately).
+- Choose contact sending service (form uses `mailto:` until then).
 - CV download: needed or not? If yes, use a PDF version without phone number/photo (EN + DE).
+- Repo URL for the Projects "Source code" link + footer source link (repo must be public).
+- User review of own-written copy: Projects highlights, Contact texts (EN + DE).
+- Repo name typo "Portofolio" — rename before sharing the link?
+
+Manual checks (in the browser)
+
+- Nav highlights "Contact" when scrolled to the page bottom (estimated OK up to ~1450px window height).
+- Contact form: real submit opens the email app with subject + body filled in.
+- Keyboard-only pass (skip link, nav, toggles, form errors + focus) and a screen-reader pass.
+- Contrast check (WCAG AA) of accent, muted text and `danger` in light + dark.
+- German text length: no overflow or awkward wraps.
+
+Tech
+
+- Responsive layout (desktop-first so far: fixed 12-column grids).
+- Switch to Node 24 LTS before CI (Node 25 gives EBADENGINE warnings; test `--no-experimental-webstorage` flag).
 
 ## Status
 
-Current step: step 9 done — ExperienceSection (CV bullets EN/DE, timeline) + shared PageSection. XING URL pending.
-Next: step 10 — Projects (this portfolio as case study).
+Current step: step 11 done — ContactSection (channels + form that opens the visitor's email app via mailto:). XING added; source link pending (repo URL).
+Next: step 12 — Footer (Impressum, Datenschutz, source link).

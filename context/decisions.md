@@ -26,3 +26,7 @@
 - 2026-09-29 — App lists sections explicitly; test asserts page order = `sections` order. `PlaceholderSection` is temporary.
 - 2026-09-29 — Extracted `PageSection` at the 3rd repeat (About, Skills, Experience); PlaceholderSection removed.
 - 2026-09-29 — Experience: CV bullets verbatim as `Localized<string[]>`, `stack` only lists tech named in bullets, dates as `<time datetime>` in MM/YYYY.
+- 2026-09-29 — Projects: data list in `projects.ts` (one entry: this portfolio), card as `<article>`; source link added once the repo URL is confirmed.
+- 2026-09-29 — Contact form submits via `mailto:` until a sending service is chosen — works now, no third-party data transfer; only `submit()` changes later.
+- 2026-09-29 — Form: `novalidate` + own translated errors (keys stored, not texts), aria-invalid/describedby, focus first invalid field, `role="status"` confirmation. German copy addresses the reader with "Sie".
+- 2026-09-29 — Added `danger` color role (red-700 / red-400) for form errors — keeps components free of `dark:` classes.

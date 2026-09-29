@@ -35,6 +35,10 @@ export default {
   experience: {
     stackLabel: 'Technologies',
   },
+  projects: {
+    highlightsLabel: 'What it shows',
+    stackLabel: 'Technologies',
+  },
   skills: {
     primary: 'Main focus',
     certifications: 'Certifications',
@@ -44,6 +48,28 @@ export default {
       tools: 'Tools & Methods',
       basics: 'Basic knowledge',
     },
+  },
+  contact: {
+    intro:
+      "I'm open to new roles in frontend or full-stack development. The quickest way to reach me is by email.",
+    channelsLabel: 'Contact channels',
+    emailLabel: 'Email',
+    formTitle: 'Write a message',
+    formNote:
+      'Sending opens your email app with the message filled in. Nothing is stored on this site.',
+    fields: {
+      name: 'Name',
+      email: 'Email',
+      message: 'Message',
+    },
+    errors: {
+      required: 'Please fill in this field.',
+      email: 'Please enter a valid email address.',
+      tooShort: 'Please write at least 10 characters.',
+    },
+    submit: 'Open in email app',
+    sent: "Your email app should open now. If it doesn't, please write to the address above.",
+    subject: 'Portfolio contact from {name}',
   },
   nav: {
     label: 'Main',
