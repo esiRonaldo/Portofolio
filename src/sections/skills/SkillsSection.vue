@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import PageSection from '../../components/PageSection.vue'
 import { localize } from '../../i18n'
 import { certifications, skillGroups, type Skill } from './skills'
 
@@ -11,16 +12,8 @@ function skillName(skill: Skill): string {
 </script>
 
 <template>
-  <section
-    id="skills"
-    aria-labelledby="skills-title"
-    class="grid grid-cols-12 gap-12 border-t border-line py-24"
-  >
-    <h2 id="skills-title" class="col-span-4 text-3xl font-semibold tracking-tight">
-      {{ t('nav.skills') }}
-    </h2>
-
-    <div class="col-span-8 space-y-10">
+  <PageSection id="skills">
+    <div class="space-y-10">
       <div v-for="group in skillGroups" :key="group.id">
         <h3 class="flex items-center gap-3 font-semibold">
           {{ t(`skills.groups.${group.id}`) }}
@@ -52,5 +45,5 @@ function skillName(skill: Skill): string {
         </ul>
       </div>
     </div>
-  </section>
+  </PageSection>
 </template>

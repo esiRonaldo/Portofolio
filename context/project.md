@@ -33,5 +33,5 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 
 ## Status
 
-Current step: step 8 done — AboutSection + SkillsSection (CV data, Frontend emphasised, certifications). XING URL pending.
-Next: step 9 — Experience (replace PlaceholderSection id="experience").
+Current step: step 9 done — ExperienceSection (CV bullets EN/DE, timeline) + shared PageSection. XING URL pending.
+Next: step 10 — Projects (this portfolio as case study).

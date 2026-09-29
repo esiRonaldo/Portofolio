@@ -11,7 +11,7 @@ src/
   i18n/               index.ts (createI18n, Locale, Localized<T>, setLocale), en.ts, de.ts
   composables/        useTheme.ts, useActiveSection.ts (IntersectionObserver band at ~40% of viewport)
   utils/storage.ts    safe localStorage read/write (try/catch → fallback)
-  components/         site shell + shared pieces (SiteHeader, ThemeToggle, LanguageSwitch, …)
+  components/         site shell + shared pieces (SiteHeader, ThemeToggle, LanguageSwitch, PageSection)
   sections/sections.ts  ordered SectionId list — single source for nav links, ids, active tracking
   sections/<name>/    NameSection.vue + child components + data file (with its types) + spec
   test-setup.ts       installs i18n for all tests, resets locale, storage and the .dark class
@@ -47,6 +47,7 @@ section data file, props inline in `defineProps`. Shared file only when 2+ featu
 ## Components
 
 PascalCase multi-word; sections end in `…Section`. Split at ~150 lines or clear repetition.
+Sections wrap their content in `<PageSection id>` (labelled section + h2 from the nav label + 4/8 grid).
 
 ## Accessibility
 

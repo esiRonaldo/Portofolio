@@ -24,3 +24,5 @@
 - 2026-09-29 — Section layout: h2 in 4 left columns, content in 8 right (editorial). Extract a shared heading component only when a 3rd section repeats it.
 - 2026-09-29 — Skills data in `sections/skills/skills.ts` with `primary` flag; certifications listed under Skills; education + languages in About.
 - 2026-09-29 — App lists sections explicitly; test asserts page order = `sections` order. `PlaceholderSection` is temporary.
+- 2026-09-29 — Extracted `PageSection` at the 3rd repeat (About, Skills, Experience); PlaceholderSection removed.
+- 2026-09-29 — Experience: CV bullets verbatim as `Localized<string[]>`, `stack` only lists tech named in bullets, dates as `<time datetime>` in MM/YYYY.

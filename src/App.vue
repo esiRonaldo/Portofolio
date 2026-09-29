@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import PageSection from './components/PageSection.vue'
 import SiteHeader from './components/SiteHeader.vue'
 import { useActiveSection } from './composables/useActiveSection'
 import AboutSection from './sections/about/AboutSection.vue'
+import ExperienceSection from './sections/experience/ExperienceSection.vue'
 import HeroSection from './sections/hero/HeroSection.vue'
-import PlaceholderSection from './sections/PlaceholderSection.vue'
 import SkillsSection from './sections/skills/SkillsSection.vue'
 import { sections } from './sections/sections'
 
@@ -27,10 +28,10 @@ const activeSection = useActiveSection(sections)
     <HeroSection />
 
     <AboutSection />
-    <!-- Placeholders are replaced by real sections in steps 9–11. -->
-    <PlaceholderSection id="experience" />
-    <PlaceholderSection id="projects" />
+    <ExperienceSection />
+    <!-- Empty until built in steps 10 and 11. -->
+    <PageSection id="projects" />
     <SkillsSection />
-    <PlaceholderSection id="contact" />
+    <PageSection id="contact" />
   </main>
 </template>

@@ -32,6 +32,9 @@ export default {
       value: 'English (fluent), German (B2), Persian (native)',
     },
   },
+  experience: {
+    stackLabel: 'Technologies',
+  },
   skills: {
     primary: 'Main focus',
     certifications: 'Certifications',

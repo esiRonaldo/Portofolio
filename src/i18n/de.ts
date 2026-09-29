@@ -35,6 +35,9 @@ const de: typeof en = {
       value: 'Deutsch (B2), Englisch (fließend), Persisch (Muttersprache)',
     },
   },
+  experience: {
+    stackLabel: 'Technologien',
+  },
   skills: {
     primary: 'Schwerpunkt',
     certifications: 'Zertifikate',
