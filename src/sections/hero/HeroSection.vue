@@ -43,5 +43,15 @@ const { t } = useI18n()
         </li>
       </ul>
     </div>
+
+    <!-- width/height reserve the space before the image loads (no layout shift); high priority: it's the main image. -->
+    <img
+      src="/images/portrait.jpg"
+      alt="Ehsan Fani"
+      width="860"
+      height="676"
+      fetchpriority="high"
+      class="col-span-5 w-full rounded-2xl border border-line motion-safe:animate-rise motion-safe:[animation-delay:120ms]"
+    />
   </section>
 </template>

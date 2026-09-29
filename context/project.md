@@ -9,7 +9,7 @@ The site itself is the main work sample (no public or shareable employer project
 
 Hero → About → Experience → Projects → Skills → Contact. Footer: Impressum, Datenschutz, source link.
 
-- Hero: role "Software Developer (Frontend/Fullstack)", "Open to new roles" line, no photo for now.
+- Hero: role "Software Developer (Frontend/Fullstack)", "Open to new roles" line, portrait photo on the right.
 - Experience: CV wording only.
 - Projects v1: this portfolio as a case study. Optional full-stack side project later.
 - Contact: form (UI + validation only until a sending service is chosen), LinkedIn, XING. No email address, no phone number.

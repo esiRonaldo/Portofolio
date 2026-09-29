@@ -36,3 +36,4 @@
 - 2026-09-29 — Icons (replaces "text-only profile links"): downloaded SVGs in public/icons/ used as `<img>` with alt as the link name; profile links icon-only, email text kept in Contact, globe + name on the language button. `dark:invert` for dark theme. LinkedIn icon from Simple Icons v13.21.0 (removed later at the brand's request).
 - 2026-09-29 — Hero facts box removed for now (experience to be updated); location shown in the footer instead ("Cologne"/"Köln" with a map-pin icon).
 - 2026-09-29 — Email address removed from the site (user's choice): no mailto links, form is validation-only (replaces the `mailto:` decision). Contact via LinkedIn/XING until a sending service is chosen.
+- 2026-09-29 — Hero portrait photo (replaces "no photo for now"): public/images/portrait.jpg, resized to 860px JPEG q80 with macOS sips (1.5 MB PNG → 83 KB; sips can't write WebP). width/height set, fetchpriority=high.
