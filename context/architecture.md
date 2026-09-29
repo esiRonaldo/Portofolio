@@ -6,12 +6,12 @@
 index.html            lang="en", inline theme script (sets .dark before first paint)
 src/
   main.ts             createApp(App).use(i18n).mount('#app')
-  App.vue             skip link, <SiteHeader>, <main> with sections; owns useActiveSection(sections)
+  App.vue             skip link, <SiteHeader>, <main> with sections, <SiteFooter>; owns useActiveSection(sections)
   styles/main.css     Tailwind import + tokens + base styles (replaces style.css)
   i18n/               index.ts (createI18n, Locale, Localized<T>, setLocale), en.ts, de.ts
   composables/        useTheme.ts, useActiveSection.ts (IntersectionObserver band at ~40% of viewport)
   utils/storage.ts    safe localStorage read/write (try/catch → fallback)
-  components/         site shell + shared pieces (SiteHeader, ThemeToggle, LanguageSwitch, PageSection)
+  components/         site shell + shared pieces (SiteHeader, SiteFooter, ThemeToggle, LanguageSwitch, PageSection)
   sections/sections.ts  ordered SectionId list — single source for nav links, ids, active tracking
   sections/<name>/    NameSection.vue + child components + data file (with its types) + spec
   test-setup.ts       installs i18n for all tests, resets locale, storage and the .dark class

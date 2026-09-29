@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import SiteFooter from './components/SiteFooter.vue'
 import SiteHeader from './components/SiteHeader.vue'
 import { useActiveSection } from './composables/useActiveSection'
 import AboutSection from './sections/about/AboutSection.vue'
@@ -34,4 +35,6 @@ const activeSection = useActiveSection(sections)
     <SkillsSection />
     <ContactSection />
   </main>
+
+  <SiteFooter />
 </template>

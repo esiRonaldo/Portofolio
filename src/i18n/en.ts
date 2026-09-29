@@ -71,6 +71,10 @@ export default {
     sent: "Your email app should open now. If it doesn't, please write to the address above.",
     subject: 'Portfolio contact from {name}',
   },
+  footer: {
+    linksLabel: 'Contact & profiles',
+    backToTop: 'Back to top',
+  },
   nav: {
     label: 'Main',
     about: 'About',

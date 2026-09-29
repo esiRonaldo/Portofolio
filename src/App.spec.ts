@@ -27,6 +27,15 @@ describe('App', () => {
     }
   })
 
+  it('puts the footer after main, outside of it, so it is the page footer landmark', () => {
+    const wrapper = mount(App)
+
+    expect(wrapper.find('main footer').exists()).toBe(false)
+    expect(wrapper.find('main + footer').exists()).toBe(true)
+    expect(wrapper.find('footer a[href="#hero"]').exists()).toBe(true)
+    expect(wrapper.find('#hero').exists()).toBe(true)
+  })
+
   it('renders the sections in the same order as the navigation', () => {
     const ids = mount(App)
       .findAll('main > section')

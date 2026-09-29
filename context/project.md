@@ -38,7 +38,7 @@ Content & legal
 
 Manual checks (in the browser)
 
-- Nav highlights "Contact" when scrolled to the page bottom (estimated OK up to ~1450px window height).
+- Nav highlights "Contact" when scrolled to the page bottom (estimated OK up to ~1450px window height, footer adds ~100px).
 - Contact form: real submit opens the email app with subject + body filled in.
 - Keyboard-only pass (skip link, nav, toggles, form errors + focus) and a screen-reader pass.
 - Contrast check (WCAG AA) of accent, muted text and `danger` in light + dark.
@@ -51,5 +51,5 @@ Tech
 
 ## Status
 
-Current step: step 11 done — ContactSection (channels + form that opens the visitor's email app via mailto:). XING added; source link pending (repo URL).
-Next: step 12 — Footer (Impressum, Datenschutz, source link).
+Current step: step 12 done — SiteFooter (©, email + profiles, back to top). Legal + source links come with their pages.
+Next: step 13 — to be decided (legal pages or responsive layout).

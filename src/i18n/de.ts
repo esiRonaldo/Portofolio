@@ -74,6 +74,10 @@ const de: typeof en = {
     sent: 'Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, schreiben Sie bitte an die Adresse oben.',
     subject: 'Portfolio-Kontakt von {name}',
   },
+  footer: {
+    linksLabel: 'Kontakt & Profile',
+    backToTop: 'Nach oben',
+  },
   nav: {
     label: 'Hauptnavigation',
     about: 'Über mich',
