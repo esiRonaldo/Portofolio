@@ -31,5 +31,5 @@ Impressum + Datenschutz pages; choose contact sending service.
 
 ## Status
 
-Current step: step 3 done — Vue 3 + TS, Vue I18n, Tailwind v4, Prettier, ESLint, Vitest (Vite demo still in place).
-Next: prompt 4 — foundation plan (remove demo, tokens, i18n/theme structure).
+Current step: step 4 done — foundation plan approved (context/architecture.md).
+Next: step 5 — implement foundation exactly as in architecture.md (remove Vite demo first).

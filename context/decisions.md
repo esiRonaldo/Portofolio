@@ -11,3 +11,6 @@
 - 2026-09-29 — ESLint: `flat/essential` + TS recommended, no eslint-config-prettier — essential has no formatting rules, so nothing conflicts with Prettier.
 - 2026-09-29 — No `jiti` — Node 24+ loads `eslint.config.ts` natively.
 - 2026-09-29 — Vitest config lives in vite.config.ts (`vitest/config`), tests colocated as `*.spec.ts` — one config file, tests next to code.
+- 2026-09-29 — Foundation plan approved (see architecture.md) — content in typed section data files, UI strings in i18n.
+- 2026-09-29 — Inter via `@fontsource-variable/inter`, no JetBrains Mono yet — self-hosted, one package.
+- 2026-09-29 — Theme doesn't live-follow OS changes after load; no temporary toggles in step 5 — simpler; toggles come with the header (step 6).

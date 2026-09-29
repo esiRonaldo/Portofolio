@@ -7,7 +7,7 @@ EN (default) / DE, light/dark, desktop-first (responsive later).
 
 ## Start of every session
 
-1. Read `context/decisions.md`.
+1. Read `context/decisions.md` and `context/architecture.md`.
 2. If `sessions/` exists, read only the newest file (local, not in Git).
 3. Run `git status` before changing anything.
 
