@@ -36,6 +36,7 @@ Content & legal
 - User review of own-written copy: Projects highlights, Contact texts, shortened Experience lines (EN + DE).
 - Hero facts box (Experience / Frontend / Backend / Location card, right of the hero text) removed for now —
   re-add with updated experience; old version in commit 0ac5c85 (HeroSection.vue + hero.facts in en/de.ts).
+- Location ("Cologne"/"Köln" with map-pin icon) removed from the footer for now — decide where to show it.
 - Repo name typo "Portofolio" — rename before sharing the link?
 
 SEO (postponed — do as one step; plan + concepts in the local session note of 2026-09-29)

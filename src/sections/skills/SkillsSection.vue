@@ -2,12 +2,17 @@
 import { useI18n } from 'vue-i18n'
 import PageSection from '../../components/PageSection.vue'
 import { localize } from '../../i18n'
-import { certifications, skillGroups, type Skill } from './skills'
+import { certifications, darkLogos, skillGroups, skillIcons, type Skill } from './skills'
 
 const { t } = useI18n()
 
 function skillName(skill: Skill): string {
   return typeof skill === 'string' ? skill : localize(skill)
+}
+
+// Icons are keyed by the English name, so they don't depend on the current language.
+function englishName(skill: Skill): string {
+  return typeof skill === 'string' ? skill : skill.en
 }
 </script>
 
@@ -28,9 +33,16 @@ function skillName(skill: Skill): string {
           <li
             v-for="skill in group.items"
             :key="skillName(skill)"
-            class="rounded-md border px-3 py-1"
+            class="flex items-center gap-2 rounded-md border px-3 py-1"
             :class="group.primary ? 'border-accent/40 bg-accent/10' : 'border-line bg-surface'"
           >
+            <img
+              v-if="skillIcons[englishName(skill)]"
+              :src="`/icons/skills/${skillIcons[englishName(skill)]}.svg`"
+              alt=""
+              class="size-4"
+              :class="{ 'dark:invert': darkLogos.includes(englishName(skill)) }"
+            />
             {{ skillName(skill) }}
           </li>
         </ul>

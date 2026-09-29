@@ -11,7 +11,7 @@ function monthYear(value: string): string {
 </script>
 
 <template>
-  <PageSection id="experience" wide>
+  <PageSection id="experience">
     <!-- Ordered list: newest first, so the order itself carries meaning. -->
     <ol class="grid grid-cols-3 gap-16">
       <li v-for="(job, index) in jobs" :key="job.company" class="relative flex gap-5">

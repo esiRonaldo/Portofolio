@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { socialLinks } from '../../profile'
 
 const { t } = useI18n()
 </script>
@@ -34,14 +33,6 @@ const { t } = useI18n()
           {{ t('hero.secondaryCta') }} <span aria-hidden="true">→</span>
         </a>
       </div>
-
-      <ul :aria-label="t('hero.linksLabel')" class="mt-8 -ml-2 flex gap-2">
-        <li v-for="link in socialLinks" :key="link.name">
-          <a :href="link.href" :title="link.name" class="block rounded-md p-2 hover:bg-surface">
-            <img :src="link.icon" :alt="link.name" class="size-5 dark:invert" />
-          </a>
-        </li>
-      </ul>
     </div>
 
     <!-- width/height reserve the space before the image loads (no layout shift); high priority: it's the main image. -->

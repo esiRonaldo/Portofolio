@@ -13,13 +13,7 @@ describe('SkillsSection', () => {
     const headings = groupHeadings(mount(SkillsSection))
 
     expect(headings[0]).toBe('Frontend Main focus')
-    expect(headings).toEqual([
-      'Frontend Main focus',
-      'Backend & Databases',
-      'Tools & Methods',
-      'Basic knowledge',
-      'Certifications',
-    ])
+    expect(headings).toEqual(['Frontend Main focus', 'Backend, Tools & More', 'Certifications'])
   })
 
   it('lists the skills of each group as a list', () => {
@@ -53,7 +47,7 @@ describe('SkillsSection', () => {
     setLocale('de')
     await wrapper.vm.$nextTick()
 
-    expect(groupHeadings(wrapper)).toContain('Backend & Datenbanken')
+    expect(groupHeadings(wrapper)).toContain('Backend, Tools & mehr')
     expect(wrapper.text()).toContain('Barrierefreiheit')
     expect(wrapper.text()).not.toContain('Accessibility')
   })

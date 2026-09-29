@@ -9,16 +9,36 @@ const { t } = useI18n()
 
 <template>
   <PageSection id="contact">
-    <p class="max-w-2xl text-lg leading-relaxed">{{ t('contact.intro') }}</p>
+    <div class="grid grid-cols-12 gap-12">
+      <ContactForm class="col-span-8" />
 
-    <ul :aria-label="t('contact.channelsLabel')" class="mt-6 -ml-2 flex gap-2">
-      <li v-for="link in socialLinks" :key="link.name">
-        <a :href="link.href" :title="link.name" class="block rounded-md p-2 hover:bg-surface">
-          <img :src="link.icon" :alt="link.name" class="size-5 dark:invert" />
-        </a>
-      </li>
-    </ul>
+      <div class="col-span-4">
+        <h3 class="text-lg font-semibold">{{ t('contact.channelsTitle') }}</h3>
+        <ul class="mt-4 space-y-2">
+          <li v-for="link in socialLinks" :key="link.name">
+            <a
+              :href="link.href"
+              class="flex items-center gap-3 rounded-lg border border-line bg-surface px-3 py-2 text-sm font-medium hover:border-accent"
+            >
+              <!-- Brand colors; only GitHub's logo is black, so only it is inverted in the dark theme. -->
+              <img
+                :src="link.icon"
+                alt=""
+                class="size-5"
+                :class="{ 'dark:invert': link.name === 'GitHub' }"
+              />
+              {{ link.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-    <ContactForm class="mt-12" />
+    <!-- Contact is the last section, so the way back up lives here. -->
+    <div class="mt-12 flex justify-end">
+      <a href="#hero" :title="t('contact.backToTop')" class="rounded-full hover:bg-surface">
+        <img src="/icons/arrow-up.svg" :alt="t('contact.backToTop')" class="size-9 dark:invert" />
+      </a>
+    </div>
   </PageSection>
 </template>

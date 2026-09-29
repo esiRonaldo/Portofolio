@@ -38,3 +38,7 @@
 - 2026-09-29 — Email address removed from the site (user's choice): no mailto links, form is validation-only (replaces the `mailto:` decision). Contact via LinkedIn/XING until a sending service is chosen.
 - 2026-09-29 — Hero portrait photo (replaces "no photo for now"): public/images/portrait.jpg, resized to 860px JPEG q80 with macOS sips (1.5 MB PNG → 83 KB; sips can't write WebP). width/height set, fetchpriority=high.
 - 2026-09-29 — Experience as a horizontal timeline like the user's reference (replaces the vertical list with full CV bullets + tech tags): one shortened first-bullet line per job, Lucide icons, `PageSection wide` (heading on top, full-width content).
+- 2026-09-29 — Skills: Backend & Databases, Tools & Methods and Basic knowledge merged into one group ("Backend, Tools & More"); chips show colorful Devicon logos (v2.17.0, MIT) in public/icons/skills/, text-only where no logo exists; Express/Django inverted in dark mode.
+- 2026-09-29 — Profile links only in Contact (removed from hero + footer), as cards (big icon + name) next to a wide form (`PageSection wide`). Contact intro sentence and footer location removed.
+- 2026-09-29 — All sections use the wide layout (heading on top, full-width content); the 4/8 split and the `wide` option are removed.
+- 2026-09-29 — Footer = centered copyright only. Back-to-top is an arrow icon at the end of Contact (last section). Profile cards in Contact are compact with brand-color logos (Devicon LinkedIn/GitHub, Simple Icons XING + #006567).

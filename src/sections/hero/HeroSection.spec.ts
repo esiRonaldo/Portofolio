@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { setLocale } from '../../i18n'
-import { socialLinks } from '../../profile'
 import HeroSection from './HeroSection.vue'
 
 describe('HeroSection', () => {
@@ -18,14 +17,6 @@ describe('HeroSection', () => {
 
     expect(wrapper.get('a[href="#experience"]').text()).toBe('View experience')
     expect(wrapper.get('a[href="#contact"]').text()).toContain('Contact')
-  })
-
-  it('links to every public profile', () => {
-    const links = mount(HeroSection).findAll('ul a')
-
-    expect(
-      links.map((link) => [link.get('img').attributes('alt'), link.attributes('href')]),
-    ).toEqual(socialLinks.map((link) => [link.name, link.href]))
   })
 
   it('shows German text after switching the language', async () => {

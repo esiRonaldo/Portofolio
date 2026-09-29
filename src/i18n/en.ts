@@ -9,7 +9,6 @@ export default {
       'I build modern web applications with Vue.js, Angular and TypeScript — with full-stack experience in Node.js, Python/Django and REST APIs.',
     primaryCta: 'View experience',
     secondaryCta: 'Contact',
-    linksLabel: 'Profiles',
   },
   about: {
     intro:
@@ -35,15 +34,12 @@ export default {
     certifications: 'Certifications',
     groups: {
       frontend: 'Frontend',
-      backend: 'Backend & Databases',
-      tools: 'Tools & Methods',
-      basics: 'Basic knowledge',
+      more: 'Backend, Tools & More',
     },
   },
   contact: {
-    intro:
-      "I'm open to new roles in frontend or full-stack development. The quickest way to reach me is on LinkedIn or XING.",
-    channelsLabel: 'Contact channels',
+    backToTop: 'Back to top',
+    channelsTitle: 'Find me on',
     formTitle: 'Write a message',
     fields: {
       name: 'Name',
@@ -57,11 +53,6 @@ export default {
     },
     submit: 'Send message',
     sent: "Thanks! Sending isn't connected yet, so please reach me on LinkedIn or XING for now.",
-  },
-  footer: {
-    location: 'Cologne',
-    linksLabel: 'Contact & profiles',
-    backToTop: 'Back to top',
   },
   nav: {
     label: 'Main',

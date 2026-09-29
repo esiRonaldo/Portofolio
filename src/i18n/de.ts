@@ -12,7 +12,6 @@ const de: typeof en = {
       'Ich entwickle moderne Webanwendungen mit Vue.js, Angular und TypeScript – mit Fullstack-Erfahrung in Node.js, Python/Django und REST APIs.',
     primaryCta: 'Erfahrung ansehen',
     secondaryCta: 'Kontakt',
-    linksLabel: 'Profile',
   },
   about: {
     intro:
@@ -38,15 +37,12 @@ const de: typeof en = {
     certifications: 'Zertifikate',
     groups: {
       frontend: 'Frontend',
-      backend: 'Backend & Datenbanken',
-      tools: 'Tools & Methoden',
-      basics: 'Grundkenntnisse',
+      more: 'Backend, Tools & mehr',
     },
   },
   contact: {
-    intro:
-      'Ich bin offen für neue Positionen in der Frontend- oder Fullstack-Entwicklung. Am schnellsten erreichen Sie mich über LinkedIn oder XING.',
-    channelsLabel: 'Kontaktwege',
+    backToTop: 'Nach oben',
+    channelsTitle: 'Sie finden mich auf',
     formTitle: 'Nachricht schreiben',
     fields: {
       name: 'Name',
@@ -60,11 +56,6 @@ const de: typeof en = {
     },
     submit: 'Nachricht senden',
     sent: 'Danke! Der Versand ist noch nicht eingerichtet. Bitte kontaktieren Sie mich vorerst über LinkedIn oder XING.',
-  },
-  footer: {
-    location: 'Köln',
-    linksLabel: 'Kontakt & Profile',
-    backToTop: 'Nach oben',
   },
   nav: {
     label: 'Hauptnavigation',

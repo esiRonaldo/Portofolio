@@ -32,7 +32,6 @@ describe('App', () => {
 
     expect(wrapper.find('main footer').exists()).toBe(false)
     expect(wrapper.find('main + footer').exists()).toBe(true)
-    expect(wrapper.find('footer a[href="#hero"]').exists()).toBe(true)
     expect(wrapper.find('#hero').exists()).toBe(true)
   })
 

@@ -1,4 +1,4 @@
-// Public profile links. Shared by the hero, the contact section and (later) the footer.
+// Public profile links, shown in the contact section.
 
 export type SocialLink = {
   name: string
