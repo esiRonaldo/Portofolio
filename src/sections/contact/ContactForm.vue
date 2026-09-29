@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { nextTick, reactive, ref, useTemplateRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { email as recipient } from '../../profile'
-import { mailtoUrl } from './mailto'
 
-// No sending service yet: a valid form opens the visitor's email app with the message filled in.
+// UI and validation only: no sending mechanism is chosen yet. A valid form just shows a note.
 
 const fields = ['name', 'email', 'message'] as const
 type Field = (typeof fields)[number]
@@ -52,12 +50,6 @@ async function submit() {
     return
   }
 
-  const body = `${values.message.trim()}\n\n${values.name.trim()} <${values.email.trim()}>`
-  window.location.href = mailtoUrl(
-    recipient,
-    t('contact.subject', { name: values.name.trim() }),
-    body,
-  )
   sent.value = true
 }
 </script>
@@ -71,7 +63,6 @@ async function submit() {
     @submit.prevent="submit"
   >
     <h3 id="contact-form-title" class="text-lg font-semibold">{{ t('contact.formTitle') }}</h3>
-    <p class="mt-2 text-sm text-fg-muted">{{ t('contact.formNote') }}</p>
 
     <div class="mt-6 grid grid-cols-2 gap-6">
       <div v-for="field in fields" :key="field" :class="{ 'col-span-2': field === 'message' }">

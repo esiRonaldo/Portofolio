@@ -13,12 +13,6 @@ const de: typeof en = {
     primaryCta: 'Erfahrung ansehen',
     secondaryCta: 'Kontakt',
     linksLabel: 'Profile',
-    facts: {
-      experience: { label: 'Erfahrung', value: '5+ Jahre' },
-      frontend: { label: 'Frontend', value: 'Vue.js, Angular, TypeScript' },
-      backend: { label: 'Backend', value: 'Node.js, Python/Django, REST APIs' },
-      location: { label: 'Standort', value: 'Köln, Deutschland' },
-    },
   },
   about: {
     intro:
@@ -54,12 +48,9 @@ const de: typeof en = {
   },
   contact: {
     intro:
-      'Ich bin offen für neue Positionen in der Frontend- oder Fullstack-Entwicklung. Am schnellsten erreichen Sie mich per E-Mail.',
+      'Ich bin offen für neue Positionen in der Frontend- oder Fullstack-Entwicklung. Am schnellsten erreichen Sie mich über LinkedIn oder XING.',
     channelsLabel: 'Kontaktwege',
-    emailLabel: 'E-Mail',
     formTitle: 'Nachricht schreiben',
-    formNote:
-      'Beim Senden öffnet sich Ihr E-Mail-Programm mit der ausgefüllten Nachricht. Auf dieser Website wird nichts gespeichert.',
     fields: {
       name: 'Name',
       email: 'E-Mail',
@@ -70,11 +61,11 @@ const de: typeof en = {
       email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
       tooShort: 'Bitte schreiben Sie mindestens 10 Zeichen.',
     },
-    submit: 'Im E-Mail-Programm öffnen',
-    sent: 'Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, schreiben Sie bitte an die Adresse oben.',
-    subject: 'Portfolio-Kontakt von {name}',
+    submit: 'Nachricht senden',
+    sent: 'Danke! Der Versand ist noch nicht eingerichtet. Bitte kontaktieren Sie mich vorerst über LinkedIn oder XING.',
   },
   footer: {
+    location: 'Köln',
     linksLabel: 'Kontakt & Profile',
     backToTop: 'Nach oben',
   },

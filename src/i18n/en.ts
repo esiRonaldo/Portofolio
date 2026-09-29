@@ -10,12 +10,6 @@ export default {
     primaryCta: 'View experience',
     secondaryCta: 'Contact',
     linksLabel: 'Profiles',
-    facts: {
-      experience: { label: 'Experience', value: '5+ years' },
-      frontend: { label: 'Frontend', value: 'Vue.js, Angular, TypeScript' },
-      backend: { label: 'Backend', value: 'Node.js, Python/Django, REST APIs' },
-      location: { label: 'Location', value: 'Cologne, Germany' },
-    },
   },
   about: {
     intro:
@@ -51,12 +45,9 @@ export default {
   },
   contact: {
     intro:
-      "I'm open to new roles in frontend or full-stack development. The quickest way to reach me is by email.",
+      "I'm open to new roles in frontend or full-stack development. The quickest way to reach me is on LinkedIn or XING.",
     channelsLabel: 'Contact channels',
-    emailLabel: 'Email',
     formTitle: 'Write a message',
-    formNote:
-      'Sending opens your email app with the message filled in. Nothing is stored on this site.',
     fields: {
       name: 'Name',
       email: 'Email',
@@ -67,11 +58,11 @@ export default {
       email: 'Please enter a valid email address.',
       tooShort: 'Please write at least 10 characters.',
     },
-    submit: 'Open in email app',
-    sent: "Your email app should open now. If it doesn't, please write to the address above.",
-    subject: 'Portfolio contact from {name}',
+    submit: 'Send message',
+    sent: "Thanks! Sending isn't connected yet, so please reach me on LinkedIn or XING for now.",
   },
   footer: {
+    location: 'Cologne',
     linksLabel: 'Contact & profiles',
     backToTop: 'Back to top',
   },

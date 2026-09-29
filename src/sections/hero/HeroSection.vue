@@ -3,7 +3,6 @@ import { useI18n } from 'vue-i18n'
 import { socialLinks } from '../../profile'
 
 const { t } = useI18n()
-const facts = ['experience', 'frontend', 'backend', 'location'] as const
 </script>
 
 <template>
@@ -44,14 +43,5 @@ const facts = ['experience', 'frontend', 'backend', 'location'] as const
         </li>
       </ul>
     </div>
-
-    <dl
-      class="col-span-5 divide-y divide-line rounded-xl border border-line bg-surface px-6 py-2 motion-safe:animate-rise motion-safe:[animation-delay:120ms]"
-    >
-      <div v-for="fact in facts" :key="fact" class="grid grid-cols-3 gap-4 py-4">
-        <dt class="text-sm text-fg-muted">{{ t(`hero.facts.${fact}.label`) }}</dt>
-        <dd class="col-span-2 text-sm font-medium">{{ t(`hero.facts.${fact}.value`) }}</dd>
-      </div>
-    </dl>
   </section>
 </template>

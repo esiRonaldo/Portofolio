@@ -28,16 +28,6 @@ describe('HeroSection', () => {
     ).toEqual(socialLinks.map((link) => [link.name, link.href]))
   })
 
-  it('pairs each fact label with its value', () => {
-    const wrapper = mount(HeroSection)
-    const facts = wrapper
-      .findAll('dl > div')
-      .map((row) => [row.get('dt').text(), row.get('dd').text()])
-
-    expect(facts).toContainEqual(['Experience', '5+ years'])
-    expect(facts).toContainEqual(['Location', 'Cologne, Germany'])
-  })
-
   it('shows German text after switching the language', async () => {
     const wrapper = mount(HeroSection)
     setLocale('de')

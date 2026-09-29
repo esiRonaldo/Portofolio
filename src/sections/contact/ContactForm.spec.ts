@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { flushPromises, mount } from '@vue/test-utils'
 import { setLocale } from '../../i18n'
 import ContactForm from './ContactForm.vue'
@@ -60,19 +60,13 @@ describe('ContactForm', () => {
     expect(wrapper.find('#contact-name-error').exists()).toBe(false)
   })
 
-  it('opens the email app with the message and confirms it', async () => {
-    const location = { href: '' }
-    vi.stubGlobal('location', location)
+  it('confirms a valid message', async () => {
     const wrapper = mount(ContactForm)
     await fill(wrapper, 'Alex', 'alex@example.com', 'Hello, nice portfolio!')
     await wrapper.get('form').trigger('submit')
 
-    const url = new URL(location.href)
-    expect(url.protocol).toBe('mailto:')
-    expect(url.pathname).toBe('ehsan.fani9@gmail.com')
-    expect(url.searchParams.get('subject')).toBe('Portfolio contact from Alex')
-    expect(url.searchParams.get('body')).toBe('Hello, nice portfolio!\n\nAlex <alex@example.com>')
-    expect(wrapper.get('[role="status"]').text()).toContain('Your email app should open now')
+    expect(wrapper.find('[aria-invalid="true"]').exists()).toBe(false)
+    expect(wrapper.get('[role="status"]').text()).toContain("Sending isn't connected yet")
   })
 
   it('shows German labels and errors after switching the language', async () => {

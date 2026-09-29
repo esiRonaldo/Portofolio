@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { setLocale } from '../i18n'
-import { email, socialLinks } from '../profile'
+import { socialLinks } from '../profile'
 import SiteFooter from './SiteFooter.vue'
 
 describe('SiteFooter', () => {
@@ -11,11 +11,11 @@ describe('SiteFooter', () => {
     )
   })
 
-  it('links to email and every profile', () => {
+  it('links to every profile', () => {
     const list = mount(SiteFooter).get('ul[aria-label="Contact & profiles"]')
     const hrefs = list.findAll('a').map((a) => a.attributes('href'))
 
-    expect(hrefs).toEqual([`mailto:${email}`, ...socialLinks.map((link) => link.href)])
+    expect(hrefs).toEqual(socialLinks.map((link) => link.href))
   })
 
   it('has a link back to the top of the page', () => {

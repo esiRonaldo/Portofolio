@@ -12,7 +12,7 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 - Hero: role "Software Developer (Frontend/Fullstack)", "Open to new roles" line, no photo for now.
 - Experience: CV wording only.
 - Projects v1: this portfolio as a case study. Optional full-stack side project later.
-- Contact: form (opens email app via mailto: until a sending service is chosen), LinkedIn, XING, email. No phone number.
+- Contact: form (UI + validation only until a sending service is chosen), LinkedIn, XING. No email address, no phone number.
 
 ## Design
 
@@ -30,10 +30,12 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 Content & legal
 
 - Impressum + Datenschutz pages (Impressum needs an address — decide how to handle privately).
-- Choose contact sending service (form uses `mailto:` until then).
+- Choose contact sending service (form is validation-only until then; the service must not expose the email address).
 - CV download: needed or not? If yes, use a PDF version without phone number/photo (EN + DE).
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
 - User review of own-written copy: Projects highlights, Contact texts (EN + DE).
+- Hero facts box (Experience / Frontend / Backend / Location card, right of the hero text) removed for now —
+  re-add with updated experience; old version in commit 0ac5c85 (HeroSection.vue + hero.facts in en/de.ts).
 - Repo name typo "Portofolio" — rename before sharing the link?
 
 SEO (postponed — do as one step; plan + concepts in the local session note of 2026-09-29)
@@ -47,7 +49,6 @@ SEO (postponed — do as one step; plan + concepts in the local session note of 
 Manual checks (in the browser)
 
 - Nav highlights "Contact" when scrolled to the page bottom (estimated OK up to ~1450px window height, footer adds ~100px).
-- Contact form: real submit opens the email app with subject + body filled in.
 - Keyboard-only pass (skip link, nav, toggles, form errors + focus) and a screen-reader pass.
 - Contrast check (WCAG AA) of accent, muted text and `danger` in light + dark.
 - German text length: no overflow or awkward wraps.

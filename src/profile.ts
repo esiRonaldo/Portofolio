@@ -1,6 +1,4 @@
-// Public contact details. Shared by the hero, the contact section and (later) the footer.
-
-export const email = 'ehsan.fani9@gmail.com'
+// Public profile links. Shared by the hero, the contact section and (later) the footer.
 
 export type SocialLink = {
   name: string
