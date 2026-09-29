@@ -32,3 +32,12 @@ export function setLocale(locale: Locale): void {
   document.documentElement.lang = locale
   writeStorage(STORAGE_KEY, locale)
 }
+
+/**
+ * Picks the current language from a Localized value (for content data, not UI strings).
+ * Reads the reactive locale, so a template that calls it re-renders when the language changes.
+ */
+export function localize<T>(value: Localized<T>): T {
+  const current = i18n.global.locale.value
+  return value[isLocale(current) ? current : 'en']
+}

@@ -36,7 +36,8 @@ src/
 ## i18n
 
 - UI strings → `en.ts`/`de.ts`, `de` typed as `typeof en`.
-- Structured content (jobs, projects) → section data files with `Localized<string>` = `{ en; de }` fields.
+- Structured content (jobs, projects) → section data files with `Localized<string>` = `{ en; de }` fields,
+  rendered with `localize(value)` from `i18n/index.ts` (reactive: re-renders on language change).
 
 ## Types
 

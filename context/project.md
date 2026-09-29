@@ -33,5 +33,5 @@ Hero → About → Experience → Projects → Skills → Contact. Footer: Impre
 
 ## Status
 
-Current step: step 7 done — HeroSection (CV-based text, facts panel, GitHub + LinkedIn links). XING URL pending.
-Next: step 8 — About + Skills.
+Current step: step 8 done — AboutSection + SkillsSection (CV data, Frontend emphasised, certifications). XING URL pending.
+Next: step 9 — Experience (replace PlaceholderSection id="experience").

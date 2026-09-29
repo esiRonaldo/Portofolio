@@ -2,7 +2,10 @@
 import { useI18n } from 'vue-i18n'
 import SiteHeader from './components/SiteHeader.vue'
 import { useActiveSection } from './composables/useActiveSection'
+import AboutSection from './sections/about/AboutSection.vue'
 import HeroSection from './sections/hero/HeroSection.vue'
+import PlaceholderSection from './sections/PlaceholderSection.vue'
+import SkillsSection from './sections/skills/SkillsSection.vue'
 import { sections } from './sections/sections'
 
 const { t } = useI18n()
@@ -23,15 +26,11 @@ const activeSection = useActiveSection(sections)
   <main id="main" class="mx-auto max-w-6xl px-6">
     <HeroSection />
 
-    <!-- Temporary placeholders, replaced by real section components in steps 8–11. -->
-    <section
-      v-for="id in sections"
-      :id="id"
-      :key="id"
-      :aria-labelledby="`${id}-title`"
-      class="min-h-[80vh] border-t border-line py-24"
-    >
-      <h2 :id="`${id}-title`" class="text-2xl font-semibold">{{ t(`nav.${id}`) }}</h2>
-    </section>
+    <AboutSection />
+    <!-- Placeholders are replaced by real sections in steps 9–11. -->
+    <PlaceholderSection id="experience" />
+    <PlaceholderSection id="projects" />
+    <SkillsSection />
+    <PlaceholderSection id="contact" />
   </main>
 </template>

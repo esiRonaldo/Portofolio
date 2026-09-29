@@ -21,3 +21,6 @@
 - 2026-09-29 — Theme toggle = fixed label + aria-pressed; language switch = one button showing the other language (with `lang`).
 - 2026-09-29 — Hero: primary CTA → #experience, text-only profile links (no brand icons), same-tab external links.
 - 2026-09-29 — Profile links in `src/profile.ts` (shared by hero, contact, footer). XING added when URL is confirmed.
+- 2026-09-29 — Section layout: h2 in 4 left columns, content in 8 right (editorial). Extract a shared heading component only when a 3rd section repeats it.
+- 2026-09-29 — Skills data in `sections/skills/skills.ts` with `primary` flag; certifications listed under Skills; education + languages in About.
+- 2026-09-29 — App lists sections explicitly; test asserts page order = `sections` order. `PlaceholderSection` is temporary.

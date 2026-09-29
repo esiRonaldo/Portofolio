@@ -20,6 +20,31 @@ const de: typeof en = {
       location: { label: 'Standort', value: 'Köln, Deutschland' },
     },
   },
+  about: {
+    intro:
+      'Ich bin Softwareentwickler in Köln mit über 5 Jahren Berufserfahrung in der Entwicklung von Webanwendungen. Mein Schwerpunkt liegt im Frontend – Vue.js, Angular und TypeScript – und ich arbeite auch im Backend mit Node.js, Python/Django und REST APIs.',
+    teamwork:
+      'Ich habe in agilen Scrum-Teams bei NTT DATA und Ben Hur gearbeitet und arbeite mich schnell in neue Technologien ein.',
+    education: {
+      label: 'Ausbildung',
+      master: 'M.Sc. Automotive Software Engineering, Technische Universität Chemnitz',
+      bachelor: 'Bachelor of Software Technologies, Zarghan Azad University',
+    },
+    languages: {
+      label: 'Sprachen',
+      value: 'Deutsch (B2), Englisch (fließend), Persisch (Muttersprache)',
+    },
+  },
+  skills: {
+    primary: 'Schwerpunkt',
+    certifications: 'Zertifikate',
+    groups: {
+      frontend: 'Frontend',
+      backend: 'Backend & Datenbanken',
+      tools: 'Tools & Methoden',
+      basics: 'Grundkenntnisse',
+    },
+  },
   nav: {
     label: 'Hauptnavigation',
     about: 'Über mich',

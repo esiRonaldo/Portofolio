@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { setLocale } from './i18n'
 import App from './App.vue'
+import { sections } from './sections/sections'
 
 describe('App', () => {
   it('has a skip link that points to the main content', () => {
@@ -24,6 +25,14 @@ describe('App', () => {
     for (const href of hrefs) {
       expect(wrapper.find(href).exists(), `missing target for ${href}`).toBe(true)
     }
+  })
+
+  it('renders the sections in the same order as the navigation', () => {
+    const ids = mount(App)
+      .findAll('main > section')
+      .map((section) => section.attributes('id'))
+
+    expect(ids).toEqual(['hero', ...sections])
   })
 
   it('shows German text after switching the language', async () => {
