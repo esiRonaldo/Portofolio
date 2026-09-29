@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+
+/* `dark:` follows the .dark class on <html> (set by index.html / useTheme), not only the OS. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Semantic color roles. Components use these (bg-canvas, text-fg, …), never raw palette colors,
+   so switching the theme only swaps the values below. */
+:root {
+  color-scheme: light;
+  --canvas: var(--color-zinc-50);
+  --surface: var(--color-white);
+  --fg: var(--color-zinc-900);
+  --fg-muted: var(--color-zinc-600);
+  --line: var(--color-zinc-200);
+  --accent: var(--color-teal-700);
+  --on-accent: var(--color-white);
+  --focus: var(--color-teal-600);
+}
+
+.dark {
+  color-scheme: dark;
+  --canvas: #0b0d10;
+  --surface: var(--color-zinc-900);
+  --fg: var(--color-zinc-100);
+  --fg-muted: var(--color-zinc-400);
+  --line: var(--color-zinc-800);
+  --accent: var(--color-teal-400);
+  --on-accent: var(--color-zinc-950);
+  --focus: var(--color-teal-400);
+}
+
+/* Expose the roles as Tailwind utilities: bg-canvas, text-fg, border-line, … */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-focus: var(--focus);
+
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas font-sans text-fg antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

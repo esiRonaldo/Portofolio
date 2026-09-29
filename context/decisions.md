@@ -14,3 +14,5 @@
 - 2026-09-29 — Foundation plan approved (see architecture.md) — content in typed section data files, UI strings in i18n.
 - 2026-09-29 — Inter via `@fontsource-variable/inter`, no JetBrains Mono yet — self-hosted, one package.
 - 2026-09-29 — Theme doesn't live-follow OS changes after load; no temporary toggles in step 5 — simpler; toggles come with the header (step 6).
+- 2026-09-29 — Vitest `execArgv: ['--no-experimental-webstorage']` — Node 25's built-in empty localStorage hides jsdom's; flag is harmless on Node 24.
+- 2026-09-29 — No empty <header>/<footer> in the skeleton — landmarks are added with their content (step 6+).

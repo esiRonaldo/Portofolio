@@ -31,5 +31,5 @@ Impressum + Datenschutz pages; choose contact sending service.
 
 ## Status
 
-Current step: step 4 done — foundation plan approved (context/architecture.md).
-Next: step 5 — implement foundation exactly as in architecture.md (remove Vite demo first).
+Current step: step 5 done — foundation (tokens, theme, i18n, storage, App skeleton, tests).
+Next: step 6 — shared shell/navigation (SiteHeader, nav, active section, ThemeToggle, LanguageSwitch).

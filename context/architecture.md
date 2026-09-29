@@ -6,14 +6,14 @@
 index.html            lang="en", inline theme script (sets .dark before first paint)
 src/
   main.ts             createApp(App).use(i18n).mount('#app')
-  App.vue             skeleton: skip link, <header>, <main id="main">, <footer>
+  App.vue             skeleton: skip link + <main id="main">; <header>/<footer> added with their content
   styles/main.css     Tailwind import + tokens + base styles (replaces style.css)
   i18n/               index.ts (createI18n, Locale, Localized<T>, setLocale), en.ts, de.ts
   composables/        useTheme.ts — only composable for now
   utils/storage.ts    safe localStorage read/write (try/catch → fallback)
   components/         shared by 2+ sections only (SiteHeader, SiteFooter, …)
   sections/<name>/    NameSection.vue + child components + data file (with its types) + spec
-  test-setup.ts       installs i18n for all tests, resets locale/theme/storage
+  test-setup.ts       installs i18n for all tests, resets locale, storage and the .dark class
 ```
 
 ## Data flow

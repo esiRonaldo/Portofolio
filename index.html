@@ -5,6 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ehsan Fani — Software Developer</title>
+    <script>
+      // Runs before the page is painted, so there's no flash of the wrong theme.
+      // Uses the saved choice, otherwise the system setting. Keep in sync with useTheme.ts.
+      {
+        let saved = null
+        try {
+          saved = localStorage.getItem('theme')
+        } catch {}
+        const dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.classList.toggle('dark', dark)
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>

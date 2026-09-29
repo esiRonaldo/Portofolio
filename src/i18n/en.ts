@@ -1,6 +1,8 @@
 export default {
-  demo: {
-    title: 'Get started',
-    switchLanguage: 'Deutsch',
+  a11y: {
+    skipToContent: 'Skip to content',
+  },
+  app: {
+    placeholder: 'Portfolio in progress.',
   },
 }
