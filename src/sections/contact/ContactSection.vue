@@ -8,13 +8,9 @@ const { t } = useI18n()
 
 <template>
   <PageSection id="contact">
-    <ContactForm />
-
-    <!-- Contact is the last section, so the way back up lives here. -->
-    <div class="mt-12 flex justify-end">
-      <a href="#hero" :title="t('contact.backToTop')" class="rounded-full hover:bg-surface">
-        <img src="/icons/arrow-up.svg" :alt="t('contact.backToTop')" class="size-9 dark:invert" />
-      </a>
-    </div>
+    <p data-reveal style="--i: 1" class="max-w-2xl text-lead text-fg-muted">
+      {{ t('contact.intro') }}
+    </p>
+    <ContactForm data-reveal style="--i: 2" class="mt-8" />
   </PageSection>
 </template>

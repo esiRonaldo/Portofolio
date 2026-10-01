@@ -19,6 +19,22 @@ describe('HeroSection', () => {
     expect(wrapper.get('a[href="#contact"]').text()).toContain('Contact')
   })
 
+  it('lists the core stack once for screen readers, the slider copy is hidden', () => {
+    const lists = mount(HeroSection).findAll('ul')
+    const [list, copy] = lists
+
+    expect(lists).toHaveLength(2)
+    expect(list?.attributes('aria-labelledby')).toBe('hero-core')
+    expect(list?.findAll('li').map((item) => item.text())).toEqual([
+      'Vue.js',
+      'Angular',
+      'TypeScript',
+      'JavaScript',
+      'Node.js',
+    ])
+    expect(copy?.attributes('aria-hidden')).toBe('true')
+  })
+
   it('shows German text after switching the language', async () => {
     const wrapper = mount(HeroSection)
     setLocale('de')

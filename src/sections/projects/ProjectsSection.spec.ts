@@ -11,20 +11,24 @@ describe('ProjectsSection', () => {
 
     projects.forEach((project, index) => {
       const article = articles[index]
-      const lists = article?.findAll('ul') ?? []
+      const stack = article?.get('ul[aria-label="Technologies"]')
+      const highlights = article?.get('h4 + ul')
 
       expect(article?.get('h3').text()).toBe(project.title.en)
       expect(article?.text()).toContain(project.summary.en)
-      expect(article?.get('h4').text()).toBe('What it shows')
-      expect(lists[0]?.findAll('li')).toHaveLength(project.highlights.en.length)
-      expect(lists[1]?.findAll('li').map((li) => li.text())).toEqual(project.stack)
-      expect(lists[1]?.attributes('aria-label')).toBe('Technologies')
+      expect(article?.get('h4').text()).toBe('Engineering highlights')
+      expect(
+        highlights?.findAll('li').map((li) => li.findAll('p').map((line) => line.text())),
+      ).toEqual(project.highlights.map(({ title, detail }) => [title.en, detail.en]))
+      expect(stack?.findAll('li').map((li) => li.text())).toEqual(project.stack)
     })
   })
 
-  it('has the same number of highlights in both languages', () => {
-    for (const project of projects)
-      expect(project.highlights.de).toHaveLength(project.highlights.en.length)
+  it('shows no source or demo links while none are set', () => {
+    const wrapper = mount(ProjectsSection)
+
+    expect(projects.some((project) => project.links)).toBe(false)
+    expect(wrapper.find('article a').exists()).toBe(false)
   })
 
   it('shows German content after switching the language', async () => {
@@ -34,7 +38,7 @@ describe('ProjectsSection', () => {
 
     const article = wrapper.get('article')
     expect(article.get('h3').text()).toBe('Dieses Portfolio')
-    expect(article.get('h4').text()).toBe('Was es zeigt')
+    expect(article.get('h4').text()).toBe('Technische Highlights')
     expect(article.text()).toContain('selbst gehostete Schrift')
   })
 })

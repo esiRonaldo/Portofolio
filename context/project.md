@@ -36,7 +36,8 @@ Content & legal
 - Choose contact sending service (form is validation-only until then; the service must not expose the email address).
 - CV download: needed or not? If yes, use a PDF version without phone number/photo (EN + DE).
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
-- User review of own-written copy: Projects highlights, Contact texts, shortened Experience lines (EN + DE).
+- User review of own-written copy: Projects highlights (titles + details), Contact intro + texts, Hero "Core stack",
+  Skills group names, shortened Experience lines (EN + DE).
 - Hero facts box (Experience / Frontend / Backend / Location card, right of the hero text) removed for now —
   re-add with updated experience; old version in commit 0ac5c85 (HeroSection.vue + hero.facts in en/de.ts).
 - Location ("Cologne"/"Köln" with map-pin icon) removed from the footer for now — decide where to show it.
@@ -66,6 +67,7 @@ Tech
 
 ## Status
 
-Current step: design iteration done and pushed (a9deef9, 2026-09-29): photo, icons, Experience timeline, Skills logos,
-Contact/footer rework, email removed. Perf audit (no fixes needed) and a11y audit done as reports only.
-Next: to be decided — a11y fixes (input borders 1.4.11, required fields, pill contrast, translated title), CI, or end-of-v1 review.
+Current step: visual refinement + motion (2026-10-01, not committed): type scale, color roles, section reveal,
+Skills stagger, floating back-to-top, Hero/Experience/Projects/Contact polish. Input borders (1.4.11) and required
+fields are fixed by it. Hero core-stack slider added (open: pause button for WCAG 2.2.2).
+Next: browser check, then remaining a11y fixes (pill contrast, translated title), CI, or end-of-v1 review.

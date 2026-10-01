@@ -28,10 +28,13 @@ src/
 
 - `@custom-variant dark (&:where(.dark, .dark *))`.
 - Semantic vars in `:root` / `.dark` built from Tailwind's zinc/teal palette; exposed via `@theme inline`
-  as `canvas, surface, fg, fg-muted, line, accent, on-accent, focus, danger`. Components use `bg-canvas text-fg`,
-  no `dark:` classes. Add roles only when needed.
-- Spacing, type scale, radii, shadows: Tailwind defaults. Font: Inter via `@fontsource-variable/inter`.
-  No JetBrains Mono for now (system mono).
+  as `canvas, surface, surface-raised, fg, fg-muted, line, line-strong, accent, accent-hover, accent-subtle,
+on-accent, focus, danger`. Components use `bg-canvas text-fg`, no `dark:` classes. Add roles only when needed.
+- Type scale in `@theme`: `text-display` (hero name), `text-heading` (h2), `text-title` (cards/groups),
+  `text-lead` (intro prose); body `text-base`, meta `text-sm`. Font: Inter via `@fontsource-variable/inter`.
+- Spacing: section `py-20`, heading→content `mt-10`, groups 32px, items 16–24px. Radii/shadows: Tailwind defaults.
+- Motion: `ease-out-soft`, hovers 150–200ms, entrance `animate-rise` (~450ms). Section reveal: `PageSection` sets
+  `data-revealed` once; mark children `data-reveal` + `style="--i: n"` to stagger (CSS in main.css).
 
 ## i18n
 
@@ -54,7 +57,8 @@ Sections wrap their content in `<PageSection id>` (labelled section + h2 from th
 `<html lang>` synced; skip link; landmarks; global `:focus-visible` outline; `color-scheme` per theme;
 smooth scroll + scroll-padding only under `prefers-reduced-motion: no-preference`; animations use
 `motion-safe:`; one h1; `<section aria-labelledby>` + h2; native elements over ARIA; alt text;
-translated aria-labels on icon-only buttons.
+translated aria-labels on icon-only buttons; reveal pre-state only under
+`prefers-reduced-motion: no-preference`, hover lifts `motion-safe:`.
 
 ## Errors
 
@@ -64,7 +68,8 @@ runtime validation. Contact form (step 11) gets visible translated error/success
 ## Do NOT abstract (yet)
 
 Pinia, Router, event bus, provide/inject, BaseSection wrappers, VueUse/useLocalStorage, JS token objects,
-Tailwind config/plugins, lazy locales, zod, icon libraries (inline SVG), global error handler.
+Tailwind config/plugins, lazy locales, zod, icon libraries (SVG files as `<img>`), animation libraries
+or reveal composables, global error handler.
 
 ## Tests
 

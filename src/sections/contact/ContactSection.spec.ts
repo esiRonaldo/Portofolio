@@ -14,9 +14,8 @@ describe('ContactSection', () => {
     expect(wrapper.find('a[href^="mailto:"]').exists()).toBe(false)
   })
 
-  it('has a link back to the top of the page', () => {
-    const link = mount(ContactSection).get('a[href="#hero"]')
-    expect(link.get('img').attributes('alt')).toBe('Back to top')
+  it('introduces the form with a short text', () => {
+    expect(mount(ContactSection).text()).toContain('Have a role or project in mind?')
   })
 
   it('contains the contact form', () => {

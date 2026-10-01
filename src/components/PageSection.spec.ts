@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import PageSection from './PageSection.vue'
 
@@ -18,5 +18,39 @@ describe('PageSection', () => {
     })
 
     expect(wrapper.get('p').text()).toBe('Content')
+  })
+
+  it('marks itself as revealed once it comes on screen, then stops observing', async () => {
+    let report: (isIntersecting: boolean) => void = () => {}
+    const disconnect = vi.fn()
+    vi.stubGlobal(
+      'IntersectionObserver',
+      class {
+        constructor(callback: (entries: Partial<IntersectionObserverEntry>[]) => void) {
+          report = (isIntersecting) => callback([{ isIntersecting }])
+        }
+        observe() {}
+        disconnect = disconnect
+      },
+    )
+
+    const wrapper = mount(PageSection, {
+      props: { id: 'skills' },
+      slots: { default: '<p>Content</p>' },
+    })
+    const section = wrapper.get('section')
+
+    // Content is in the page before the reveal; only its animation waits.
+    expect(wrapper.text()).toContain('Content')
+    expect(section.attributes('data-revealed')).toBeUndefined()
+
+    report(false)
+    await wrapper.vm.$nextTick()
+    expect(section.attributes('data-revealed')).toBeUndefined()
+
+    report(true)
+    await wrapper.vm.$nextTick()
+    expect(section.attributes('data-revealed')).toBeDefined()
+    expect(disconnect).toHaveBeenCalled()
   })
 })

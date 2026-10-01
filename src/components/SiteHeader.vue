@@ -22,9 +22,14 @@ const { t } = useI18n()
               <a
                 :href="`#${id}`"
                 :aria-current="id === activeSection ? 'true' : undefined"
-                class="text-fg-muted underline-offset-8 hover:text-fg aria-[current=true]:text-fg aria-[current=true]:underline aria-[current=true]:decoration-accent aria-[current=true]:decoration-2"
+                class="group relative py-2 text-fg-muted transition-colors duration-200 hover:text-fg aria-[current=true]:text-fg"
               >
                 {{ t(`nav.${id}`) }}
+                <!-- Indicator bar: grows from the center when the link becomes current. -->
+                <span
+                  aria-hidden="true"
+                  class="absolute inset-x-0 -bottom-0.5 h-0.5 scale-x-0 rounded-full bg-accent transition-transform duration-300 ease-out-soft group-aria-[current=true]:scale-x-100 motion-reduce:transition-none"
+                />
               </a>
             </li>
           </ul>

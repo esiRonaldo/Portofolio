@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import BackToTop from './components/BackToTop.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import SiteHeader from './components/SiteHeader.vue'
 import { useActiveSection } from './composables/useActiveSection'
@@ -37,4 +38,5 @@ const activeSection = useActiveSection(sections)
   </main>
 
   <SiteFooter />
+  <BackToTop />
 </template>

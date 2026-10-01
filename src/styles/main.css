@@ -10,10 +10,14 @@
   color-scheme: light;
   --canvas: var(--color-zinc-50);
   --surface: var(--color-white);
+  --surface-raised: var(--color-white);
   --fg: var(--color-zinc-900);
   --fg-muted: var(--color-zinc-600);
   --line: var(--color-zinc-200);
+  /* At least 3:1 against canvas and surface: input borders, hover borders. */
+  --line-strong: var(--color-zinc-500);
   --accent: var(--color-teal-700);
+  --accent-hover: var(--color-teal-800);
   --on-accent: var(--color-white);
   --focus: var(--color-teal-600);
   --danger: var(--color-red-700);
@@ -21,12 +25,15 @@
 
 .dark {
   color-scheme: dark;
-  --canvas: #0b0d10;
-  --surface: var(--color-zinc-900);
+  --canvas: var(--color-zinc-950);
+  --surface: #131316;
+  --surface-raised: var(--color-zinc-900);
   --fg: var(--color-zinc-100);
   --fg-muted: var(--color-zinc-400);
   --line: var(--color-zinc-800);
+  --line-strong: var(--color-zinc-500);
   --accent: var(--color-teal-400);
+  --accent-hover: var(--color-teal-300);
   --on-accent: var(--color-zinc-950);
   --focus: var(--color-teal-400);
   --danger: var(--color-red-400);
@@ -36,10 +43,14 @@
 @theme inline {
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
   --color-fg: var(--fg);
   --color-fg-muted: var(--fg-muted);
   --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: color-mix(in oklab, var(--accent) 10%, transparent);
   --color-on-accent: var(--on-accent);
   --color-focus: var(--focus);
   --color-danger: var(--danger);
@@ -47,14 +58,42 @@
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
 }
 
-/* One-time entrance: fade in and rise 8px. Use as `motion-safe:animate-rise`. */
 @theme {
-  --animate-rise: rise 500ms cubic-bezier(0.2, 0, 0, 1) both;
+  /* Type scale: use these instead of picking raw sizes in components. Body = text-base, meta = text-sm. */
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 700;
+  --text-heading: 2rem;
+  --text-heading--line-height: 1.2;
+  --text-heading--letter-spacing: -0.02em;
+  --text-heading--font-weight: 600;
+  --text-title: 1.25rem;
+  --text-title--line-height: 1.4;
+  --text-title--font-weight: 600;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.7;
+  --text-base--line-height: 1.65;
+
+  /* Motion: one easing for everything; hovers ~150–200ms, entrances ~400ms. */
+  --ease-out-soft: cubic-bezier(0.2, 0, 0, 1);
+
+  /* One-time entrance: fade in and rise. Use as `motion-safe:animate-rise`. */
+  --animate-rise: rise 450ms var(--ease-out-soft) both;
+
+  /* Endless slider: the track holds two identical lists, so moving it by half loops seamlessly. */
+  --animate-marquee: marquee 20s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 
   @keyframes rise {
     from {
       opacity: 0;
-      transform: translateY(8px);
+      transform: translateY(12px);
     }
   }
 }
@@ -66,7 +105,7 @@
   }
 
   body {
-    @apply bg-canvas font-sans text-fg antialiased;
+    @apply bg-canvas font-sans text-base text-fg antialiased;
   }
 
   :focus-visible {
@@ -78,5 +117,18 @@
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Section reveal: PageSection sets data-revealed once the section is on screen. Elements marked
+     data-reveal rise in, staggered by their --i index (capped, so long lists stay quick).
+     Only here, under no-preference: with reduced motion, content is never hidden. Hover lifts use
+     the separate `translate` property, so they don't conflict with this `transform` animation. */
+  section:not([data-revealed]) [data-reveal] {
+    opacity: 0;
+  }
+
+  [data-revealed] [data-reveal] {
+    animation: var(--animate-rise);
+    animation-delay: min(calc(var(--i, 0) * 40ms), 600ms);
   }
 }

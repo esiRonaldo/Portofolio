@@ -4,6 +4,7 @@ import type en from './en'
 const de: typeof en = {
   a11y: {
     skipToContent: 'Zum Inhalt springen',
+    backToTop: 'Nach oben',
   },
   hero: {
     status: 'Offen für neue Positionen',
@@ -12,6 +13,7 @@ const de: typeof en = {
       'Ich entwickle moderne Webanwendungen mit Vue.js, Angular und TypeScript – mit Fullstack-Erfahrung in Node.js, Python/Django und REST APIs.',
     primaryCta: 'Erfahrung ansehen',
     secondaryCta: 'Kontakt',
+    coreLabel: 'Kerntechnologien',
   },
   about: {
     intro:
@@ -29,19 +31,24 @@ const de: typeof en = {
     },
   },
   projects: {
-    highlightsLabel: 'Was es zeigt',
+    eyebrow: 'Fallstudie',
+    highlightsLabel: 'Technische Highlights',
     stackLabel: 'Technologien',
+    source: 'Quellcode',
+    demo: 'Live-Demo',
   },
   skills: {
     primary: 'Schwerpunkt',
     certifications: 'Zertifikate',
     groups: {
       frontend: 'Frontend',
-      more: 'Backend, Tools & mehr',
+      backend: 'Backend',
+      tools: 'Tools & Methoden',
     },
   },
   contact: {
-    backToTop: 'Nach oben',
+    intro:
+      'Haben Sie eine Stelle oder ein Projekt im Blick? Schreiben Sie mir eine Nachricht oder kontaktieren Sie mich über LinkedIn oder XING.',
     fields: {
       name: 'Name',
       email: 'E-Mail',

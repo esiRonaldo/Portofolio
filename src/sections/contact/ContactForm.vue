@@ -36,8 +36,10 @@ function controlAttrs(field: Field) {
     name: field,
     'aria-invalid': error ? true : undefined,
     'aria-describedby': error ? `contact-${field}-error` : undefined,
+    // Native `required` tells assistive tech up front; `novalidate` on the form keeps our own messages.
+    required: true,
     class:
-      'mt-2 block w-full rounded-md border border-line bg-canvas px-3 py-2 aria-invalid:border-danger',
+      'mt-2 block w-full rounded-lg border border-line-strong bg-canvas px-3.5 py-2.5 transition-colors duration-200 focus:border-accent aria-invalid:border-danger',
   }
 }
 
@@ -59,7 +61,7 @@ async function submit() {
   <form
     ref="form"
     novalidate
-    class="rounded-xl border border-line bg-surface p-8"
+    class="rounded-2xl border border-line bg-surface p-8"
     @submit.prevent="submit"
   >
     <div class="grid grid-cols-2 gap-6">
@@ -88,9 +90,18 @@ async function submit() {
       </div>
     </div>
 
-    <div class="mt-6 flex items-center gap-6">
-      <button type="submit" class="font-semibold text-accent underline-offset-4 hover:underline">
+    <div class="mt-8 flex items-center gap-6">
+      <button
+        type="submit"
+        class="group inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 font-medium text-on-accent transition-colors duration-200 hover:bg-accent-hover"
+      >
         {{ t('contact.submit') }}
+        <!-- Black icon: white on the dark teal (light theme), stays dark on the light teal (dark theme). -->
+        <img
+          src="/icons/send.svg"
+          alt=""
+          class="size-4 invert transition-transform duration-200 ease-out-soft group-hover:translate-x-0.5 motion-reduce:transition-none dark:invert-0"
+        />
       </button>
       <!-- Always rendered, so screen readers announce the text when it appears. -->
       <p role="status" class="text-sm text-fg-muted">
@@ -98,13 +109,17 @@ async function submit() {
       </p>
 
       <!-- Profile links, icon-only: the img alt names each link. Only GitHub's logo is black → inverted in dark. -->
-      <ul class="ml-auto flex gap-1">
+      <ul class="ml-auto flex gap-2">
         <li v-for="link in socialLinks" :key="link.name">
-          <a :href="link.href" :title="link.name" class="block rounded-md p-2 hover:bg-canvas">
+          <a
+            :href="link.href"
+            :title="link.name"
+            class="flex size-11 items-center justify-center rounded-lg border border-line bg-canvas transition duration-200 ease-out-soft hover:border-line-strong/60 motion-safe:hover:-translate-y-0.5"
+          >
             <img
               :src="link.icon"
               :alt="link.name"
-              class="size-6"
+              class="size-5"
               :class="{ 'dark:invert': link.name === 'GitHub' }"
             />
           </a>

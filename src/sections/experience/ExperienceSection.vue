@@ -14,29 +14,34 @@ function monthYear(value: string): string {
   <PageSection id="experience">
     <!-- Ordered list: newest first, so the order itself carries meaning. -->
     <ol class="grid grid-cols-3 gap-16">
-      <li v-for="(job, index) in jobs" :key="job.company" class="relative flex gap-5">
-        <!-- Dashed connector with a dot, across the gap to the next job. -->
+      <li
+        v-for="(job, index) in jobs"
+        :key="job.company"
+        data-reveal
+        :style="{ '--i': index + 1 }"
+        class="relative flex gap-5"
+      >
+        <!-- Connector from this node to the next one (across the column gap). Its own element,
+             so it can later "draw" itself with a scale-x animation. -->
         <span
           v-if="index < jobs.length - 1"
           aria-hidden="true"
-          class="absolute top-7 left-full w-16 border-t-2 border-dashed border-line"
-        >
-          <span
-            class="absolute -top-1.25 left-1/2 size-2 -translate-x-1/2 rounded-full bg-accent"
-          />
-        </span>
+          class="absolute top-7 left-14 -right-16 h-px origin-left bg-line-strong/40"
+        />
 
-        <div class="flex size-14 shrink-0 items-center justify-center rounded-full bg-accent/10">
+        <div
+          class="relative flex size-14 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-surface ring-4 ring-canvas"
+        >
           <img :src="job.icon" alt="" class="size-6 dark:invert" />
         </div>
 
-        <div>
-          <p class="text-sm font-semibold text-accent tabular-nums">
+        <div class="pt-1">
+          <p class="text-sm text-fg-muted tabular-nums">
             <time :datetime="job.start">{{ monthYear(job.start) }}</time>
             –
             <time :datetime="job.end">{{ monthYear(job.end) }}</time>
           </p>
-          <h3 class="mt-1 text-lg font-semibold">{{ localize(job.role) }}</h3>
+          <h3 class="mt-2 text-title">{{ localize(job.role) }}</h3>
           <p class="text-sm font-medium text-accent">{{ job.company }}</p>
           <p class="mt-3 text-sm leading-relaxed text-fg-muted">{{ localize(job.summary) }}</p>
         </div>

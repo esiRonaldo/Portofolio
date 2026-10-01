@@ -1,6 +1,7 @@
 export default {
   a11y: {
     skipToContent: 'Skip to content',
+    backToTop: 'Back to top',
   },
   hero: {
     status: 'Open to new roles',
@@ -9,6 +10,7 @@ export default {
       'I build modern web applications with Vue.js, Angular and TypeScript — with full-stack experience in Node.js, Python/Django and REST APIs.',
     primaryCta: 'View experience',
     secondaryCta: 'Contact',
+    coreLabel: 'Core stack',
   },
   about: {
     intro:
@@ -26,19 +28,23 @@ export default {
     },
   },
   projects: {
-    highlightsLabel: 'What it shows',
+    eyebrow: 'Case study',
+    highlightsLabel: 'Engineering highlights',
     stackLabel: 'Technologies',
+    source: 'Source code',
+    demo: 'Live demo',
   },
   skills: {
     primary: 'Main focus',
     certifications: 'Certifications',
     groups: {
       frontend: 'Frontend',
-      more: 'Backend, Tools & More',
+      backend: 'Backend',
+      tools: 'Tools & Practices',
     },
   },
   contact: {
-    backToTop: 'Back to top',
+    intro: 'Have a role or project in mind? Send me a message, or reach me on LinkedIn or XING.',
     fields: {
       name: 'Name',
       email: 'Email',

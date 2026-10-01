@@ -7,7 +7,7 @@ const year = new Date().getFullYear()
 
 <template>
   <footer class="border-t border-line">
-    <p class="mx-auto max-w-6xl px-6 py-10 text-center text-sm text-fg-muted">
+    <p class="mx-auto max-w-6xl px-6 py-8 text-center text-sm text-fg-muted">
       © {{ year }} Ehsan Fani | {{ t('footer.rights') }}
     </p>
   </footer>

@@ -6,8 +6,10 @@ import type { Localized } from '../../i18n'
 export type Skill = string | Localized
 
 export type SkillGroup = {
-  id: 'frontend' | 'more'
+  id: 'frontend' | 'backend' | 'tools'
   items: Skill[]
+  /** Icon file in public/icons/. */
+  icon: string
   /** The main focus — shown first and emphasised. */
   primary?: boolean
 }
@@ -16,6 +18,7 @@ export const skillGroups: SkillGroup[] = [
   {
     id: 'frontend',
     primary: true,
+    icon: '/icons/code-xml.svg',
     items: [
       'Vue.js',
       'Vuetify',
@@ -30,8 +33,8 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    // Backend & databases, tools & methods and basic knowledge, in one group.
-    id: 'more',
+    id: 'backend',
+    icon: '/icons/server.svg',
     items: [
       'Node.js',
       'Express.js',
@@ -40,14 +43,20 @@ export const skillGroups: SkillGroup[] = [
       'REST APIs',
       'SQL',
       'MongoDB',
+      'Java',
+      'Spring Boot',
+    ],
+  },
+  {
+    id: 'tools',
+    icon: '/icons/wrench.svg',
+    items: [
       'Git',
       'Azure DevOps',
       'Power Platform',
       'OutSystems',
       'Scrum',
       { en: 'Accessibility', de: 'Barrierefreiheit' },
-      'Java',
-      'Spring Boot',
     ],
   },
 ]

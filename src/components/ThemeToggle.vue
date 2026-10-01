@@ -14,7 +14,7 @@ const isDark = computed(() => theme.value === 'dark')
     type="button"
     :aria-label="t('theme.dark')"
     :aria-pressed="isDark"
-    class="inline-flex size-9 items-center justify-center rounded-md text-fg-muted hover:bg-surface hover:text-fg"
+    class="inline-flex size-9 items-center justify-center rounded-md text-fg-muted transition-colors duration-200 hover:bg-surface-raised hover:text-fg"
     @click="toggle"
   >
     <!-- Icons: Lucide (ISC license). -->

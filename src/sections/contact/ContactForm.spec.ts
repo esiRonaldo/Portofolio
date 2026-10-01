@@ -20,8 +20,12 @@ describe('ContactForm', () => {
       ['message', 'Message'],
     ]) {
       expect(wrapper.get(`label[for="contact-${field}"]`).text()).toBe(label)
-      expect(wrapper.find(`#contact-${field}`).exists()).toBe(true)
+      expect(wrapper.get(`#contact-${field}`).attributes('required')).toBeDefined()
     }
+  })
+
+  it('submits with a button named by its text', () => {
+    expect(mount(ContactForm).get('button[type="submit"]').text()).toBe('Submit')
   })
 
   it('shows linked errors on an empty submit and focuses the first invalid field', async () => {
