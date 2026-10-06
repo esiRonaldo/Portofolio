@@ -26,7 +26,7 @@ Footer: centered "© year Ehsan Fani | All rights reserved." (Impressum/Datensch
 - Colors: zinc neutrals, teal accent (#0F766E light / #2DD4BF dark).
 - Tokens: 2 layers — primitives → semantic CSS variables used by Tailwind.
 - Theme: 2-state toggle, starts from system preference, remembered.
-- Language: EN default, EN/DE toggle, remembered. No URL prefixes.
+- Language: EN default, "EN | DE" switch in the header (current language highlighted), remembered. No URL prefixes.
 - Motion: subtle, opacity/transform only, off under reduced motion.
 - Accessibility: WCAG 2.2 AA. Design with German text length in mind.
 
@@ -71,7 +71,7 @@ Tech
 ## Status
 
 Current step: content update from the CV (2026-10-06): Hero/About/Experience/Projects/Skills texts (EN + DE),
-CV download menu in the Hero. Open: NTT DATA role title ("Frontend Software Engineer (IT Technical Consultant)"?),
+CV download menu in the Hero, EN | DE language switch, new portrait photo. Open: NTT DATA role title ("Frontend Software Engineer (IT Technical Consultant)"?),
 Project 1 contribution list, Azure DevOps/Scrum/Accessibility no longer in Skills, Skills 2- vs 3-column row,
 German level "B2" vs CV "B2, C1 course completed".
 Next: browser check, then remaining a11y fixes (pill contrast, translated title, slider pause), CI, or end-of-v1 review.

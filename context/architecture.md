@@ -4,6 +4,7 @@
 
 ```
 index.html            lang="en", inline theme script (sets .dark before first paint)
+public/               served as-is: icons/ (Lucide + skills/ Devicon SVGs), images/portrait.jpg (860×717), cv/ (EN + DE PDFs)
 src/
   main.ts             createApp(App).use(i18n).mount('#app')
   App.vue             skip link, <SiteHeader>, <main> with sections, <SiteFooter>; owns useActiveSection(sections)
@@ -13,7 +14,7 @@ src/
   utils/storage.ts    safe localStorage read/write (try/catch → fallback)
   components/         site shell + shared pieces (SiteHeader, SiteFooter, ThemeToggle, LanguageSwitch, PageSection)
   sections/sections.ts  ordered SectionId list — single source for nav links, ids, active tracking
-  sections/<name>/    NameSection.vue + child components + data file (with its types) + spec
+  sections/<name>/    NameSection.vue + child components (e.g. hero/CvDownload.vue) + data file (with its types) + spec
   test-setup.ts       installs i18n for all tests, resets locale, storage and the .dark class
 ```
 
@@ -58,7 +59,9 @@ Sections wrap their content in `<PageSection id>` (labelled section + h2 from th
 smooth scroll + scroll-padding only under `prefers-reduced-motion: no-preference`; animations use
 `motion-safe:`; one h1; `<section aria-labelledby>` + h2; native elements over ARIA; alt text;
 translated aria-labels on icon-only buttons; reveal pre-state only under
-`prefers-reduced-motion: no-preference`, hover lifts `motion-safe:`.
+`prefers-reduced-motion: no-preference`, hover lifts `motion-safe:`. Toggles use `aria-pressed`
+(theme, EN | DE language switch); disclosures use `aria-expanded` and close on Escape (focus back), click
+outside and focus leaving (CV download).
 
 ## Errors
 

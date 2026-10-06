@@ -76,7 +76,7 @@ const de: typeof en = {
     dark: 'Dunkles Design',
   },
   language: {
-    switch: 'English',
+    label: 'Sprache',
   },
 }
 

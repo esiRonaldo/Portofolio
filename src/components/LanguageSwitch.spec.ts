@@ -1,17 +1,36 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { setLocale } from '../i18n'
 import LanguageSwitch from './LanguageSwitch.vue'
 
 describe('LanguageSwitch', () => {
-  it('offers the other language and switches to it', async () => {
-    const button = mount(LanguageSwitch).get('button')
+  it('shows both languages, the current one pressed', () => {
+    setLocale('en')
+    const buttons = mount(LanguageSwitch).findAll('button')
 
-    expect(button.text()).toBe('Deutsch')
-    expect(button.attributes('lang')).toBe('de')
+    expect(
+      buttons.map((button) => [
+        button.text(),
+        button.attributes('aria-label'),
+        button.attributes('lang'),
+        button.attributes('aria-pressed'),
+      ]),
+    ).toEqual([
+      ['EN', 'English', 'en', 'true'],
+      ['DE', 'Deutsch', 'de', 'false'],
+    ])
+  })
 
-    await button.trigger('click')
+  it('switches the language on click', async () => {
+    setLocale('en')
+    const wrapper = mount(LanguageSwitch)
+    const [en, de] = wrapper.findAll('button')
+
+    await de?.trigger('click')
+
     expect(document.documentElement.lang).toBe('de')
-    expect(button.text()).toBe('English')
-    expect(button.attributes('lang')).toBe('en')
+    expect(de?.attributes('aria-pressed')).toBe('true')
+    expect(en?.attributes('aria-pressed')).toBe('false')
+    expect(wrapper.get('[role="group"]').attributes('aria-label')).toBe('Sprache')
   })
 })

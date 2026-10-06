@@ -74,6 +74,6 @@ export default {
     dark: 'Dark theme',
   },
   language: {
-    switch: 'Deutsch',
+    label: 'Language',
   },
 }

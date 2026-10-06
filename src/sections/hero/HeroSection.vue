@@ -81,7 +81,7 @@ const coreStack = [
         src="/images/portrait.jpg"
         alt="Ehsan Fani"
         width="860"
-        height="676"
+        height="717"
         fetchpriority="high"
         class="relative w-full rounded-3xl border border-line"
       />
