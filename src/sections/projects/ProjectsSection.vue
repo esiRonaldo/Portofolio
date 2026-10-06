@@ -24,9 +24,10 @@ const { t } = useI18n()
           />
 
           <div class="col-span-5 flex flex-col">
-            <p class="text-sm font-medium text-accent">{{ t('projects.eyebrow') }}</p>
-            <h3 class="mt-2 text-title">{{ localize(project.title) }}</h3>
-            <p class="mt-3 text-fg-muted">{{ localize(project.summary) }}</p>
+            <p v-if="project.industry" class="mb-2 text-sm font-medium text-accent">
+              {{ localize(project.industry) }}
+            </p>
+            <h3 class="text-title">{{ localize(project.title) }}</h3>
 
             <ul :aria-label="t('projects.stackLabel')" class="mt-6 flex flex-wrap gap-2 text-sm">
               <li
@@ -56,28 +57,7 @@ const { t } = useI18n()
             </div>
           </div>
 
-          <div class="col-span-7">
-            <h4 class="text-sm font-semibold">{{ t('projects.highlightsLabel') }}</h4>
-            <ul class="mt-4 space-y-4">
-              <li
-                v-for="highlight in project.highlights"
-                :key="highlight.title.en"
-                class="flex gap-3"
-              >
-                <span
-                  class="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-accent-subtle"
-                >
-                  <img src="/icons/check.svg" alt="" class="size-3.5 dark:invert" />
-                </span>
-                <div>
-                  <p class="font-medium">{{ localize(highlight.title) }}</p>
-                  <p class="mt-0.5 text-sm leading-relaxed text-fg-muted">
-                    {{ localize(highlight.detail) }}
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
+          <p class="col-span-7 leading-relaxed text-fg-muted">{{ localize(project.summary) }}</p>
         </article>
       </li>
     </ul>

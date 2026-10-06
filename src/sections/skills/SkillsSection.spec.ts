@@ -28,7 +28,7 @@ describe('SkillsSection', () => {
       .map((item) => item.text())
 
     expect(frontendItems).toContain('Vue.js')
-    expect(frontendItems).toContain('TypeScript')
+    expect(frontendItems).toContain('JavaScript/TypeScript')
   })
 
   it('lists every certification', () => {

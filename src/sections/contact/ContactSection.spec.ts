@@ -15,7 +15,7 @@ describe('ContactSection', () => {
   })
 
   it('introduces the form with a short text', () => {
-    expect(mount(ContactSection).text()).toContain('Have a role or project in mind?')
+    expect(mount(ContactSection).text()).toContain("Let's connect.")
   })
 
   it('contains the contact form', () => {

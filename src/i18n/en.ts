@@ -7,16 +7,16 @@ export default {
     status: 'Open to new roles',
     role: 'Software Developer (Frontend/Fullstack)',
     summary:
-      'I build modern web applications with Vue.js, Angular and TypeScript — with full-stack experience in Node.js, Python/Django and REST APIs.',
+      'I build modern web applications with Vue.js, Angular and JavaScript/TypeScript, complemented by full-stack experience with Node.js, Python/Django and REST APIs.',
     primaryCta: 'View experience',
     secondaryCta: 'Contact',
     coreLabel: 'Core stack',
   },
   about: {
     intro:
-      "I'm a software developer based in Cologne with over 5 years of experience building web applications. My focus is the frontend — Vue.js, Angular and TypeScript — and I also work on the backend with Node.js, Python/Django and REST APIs.",
+      "I'm a software developer based in Cologne with 5+ years of professional experience. I mainly build modern web applications with Vue.js, Angular and JavaScript/TypeScript, and I bring full-stack experience with Node.js, Python/Django and REST APIs.",
     teamwork:
-      "I've worked in agile Scrum teams at NTT DATA and Ben Hur, and I get up to speed with new technologies quickly.",
+      'In agile Scrum teams, I have worked on enterprise applications, application modernization, process automation and API integration.',
     education: {
       label: 'Education',
       master: 'M.Sc. Automotive Software Engineering, Chemnitz University of Technology',
@@ -28,8 +28,6 @@ export default {
     },
   },
   projects: {
-    eyebrow: 'Case study',
-    highlightsLabel: 'Engineering highlights',
     stackLabel: 'Technologies',
     source: 'Source code',
     demo: 'Live demo',
@@ -44,7 +42,8 @@ export default {
     },
   },
   contact: {
-    intro: 'Have a role or project in mind? Send me a message, or reach me on LinkedIn or XING.',
+    intro:
+      "Let's connect. I'm open to new opportunities and interesting projects. If you'd like to discuss a position, a collaboration or simply get in touch, feel free to send me a message.",
     fields: {
       name: 'Name',
       email: 'Email',

@@ -27,7 +27,7 @@ describe('ExperienceSection', () => {
     const times = first?.findAll('time') ?? []
 
     expect(first?.text()).toContain('NTT DATA Deutschland SE')
-    expect(first?.text()).toContain('import/export management')
+    expect(first?.text()).toContain('modernize and maintain enterprise applications')
     expect(times.map((time) => [time.attributes('datetime'), time.text()])).toEqual([
       ['2022-04', '04/2022'],
       ['2025-12', '12/2025'],

@@ -12,7 +12,7 @@ Footer: centered "© year Ehsan Fani | All rights reserved." (Impressum/Datensch
 
 - Hero: role "Software Developer (Frontend/Fullstack)", "Open to new roles" line, portrait photo on the right.
 - Experience: horizontal 3-column timeline (icon, dates, role, company, one short line shortened from the first CV bullet).
-- Projects v1: this portfolio as a case study. Optional full-stack side project later.
+- Projects: three professional examples written by the user (no client names). Optional full-stack side project later.
 - Skills: two groups (Frontend = main focus; Backend, Tools & More) with colorful Devicon logos.
 - Contact: full-width form (UI + validation only until a sending service is chosen), text-only "Submit",
   icon-only GitHub/LinkedIn/XING (brand colors) in the button row, back-to-top arrow below. No email address, no phone number.
@@ -36,8 +36,8 @@ Content & legal
 - Choose contact sending service (form is validation-only until then; the service must not expose the email address).
 - CV download: needed or not? If yes, use a PDF version without phone number/photo (EN + DE).
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
-- User review of own-written copy: Projects highlights (titles + details), Contact intro + texts, Hero "Core stack",
-  Skills group names, shortened Experience lines (EN + DE).
+- User review of copy: German translations of the new About/Hero/Contact/Experience/Projects texts, Hero "Core stack",
+  Skills group names, Ben Hur/DFKI Experience lines (EN + DE).
 - Hero facts box (Experience / Frontend / Backend / Location card, right of the hero text) removed for now —
   re-add with updated experience; old version in commit 0ac5c85 (HeroSection.vue + hero.facts in en/de.ts).
 - Location ("Cologne"/"Köln" with map-pin icon) removed from the footer for now — decide where to show it.

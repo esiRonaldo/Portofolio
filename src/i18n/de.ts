@@ -10,16 +10,16 @@ const de: typeof en = {
     status: 'Offen für neue Positionen',
     role: 'Softwareentwickler (Frontend/Fullstack)',
     summary:
-      'Ich entwickle moderne Webanwendungen mit Vue.js, Angular und TypeScript – mit Fullstack-Erfahrung in Node.js, Python/Django und REST APIs.',
+      'Ich entwickle moderne Webanwendungen mit Vue.js, Angular und JavaScript/TypeScript – ergänzt durch Fullstack-Erfahrung mit Node.js, Python/Django und REST APIs.',
     primaryCta: 'Erfahrung ansehen',
     secondaryCta: 'Kontakt',
     coreLabel: 'Kerntechnologien',
   },
   about: {
     intro:
-      'Ich bin Softwareentwickler in Köln mit über 5 Jahren Berufserfahrung in der Entwicklung von Webanwendungen. Mein Schwerpunkt liegt im Frontend – Vue.js, Angular und TypeScript – und ich arbeite auch im Backend mit Node.js, Python/Django und REST APIs.',
+      'Ich bin Softwareentwickler in Köln mit über 5 Jahren Berufserfahrung. Mein Schwerpunkt liegt auf modernen Webanwendungen mit Vue.js, Angular und JavaScript/TypeScript; dazu kommt Fullstack-Erfahrung mit Node.js, Python/Django und REST APIs.',
     teamwork:
-      'Ich habe in agilen Scrum-Teams bei NTT DATA und Ben Hur gearbeitet und arbeite mich schnell in neue Technologien ein.',
+      'In agilen Scrum-Teams habe ich an Enterprise-Anwendungen, der Modernisierung bestehender Anwendungen, Prozessautomatisierung und API-Integrationen gearbeitet.',
     education: {
       label: 'Ausbildung',
       master: 'M.Sc. Automotive Software Engineering, Technische Universität Chemnitz',
@@ -31,8 +31,6 @@ const de: typeof en = {
     },
   },
   projects: {
-    eyebrow: 'Fallstudie',
-    highlightsLabel: 'Technische Highlights',
     stackLabel: 'Technologien',
     source: 'Quellcode',
     demo: 'Live-Demo',
@@ -48,7 +46,7 @@ const de: typeof en = {
   },
   contact: {
     intro:
-      'Haben Sie eine Stelle oder ein Projekt im Blick? Schreiben Sie mir eine Nachricht oder kontaktieren Sie mich über LinkedIn oder XING.',
+      'Lassen Sie uns in Kontakt treten. Ich bin offen für neue berufliche Herausforderungen und spannende Projekte. Wenn Sie über eine Position oder eine Zusammenarbeit sprechen oder einfach Kontakt aufnehmen möchten, schreiben Sie mir gerne eine Nachricht.',
     fields: {
       name: 'Name',
       email: 'E-Mail',

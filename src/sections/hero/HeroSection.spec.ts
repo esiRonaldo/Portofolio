@@ -28,8 +28,7 @@ describe('HeroSection', () => {
     expect(list?.findAll('li').map((item) => item.text())).toEqual([
       'Vue.js',
       'Angular',
-      'TypeScript',
-      'JavaScript',
+      'JavaScript/TypeScript',
       'Node.js',
     ])
     expect(copy?.attributes('aria-hidden')).toBe('true')

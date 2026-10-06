@@ -5,30 +5,29 @@ import ProjectsSection from './ProjectsSection.vue'
 import { projects } from './projects'
 
 describe('ProjectsSection', () => {
-  it('shows each project as an article with title, summary, highlights and technologies', () => {
+  it('shows each project as an article with title, summary and technologies', () => {
     const articles = mount(ProjectsSection).findAll('article')
     expect(articles).toHaveLength(projects.length)
 
     projects.forEach((project, index) => {
       const article = articles[index]
       const stack = article?.get('ul[aria-label="Technologies"]')
-      const highlights = article?.get('h4 + ul')
 
       expect(article?.get('h3').text()).toBe(project.title.en)
       expect(article?.text()).toContain(project.summary.en)
-      expect(article?.get('h4').text()).toBe('Engineering highlights')
-      expect(
-        highlights?.findAll('li').map((li) => li.findAll('p').map((line) => line.text())),
-      ).toEqual(project.highlights.map(({ title, detail }) => [title.en, detail.en]))
       expect(stack?.findAll('li').map((li) => li.text())).toEqual(project.stack)
     })
   })
 
-  it('shows no source or demo links while none are set', () => {
-    const wrapper = mount(ProjectsSection)
+  it('shows the industry only where it is set', () => {
+    const articles = mount(ProjectsSection).findAll('article')
 
-    expect(projects.some((project) => project.links)).toBe(false)
-    expect(wrapper.find('article a').exists()).toBe(false)
+    expect(articles[0]?.text()).toContain('Reinsurance')
+    expect(articles[1]?.text()).not.toContain('Reinsurance')
+  })
+
+  it('shows no source or demo links while none are set', () => {
+    expect(mount(ProjectsSection).find('article a').exists()).toBe(false)
   })
 
   it('shows German content after switching the language', async () => {
@@ -37,8 +36,7 @@ describe('ProjectsSection', () => {
     await wrapper.vm.$nextTick()
 
     const article = wrapper.get('article')
-    expect(article.get('h3').text()).toBe('Dieses Portfolio')
-    expect(article.get('h4').text()).toBe('Technische Highlights')
-    expect(article.text()).toContain('selbst gehostete Schrift')
+    expect(article.get('h3').text()).toBe('Anwendung für Import-/Exportmanagement')
+    expect(article.text()).toContain('Rückversicherung')
   })
 })

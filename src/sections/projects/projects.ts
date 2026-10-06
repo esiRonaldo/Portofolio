@@ -1,66 +1,50 @@
 import type { Localized } from '../../i18n'
 
-// Projects shown on the page. Only this portfolio for now — employer projects are confidential.
-// `links` and `image` are optional and only rendered when set (no repository URL or screenshot yet).
-
-export type Highlight = {
-  title: Localized
-  detail: Localized
-}
+// Professional projects, described from the user's own work. No client or company names.
+// `industry`, `links` and `image` are optional and only rendered when set.
 
 export type Project = {
   title: Localized
   summary: Localized
-  highlights: Highlight[]
   stack: string[]
+  industry?: Localized
   links?: { source?: string; demo?: string }
   image?: { src: string; alt: Localized }
 }
 
 export const projects: Project[] = [
   {
-    title: { en: 'This portfolio', de: 'Dieses Portfolio' },
-    summary: {
-      en: 'A bilingual single-page portfolio, built step by step as a work sample.',
-      de: 'Ein zweisprachiges Single-Page-Portfolio, Schritt für Schritt als Arbeitsprobe entwickelt.',
+    title: {
+      en: 'Import/Export Management Application',
+      de: 'Anwendung für Import-/Exportmanagement',
     },
-    highlights: [
-      {
-        title: { en: 'Typed i18n', de: 'Typisierte Übersetzungen' },
-        detail: {
-          en: 'A missing German string fails the type-check.',
-          de: 'Ein fehlender deutscher Text lässt den Type-Check fehlschlagen.',
-        },
-      },
-      {
-        title: { en: 'Semantic design tokens', de: 'Semantische Design-Tokens' },
-        detail: {
-          en: 'Two layers (primitives → semantic variables), so light and dark mode need no extra classes in components.',
-          de: 'Zwei Ebenen (Primitive → semantische Variablen), sodass Hell- und Dunkelmodus keine zusätzlichen Klassen in Komponenten brauchen.',
-        },
-      },
-      {
-        title: { en: 'Accessibility', de: 'Barrierefreiheit' },
-        detail: {
-          en: 'Aimed at WCAG 2.2 AA: skip link, landmarks, current section marked in the navigation, motion off under reduced motion.',
-          de: 'WCAG 2.2 AA als Ziel: Skip-Link, Landmarks, aktueller Abschnitt in der Navigation markiert, keine Animationen bei reduzierter Bewegung.',
-        },
-      },
-      {
-        title: { en: 'Privacy', de: 'Datenschutz' },
-        detail: {
-          en: 'GDPR-minded: self-hosted font, no third-party requests.',
-          de: 'DSGVO-bewusst: selbst gehostete Schrift, keine Anfragen an Drittanbieter.',
-        },
-      },
-      {
-        title: { en: 'Testing', de: 'Tests' },
-        detail: {
-          en: 'Tests check behavior, not styling; formatting, linting, type-check, tests and build run on every step.',
-          de: 'Tests prüfen Verhalten statt Styling; Formatierung, Linting, Type-Check, Tests und Build laufen bei jedem Schritt.',
-        },
-      },
-    ],
-    stack: ['Vue 3', 'TypeScript', 'Tailwind CSS', 'Vue I18n', 'Vite', 'Vitest'],
+    industry: { en: 'Reinsurance', de: 'Rückversicherung' },
+    summary: {
+      en: 'Developed and improved an enterprise application supporting import/export operations. Added new features to automate operational tasks, improved existing functionality and resolved application issues in collaboration with backend and operations teams.',
+      de: 'Entwicklung und Weiterentwicklung einer Enterprise-Anwendung für Import- und Exportprozesse. Neue Funktionen zur Automatisierung betrieblicher Aufgaben, Verbesserungen bestehender Funktionen und Behebung von Anwendungsfehlern – in Zusammenarbeit mit Backend- und Betriebsteams.',
+    },
+    stack: ['Vue.js', 'JavaScript/TypeScript', 'REST APIs'],
+  },
+  {
+    title: {
+      en: 'Legacy Application Modernization',
+      de: 'Modernisierung einer Legacy-Anwendung',
+    },
+    summary: {
+      en: 'Modernized an existing enterprise application by upgrading Angular from version 8 to 17 and Ionic from version 4 to 7. Adapted the application to the newer framework versions and continued development with new functionality.',
+      de: 'Modernisierung einer bestehenden Enterprise-Anwendung durch das Upgrade von Angular 8 auf 17 und von Ionic 4 auf 7. Anpassung der Anwendung an die neuen Framework-Versionen und Weiterentwicklung mit neuen Funktionen.',
+    },
+    stack: ['Angular', 'Ionic', 'JavaScript/TypeScript'],
+  },
+  {
+    title: {
+      en: 'Internal Workflow Digitalization',
+      de: 'Digitalisierung interner Arbeitsabläufe',
+    },
+    summary: {
+      en: 'Contributed to an internal Microsoft Power Platform solution designed to simplify workflows and reduce paperwork through digital processes.',
+      de: 'Mitarbeit an einer internen Lösung auf Basis der Microsoft Power Platform, die Arbeitsabläufe vereinfacht und Papieraufwand durch digitale Prozesse reduziert.',
+    },
+    stack: ['Microsoft Power Platform'],
   },
 ]

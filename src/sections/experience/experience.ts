@@ -1,7 +1,7 @@
 import type { Localized } from '../../i18n'
 
 // Work experience from the CV (EN + DE), newest first.
-// `summary` is a shortened version of the first CV bullet; the full bullets are in Git history (commit 09a7e6b).
+// `summary` describes the work in one short paragraph; the full CV bullets are in Git history (commit 09a7e6b).
 
 export type Job = {
   role: Localized
@@ -22,8 +22,8 @@ export const jobs: Job[] = [
     start: '2022-04',
     end: '2025-12',
     summary: {
-      en: 'Built a scalable web application for import/export management with Vue.js and Vuetify.',
-      de: 'Entwicklung einer skalierbaren Webanwendung für Import- und Exportmanagement mit Vue.js und Vuetify.',
+      en: 'Worked in a Scrum team with backend developers and operations teams to develop, modernize and maintain enterprise applications. My work included building new features, automating operational processes, resolving application issues and modernizing legacy applications.',
+      de: 'Im Scrum-Team mit Backend-Entwicklern und Betriebsteams habe ich Enterprise-Anwendungen weiterentwickelt, modernisiert und gewartet. Dazu gehörten neue Features, die Automatisierung betrieblicher Prozesse, die Behebung von Anwendungsfehlern und die Modernisierung von Legacy-Anwendungen.',
     },
     icon: '/icons/briefcase.svg',
   },

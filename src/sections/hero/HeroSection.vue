@@ -7,8 +7,7 @@ const { t } = useI18n()
 const coreStack = [
   { name: 'Vue.js', icon: 'vuejs' },
   { name: 'Angular', icon: 'angular' },
-  { name: 'TypeScript', icon: 'typescript' },
-  { name: 'JavaScript', icon: 'javascript' },
+  { name: 'JavaScript/TypeScript', icon: 'typescript' },
   { name: 'Node.js', icon: 'nodejs' },
 ]
 </script>
