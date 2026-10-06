@@ -19,13 +19,6 @@ describe('ProjectsSection', () => {
     })
   })
 
-  it('shows the industry only where it is set', () => {
-    const articles = mount(ProjectsSection).findAll('article')
-
-    expect(articles[0]?.text()).toContain('Reinsurance')
-    expect(articles[1]?.text()).not.toContain('Reinsurance')
-  })
-
   it('shows no source or demo links while none are set', () => {
     expect(mount(ProjectsSection).find('article a').exists()).toBe(false)
   })
@@ -36,7 +29,9 @@ describe('ProjectsSection', () => {
     await wrapper.vm.$nextTick()
 
     const article = wrapper.get('article')
-    expect(article.get('h3').text()).toBe('Anwendung für Import-/Exportmanagement')
-    expect(article.text()).toContain('Rückversicherung')
+    expect(article.get('h3').text()).toBe(
+      'Operatives Cockpit & Digitalisierung von Arbeitsabläufen',
+    )
+    expect(article.text()).toContain('Aufgabenverfolgung, Dateiverwaltung und Benachrichtigungen')
   })
 })

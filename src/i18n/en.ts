@@ -5,18 +5,19 @@ export default {
   },
   hero: {
     status: 'Open to new roles',
-    role: 'Software Developer (Frontend/Fullstack)',
+    // {'|'} is a literal pipe; a bare | is vue-i18n's plural separator.
+    role: "Frontend Software Engineer {'|'} Full-Stack Experience",
     summary:
-      'I build modern web applications with Vue.js, Angular and JavaScript/TypeScript, complemented by full-stack experience with Node.js, Python/Django and REST APIs.',
-    primaryCta: 'View experience',
-    secondaryCta: 'Contact',
+      'I build modern, maintainable web applications, with strong experience in Vue.js, Angular and JavaScript/TypeScript, complemented by full-stack experience with Node.js, Python/Django and REST APIs.',
+    cv: 'Download CV',
+    contact: 'Contact',
     coreLabel: 'Core stack',
   },
   about: {
     intro:
-      "I'm a software developer based in Cologne with 5+ years of professional experience. I mainly build modern web applications with Vue.js, Angular and JavaScript/TypeScript, and I bring full-stack experience with Node.js, Python/Django and REST APIs.",
+      "I'm a Frontend Software Engineer based in Cologne with 5+ years of professional experience building enterprise web applications. My work focuses primarily on frontend development, complemented by full-stack experience across backend development, REST API integration, testing and deployment.",
     teamwork:
-      'In agile Scrum teams, I have worked on enterprise applications, application modernization, process automation and API integration.',
+      "I've worked in agile teams on feature development, application modernization and the digitalization of manual business processes, taking features from implementation through testing and delivery.",
     education: {
       label: 'Education',
       master: 'M.Sc. Automotive Software Engineering, Chemnitz University of Technology',
@@ -36,9 +37,10 @@ export default {
     primary: 'Main focus',
     certifications: 'Certifications',
     groups: {
-      frontend: 'Frontend',
-      backend: 'Backend',
-      tools: 'Tools & Practices',
+      advanced: 'Advanced',
+      proficient: 'Proficient',
+      working: 'Working Knowledge',
+      exposure: 'Additional Exposure',
     },
   },
   contact: {

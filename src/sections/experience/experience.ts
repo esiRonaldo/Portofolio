@@ -22,8 +22,8 @@ export const jobs: Job[] = [
     start: '2022-04',
     end: '2025-12',
     summary: {
-      en: 'Worked in a Scrum team with backend developers and operations teams to develop, modernize and maintain enterprise applications. My work included building new features, automating operational processes, resolving application issues and modernizing legacy applications.',
-      de: 'Im Scrum-Team mit Backend-Entwicklern und Betriebsteams habe ich Enterprise-Anwendungen weiterentwickelt, modernisiert und gewartet. Dazu gehörten neue Features, die Automatisierung betrieblicher Prozesse, die Behebung von Anwendungsfehlern und die Modernisierung von Legacy-Anwendungen.',
+      en: 'Worked on client software projects within a DevOps environment, primarily developing frontend solutions while also contributing to backend development, API integration, testing and deployment. Developed new features, modernized legacy applications and helped digitalize manual business processes.',
+      de: 'Mitarbeit an Softwareprojekten für Kunden in einem DevOps-Umfeld, mit Schwerpunkt auf der Frontend-Entwicklung sowie Beiträgen zu Backend-Entwicklung, API-Integration, Testing und Deployment. Entwicklung neuer Features, Modernisierung von Legacy-Anwendungen und Mitwirkung an der Digitalisierung manueller Geschäftsprozesse.',
     },
     icon: '/icons/briefcase.svg',
   },
@@ -33,8 +33,8 @@ export const jobs: Job[] = [
     start: '2020-11',
     end: '2022-03',
     summary: {
-      en: 'Developed a new Vue.js frontend for a system configuration application.',
-      de: 'Entwicklung eines neuen Vue.js-Frontends für eine Systemkonfigurationsanwendung.',
+      en: 'Developed customer-facing web applications and interactive interfaces, primarily working on frontend development while also contributing to backend functionality, API integration and bug fixing.',
+      de: 'Entwicklung kundenorientierter Webanwendungen und interaktiver Benutzeroberflächen, mit Schwerpunkt auf der Frontend-Entwicklung sowie Beiträgen zu Backend-Funktionen, API-Integration und Fehlerbehebung.',
     },
     icon: '/icons/code-xml.svg',
   },
@@ -44,8 +44,8 @@ export const jobs: Job[] = [
     start: '2018-06',
     end: '2018-11',
     summary: {
-      en: 'Developed a console application in C/C++.',
-      de: 'Entwicklung einer Konsolenanwendung mit C/C++.',
+      en: 'Created 3D models and integrated APIs for speech recognition functionality.',
+      de: 'Erstellung von 3D-Modellen und Integration von APIs für Spracherkennungsfunktionen.',
     },
     icon: '/icons/graduation-cap.svg',
   },

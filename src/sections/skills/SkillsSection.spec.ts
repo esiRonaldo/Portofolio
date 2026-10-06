@@ -9,26 +9,27 @@ function groupHeadings(wrapper: ReturnType<typeof mount>) {
 }
 
 describe('SkillsSection', () => {
-  it('shows Frontend first, marked as the main focus', () => {
+  it('shows the proficiency groups from Advanced down, Advanced marked as the main focus', () => {
     const headings = groupHeadings(mount(SkillsSection))
 
     expect(headings).toEqual([
-      'Frontend Main focus',
-      'Backend',
-      'Tools & Practices',
+      'Advanced Main focus',
+      'Proficient',
+      'Working Knowledge',
+      'Additional Exposure',
       'Certifications',
     ])
   })
 
   it('lists the skills of each group as a list', () => {
     const wrapper = mount(SkillsSection)
-    const frontendItems = wrapper
+    const advancedItems = wrapper
       .findAll('ul')[0]
       ?.findAll('li')
       .map((item) => item.text())
 
-    expect(frontendItems).toContain('Vue.js')
-    expect(frontendItems).toContain('JavaScript/TypeScript')
+    expect(advancedItems).toContain('Vue.js')
+    expect(advancedItems).toContain('JavaScript/TypeScript')
   })
 
   it('lists every certification', () => {
@@ -44,15 +45,17 @@ describe('SkillsSection', () => {
     expect(wrapper.find('progress, meter, [role="progressbar"]').exists()).toBe(false)
   })
 
-  it('translates group names and localized skills', async () => {
+  it('translates the group names', async () => {
     const wrapper = mount(SkillsSection)
-    expect(wrapper.text()).toContain('Accessibility')
-
     setLocale('de')
     await wrapper.vm.$nextTick()
 
-    expect(groupHeadings(wrapper)).toContain('Tools & Methoden')
-    expect(wrapper.text()).toContain('Barrierefreiheit')
-    expect(wrapper.text()).not.toContain('Accessibility')
+    expect(groupHeadings(wrapper)).toEqual([
+      'Fortgeschritten Schwerpunkt',
+      'Gute Kenntnisse',
+      'Praxiskenntnisse',
+      'Weitere Kenntnisse',
+      'Zertifikate',
+    ])
   })
 })

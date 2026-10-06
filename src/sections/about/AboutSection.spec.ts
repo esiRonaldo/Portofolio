@@ -28,6 +28,6 @@ describe('AboutSection', () => {
     await wrapper.vm.$nextTick()
 
     expect(wrapper.get('h2').text()).toBe('Über mich')
-    expect(wrapper.text()).toContain('Softwareentwickler in Köln')
+    expect(wrapper.text()).toContain('Frontend Software Engineer in Köln')
   })
 })

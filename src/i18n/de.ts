@@ -8,18 +8,18 @@ const de: typeof en = {
   },
   hero: {
     status: 'Offen für neue Positionen',
-    role: 'Softwareentwickler (Frontend/Fullstack)',
+    role: "Frontend Software Engineer {'|'} Fullstack-Erfahrung",
     summary:
-      'Ich entwickle moderne Webanwendungen mit Vue.js, Angular und JavaScript/TypeScript – ergänzt durch Fullstack-Erfahrung mit Node.js, Python/Django und REST APIs.',
-    primaryCta: 'Erfahrung ansehen',
-    secondaryCta: 'Kontakt',
+      'Ich entwickle moderne, wartbare Webanwendungen – mit fundierter Erfahrung in Vue.js, Angular und JavaScript/TypeScript, ergänzt durch Fullstack-Erfahrung mit Node.js, Python/Django und REST APIs.',
+    cv: 'Lebenslauf',
+    contact: 'Kontakt',
     coreLabel: 'Kerntechnologien',
   },
   about: {
     intro:
-      'Ich bin Softwareentwickler in Köln mit über 5 Jahren Berufserfahrung. Mein Schwerpunkt liegt auf modernen Webanwendungen mit Vue.js, Angular und JavaScript/TypeScript; dazu kommt Fullstack-Erfahrung mit Node.js, Python/Django und REST APIs.',
+      'Ich bin Frontend Software Engineer in Köln mit über 5 Jahren Berufserfahrung in der Entwicklung von Enterprise-Webanwendungen. Mein Schwerpunkt liegt auf der Frontend-Entwicklung, ergänzt durch Fullstack-Erfahrung in Backend-Entwicklung, Integration von REST APIs, Testing und Deployment.',
     teamwork:
-      'In agilen Scrum-Teams habe ich an Enterprise-Anwendungen, der Modernisierung bestehender Anwendungen, Prozessautomatisierung und API-Integrationen gearbeitet.',
+      'In agilen Teams habe ich an der Entwicklung neuer Features, der Modernisierung von Anwendungen und der Digitalisierung manueller Geschäftsprozesse gearbeitet – von der Implementierung über das Testing bis zur Auslieferung.',
     education: {
       label: 'Ausbildung',
       master: 'M.Sc. Automotive Software Engineering, Technische Universität Chemnitz',
@@ -39,9 +39,10 @@ const de: typeof en = {
     primary: 'Schwerpunkt',
     certifications: 'Zertifikate',
     groups: {
-      frontend: 'Frontend',
-      backend: 'Backend',
-      tools: 'Tools & Methoden',
+      advanced: 'Fortgeschritten',
+      proficient: 'Gute Kenntnisse',
+      working: 'Praxiskenntnisse',
+      exposure: 'Weitere Kenntnisse',
     },
   },
   contact: {

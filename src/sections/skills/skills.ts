@@ -1,13 +1,8 @@
-import type { Localized } from '../../i18n'
-
-// Skills and certifications exactly as listed in the CV. Most names are the same in every
-// language; the few that aren't are Localized.
-
-export type Skill = string | Localized
+// Skills grouped by proficiency and certifications, as listed in the CV. Names are the same in every language.
 
 export type SkillGroup = {
-  id: 'frontend' | 'backend' | 'tools'
-  items: Skill[]
+  id: 'advanced' | 'proficient' | 'working' | 'exposure'
+  items: string[]
   /** Icon file in public/icons/. */
   icon: string
   /** The main focus — shown first and emphasised. */
@@ -16,51 +11,29 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    id: 'frontend',
+    id: 'advanced',
     primary: true,
     icon: '/icons/code-xml.svg',
-    items: [
-      'Vue.js',
-      'Vuetify',
-      'Vuex',
-      'Pinia',
-      'Angular',
-      'Ionic',
-      'JavaScript/TypeScript',
-      'HTML',
-      'CSS',
-    ],
+    items: ['Vue.js', 'JavaScript/TypeScript', 'HTML', 'CSS', 'Vuetify', 'Vuex', 'Pinia'],
   },
   {
-    id: 'backend',
+    id: 'proficient',
+    icon: '/icons/check.svg',
+    items: ['Angular', 'REST APIs', 'Git'],
+  },
+  {
+    id: 'working',
     icon: '/icons/server.svg',
-    items: [
-      'Node.js',
-      'Express.js',
-      'Python',
-      'Django',
-      'REST APIs',
-      'SQL',
-      'MongoDB',
-      'Java',
-      'Spring Boot',
-    ],
+    items: ['Node.js', 'Express.js', 'Python', 'Django', 'SQL', 'MongoDB', 'Ionic'],
   },
   {
-    id: 'tools',
+    id: 'exposure',
     icon: '/icons/wrench.svg',
-    items: [
-      'Git',
-      'Azure DevOps',
-      'Power Platform',
-      'OutSystems',
-      'Scrum',
-      { en: 'Accessibility', de: 'Barrierefreiheit' },
-    ],
+    items: ['Power Platform', 'OutSystems', 'Java', 'Spring Boot'],
   },
 ]
 
-// Colorful logos (Devicon, MIT) in public/icons/skills/, keyed by the English skill name.
+// Colorful logos (Devicon, MIT) in public/icons/skills/, keyed by the skill name.
 // Skills without a logo are shown as text only.
 export const skillIcons: Record<string, string> = {
   'Vue.js': 'vuejs',
@@ -76,7 +49,6 @@ export const skillIcons: Record<string, string> = {
   Django: 'django',
   MongoDB: 'mongodb',
   Git: 'git',
-  'Azure DevOps': 'azuredevops',
   Java: 'java',
   'Spring Boot': 'spring',
 }

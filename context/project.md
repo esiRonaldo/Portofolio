@@ -10,10 +10,12 @@ The site itself is the main work sample (no public or shareable employer project
 Hero → About → Experience → Projects → Skills → Contact. All sections: heading on top, content full width, no divider lines.
 Footer: centered "© year Ehsan Fani | All rights reserved." (Impressum/Datenschutz/source links come later).
 
-- Hero: role "Software Developer (Frontend/Fullstack)", "Open to new roles" line, portrait photo on the right.
-- Experience: horizontal 3-column timeline (icon, dates, role, company, one short line shortened from the first CV bullet).
-- Projects: three professional examples written by the user (no client names). Optional full-stack side project later.
-- Skills: two groups (Frontend = main focus; Backend, Tools & More) with colorful Devicon logos.
+- Hero: role "Frontend Software Engineer | Full-Stack Experience", "Open to new roles" line, CV download (EN/DE menu)
+  and Contact button, portrait photo on the right.
+- Experience: horizontal 3-column timeline (icon, dates, role, company, one short paragraph written by the user).
+- Projects: four professional examples written by the user (no client names). Optional full-stack side project later.
+- Skills: four CV proficiency groups (Advanced = main focus; Proficient; Working Knowledge; Additional Exposure)
+  with colorful Devicon logos, plus Certifications.
 - Contact: full-width form (UI + validation only until a sending service is chosen), text-only "Submit",
   icon-only GitHub/LinkedIn/XING (brand colors) in the button row, back-to-top arrow below. No email address, no phone number.
 
@@ -34,7 +36,8 @@ Content & legal
 
 - Impressum + Datenschutz pages (Impressum needs an address — decide how to handle privately).
 - Choose contact sending service (form is validation-only until then; the service must not expose the email address).
-- CV download: needed or not? If yes, use a PDF version without phone number/photo (EN + DE).
+- CV download: Hero serves the user's exact CVs (`public/cv/Ehsan-Fani-CV-EN.pdf` + `Ehsan-Fani-Lebenslauf-DE.pdf`,
+  user's decision 2026-10-06 — they include phone number and email). Every committed version stays in Git history.
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
 - User review of copy: German translations of the new About/Hero/Contact/Experience/Projects texts, Hero "Core stack",
   Skills group names, Ben Hur/DFKI Experience lines (EN + DE).
@@ -45,7 +48,7 @@ Content & legal
 
 SEO (postponed — do as one step; plan + concepts in the local session note of 2026-09-29)
 
-- Can be done any time: meta description (≤160 chars), title "Ehsan Fani — Software Developer (Frontend/Fullstack)",
+- Can be done any time: meta description (≤160 chars), title "Ehsan Fani — Frontend Software Engineer",
   Open Graph basics (og:type/title/description/locale), own favicon instead of the Vite logo, test guarding the metadata.
 - Needs the domain: canonical, `og:url`, `og:image` (+ 1200×630 image), `robots.txt` + `sitemap.xml`, optional JSON-LD `Person`.
 - After deploy: Lighthouse (LCP, CLS, INP) and a LinkedIn/XING link-preview test.
@@ -67,7 +70,8 @@ Tech
 
 ## Status
 
-Current step: visual refinement + motion (2026-10-01, not committed): type scale, color roles, section reveal,
-Skills stagger, floating back-to-top, Hero/Experience/Projects/Contact polish. Input borders (1.4.11) and required
-fields are fixed by it. Hero core-stack slider added (open: pause button for WCAG 2.2.2).
-Next: browser check, then remaining a11y fixes (pill contrast, translated title), CI, or end-of-v1 review.
+Current step: content update from the CV (2026-10-06): Hero/About/Experience/Projects/Skills texts (EN + DE),
+CV download menu in the Hero. Open: NTT DATA role title ("Frontend Software Engineer (IT Technical Consultant)"?),
+Project 1 contribution list, Azure DevOps/Scrum/Accessibility no longer in Skills, Skills 2- vs 3-column row,
+German level "B2" vs CV "B2, C1 course completed".
+Next: browser check, then remaining a11y fixes (pill contrast, translated title, slider pause), CI, or end-of-v1 review.

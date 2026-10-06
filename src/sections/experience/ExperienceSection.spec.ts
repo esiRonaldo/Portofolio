@@ -27,7 +27,7 @@ describe('ExperienceSection', () => {
     const times = first?.findAll('time') ?? []
 
     expect(first?.text()).toContain('NTT DATA Deutschland SE')
-    expect(first?.text()).toContain('modernize and maintain enterprise applications')
+    expect(first?.text()).toContain('helped digitalize manual business processes')
     expect(times.map((time) => [time.attributes('datetime'), time.text()])).toEqual([
       ['2022-04', '04/2022'],
       ['2025-12', '12/2025'],
@@ -41,6 +41,6 @@ describe('ExperienceSection', () => {
 
     const second = jobItems(wrapper)[1]
     expect(second?.get('h3').text()).toBe('Junior Softwareentwickler')
-    expect(second?.text()).toContain('Systemkonfigurationsanwendung')
+    expect(second?.text()).toContain('interaktiver Benutzeroberflächen')
   })
 })

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import CvDownload from './CvDownload.vue'
 
 const { t } = useI18n()
 
@@ -58,22 +59,13 @@ const coreStack = [
       </div>
 
       <div class="mt-10 flex items-center gap-4">
-        <a
-          href="#experience"
-          class="rounded-lg bg-accent px-5 py-2.5 font-medium text-on-accent transition duration-200 ease-out-soft hover:bg-accent-hover motion-safe:hover:-translate-y-0.5"
-        >
-          {{ t('hero.primaryCta') }}
-        </a>
+        <CvDownload />
         <a
           href="#contact"
-          class="group inline-flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 font-medium transition-colors duration-200 hover:border-line-strong"
+          class="inline-flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 font-medium transition-colors duration-200 hover:border-line-strong"
         >
-          {{ t('hero.secondaryCta') }}
-          <img
-            src="/icons/arrow-right.svg"
-            alt=""
-            class="size-4 transition-transform duration-200 ease-out-soft group-hover:translate-x-0.5 motion-reduce:transition-none dark:invert"
-          />
+          <img src="/icons/mail.svg" alt="" class="size-4 dark:invert" />
+          {{ t('hero.contact') }}
         </a>
       </div>
     </div>

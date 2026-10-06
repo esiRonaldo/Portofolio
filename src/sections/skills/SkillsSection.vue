@@ -1,30 +1,13 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import PageSection from '../../components/PageSection.vue'
-import { localize } from '../../i18n'
-import {
-  certifications,
-  darkLogos,
-  skillGroups,
-  skillIcons,
-  type Skill,
-  type SkillGroup,
-} from './skills'
+import { certifications, darkLogos, skillGroups, skillIcons, type SkillGroup } from './skills'
 
 const { t } = useI18n()
 
 // The main focus gets its own full-width row with larger chips; the rest share a row below.
 const primaryGroups = skillGroups.filter((group) => group.primary)
 const otherGroups = skillGroups.filter((group) => !group.primary)
-
-function skillName(skill: Skill): string {
-  return typeof skill === 'string' ? skill : localize(skill)
-}
-
-// Icons are keyed by the English name, so they don't depend on the current language.
-function englishName(skill: Skill): string {
-  return typeof skill === 'string' ? skill : skill.en
-}
 
 // Reveal order (--i): each group starts 3 steps after the previous one, its chips follow one by one.
 // The CSS caps the delay, so long groups still finish quickly.
@@ -53,19 +36,19 @@ const certificationsStep = 1 + skillGroups.length * 3
         <ul class="mt-5 flex flex-wrap gap-3">
           <li
             v-for="(skill, index) in group.items"
-            :key="skillName(skill)"
+            :key="skill"
             data-reveal
             :style="{ '--i': groupStep(group) + 1 + index }"
             class="group flex items-center gap-2.5 rounded-lg border border-accent/30 bg-accent-subtle px-4 py-2 font-medium transition duration-200 ease-out-soft hover:border-accent/60 hover:bg-accent/15 motion-safe:hover:-translate-y-0.5"
           >
             <img
-              v-if="skillIcons[englishName(skill)]"
-              :src="`/icons/skills/${skillIcons[englishName(skill)]}.svg`"
+              v-if="skillIcons[skill]"
+              :src="`/icons/skills/${skillIcons[skill]}.svg`"
               alt=""
               class="size-5 transition-transform duration-200 ease-out-soft motion-safe:group-hover:scale-110"
-              :class="{ 'dark:invert': darkLogos.includes(englishName(skill)) }"
+              :class="{ 'dark:invert': darkLogos.includes(skill) }"
             />
-            {{ skillName(skill) }}
+            {{ skill }}
           </li>
         </ul>
       </div>
@@ -83,19 +66,19 @@ const certificationsStep = 1 + skillGroups.length * 3
           <ul class="mt-4 flex flex-wrap gap-2 text-sm">
             <li
               v-for="(skill, index) in group.items"
-              :key="skillName(skill)"
+              :key="skill"
               data-reveal
               :style="{ '--i': groupStep(group) + 1 + index }"
               class="group flex items-center gap-2 rounded-md border border-line bg-surface px-3 py-1.5 transition duration-200 ease-out-soft hover:border-line-strong/60 hover:bg-surface-raised motion-safe:hover:-translate-y-0.5"
             >
               <img
-                v-if="skillIcons[englishName(skill)]"
-                :src="`/icons/skills/${skillIcons[englishName(skill)]}.svg`"
+                v-if="skillIcons[skill]"
+                :src="`/icons/skills/${skillIcons[skill]}.svg`"
                 alt=""
                 class="size-4 transition-transform duration-200 ease-out-soft motion-safe:group-hover:scale-110"
-                :class="{ 'dark:invert': darkLogos.includes(englishName(skill)) }"
+                :class="{ 'dark:invert': darkLogos.includes(skill) }"
               />
-              {{ skillName(skill) }}
+              {{ skill }}
             </li>
           </ul>
         </div>
