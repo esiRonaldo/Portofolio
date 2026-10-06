@@ -71,7 +71,6 @@ Tech
 ## Status
 
 Current step: content update from the CV (2026-10-06): Hero/About/Experience/Projects/Skills texts (EN + DE),
-CV download menu in the Hero, EN | DE language switch, new portrait photo. Open: NTT DATA role title ("Frontend Software Engineer (IT Technical Consultant)"?),
-Project 1 contribution list, Azure DevOps/Scrum/Accessibility no longer in Skills, Skills 2- vs 3-column row,
-German level "B2" vs CV "B2, C1 course completed".
+CV download menu in the Hero, EN | DE language switch, new portrait photo. Reviewed by the user in the browser and accepted as is (2026-10-06): role
+"Technical Consultant", Projects without a contribution list, Skills as listed, German "B2".
 Next: browser check, then remaining a11y fixes (pill contrast, translated title, slider pause), CI, or end-of-v1 review.
