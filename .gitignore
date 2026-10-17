@@ -2,6 +2,9 @@
 sessions/
 .claude/settings.local.json
 
+# CV PDFs: personal data, uploaded with the website, never in Git
+public/cv/
+
 # Secrets
 .env
 .env.*

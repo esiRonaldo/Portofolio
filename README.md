@@ -31,7 +31,7 @@ npm run dev        # dev server on http://localhost:5173
 ## Project structure
 
 ```
-public/            static files served as-is: icons, portrait, CV PDFs (cv/)
+public/            static files served as-is: icons, portrait, CV PDFs (cv/, local only, gitignored)
 src/
   i18n/            English and German texts (de is typed against en)
   components/      site shell: header, footer, theme and language switch, section wrapper

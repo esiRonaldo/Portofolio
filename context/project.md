@@ -38,8 +38,10 @@ Content & legal
 
 - Impressum + Datenschutz pages (Impressum needs an address — decide how to handle privately).
 - Choose contact sending service (form is validation-only until then; the service must not expose the email address).
-- CV download: Hero serves the user's exact CVs (`public/cv/Ehsan-Fani-CV-EN.pdf` + `Ehsan-Fani-Lebenslauf-DE.pdf`,
-  user's decision 2026-10-06 — they include phone number and email). Every committed version stays in Git history.
+- CV download: Hero links to `/cv/Ehsan-Fani-CV-EN.pdf` + `/cv/Ehsan-Fani-Lebenslauf-DE.pdf`. The files contain phone number
+  and email, so they are local only (`public/cv/` is gitignored, removed from all commits 2026-10-17) and must be uploaded to
+  the domain at deploy time (a local build includes them in `dist/cv/`; a host that builds from GitHub won't have them).
+  Optional: `noindex` header for `/cv/*`. Consider a public web CV without phone number (full CV on request).
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
 - User review of copy: German translations of the new About/Hero/Contact/Experience/Projects texts, Hero "Core stack",
   Skills group names, Ben Hur/DFKI Experience lines (EN + DE), Professional Development description + "Schwerpunkte" (DE).

@@ -4,7 +4,7 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-// CV versions without phone number and email, in public/cv/. Language names in their own language.
+// The CVs in public/cv/ are not in Git (gitignored, uploaded with the website). Language names in their own language.
 const cvFiles = [
   { lang: 'en', name: 'English', file: 'Ehsan-Fani-CV-EN.pdf' },
   { lang: 'de', name: 'Deutsch', file: 'Ehsan-Fani-Lebenslauf-DE.pdf' },

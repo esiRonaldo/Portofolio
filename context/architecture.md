@@ -4,7 +4,7 @@
 
 ```
 index.html            lang="en", inline theme script (sets .dark before first paint)
-public/               served as-is: icons/ (Lucide + skills/ Devicon SVGs), images/portrait.jpg (860×717), cv/ (EN + DE PDFs)
+public/               served as-is: icons/ (Lucide + skills/ Devicon SVGs), images/portrait.jpg (860×717), cv/ (EN + DE PDFs, local only, gitignored)
 src/
   main.ts             createApp(App).use(i18n).mount('#app')
   App.vue             skip link, <SiteHeader>, <main> with sections, <SiteFooter>; owns useActiveSection(sections)
