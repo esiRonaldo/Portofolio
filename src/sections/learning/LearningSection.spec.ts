@@ -10,7 +10,7 @@ describe('LearningSection', () => {
     const article = wrapper.get('article')
 
     expect(wrapper.get('h2').text()).toBe('Professional Development')
-    expect(article.get('h3').text()).toBe(course.title)
+    expect(article.get('h3').text()).toBe(course.title.en)
     expect(article.text()).toContain('neue fische / SPICED')
     expect(article.text()).toContain('In Progress')
     expect(article.text()).toContain(course.summary.en)
@@ -29,13 +29,13 @@ describe('LearningSection', () => {
     expect(list.findAll('li').map((li) => li.text())).toEqual(course.focus.en)
   })
 
-  it('shows German content after switching the language, keeping the course name', async () => {
+  it('shows German content after switching the language', async () => {
     const wrapper = mount(LearningSection)
     setLocale('de')
     await wrapper.vm.$nextTick()
 
     expect(wrapper.get('h2').text()).toBe('Berufliche Weiterbildung')
-    expect(wrapper.get('h3').text()).toBe(course.title)
+    expect(wrapper.get('h3').text()).toBe('Advanced Software Development mit KI — Weiterbildung')
     expect(wrapper.text()).toContain('Laufend')
     expect(wrapper.get('ul li').text()).toBe('KI-gestützte Softwareentwicklung')
   })

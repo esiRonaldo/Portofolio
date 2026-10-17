@@ -4,8 +4,8 @@ import type { Localized } from '../../i18n'
 // work experience and stay out of the Skills section.
 
 export type Course = {
-  /** Official course name, the same in both languages. */
-  title: string
+  /** Course name as written in the EN / DE CV. */
+  title: Localized
   provider: string
   /** 'YYYY-MM' */
   start: string
@@ -16,7 +16,10 @@ export type Course = {
 }
 
 export const course: Course = {
-  title: 'Advanced Software Development with AI — Weiterbildung',
+  title: {
+    en: 'Advanced Software Development with AI — Weiterbildung',
+    de: 'Advanced Software Development mit KI — Weiterbildung',
+  },
   provider: 'neue fische / SPICED',
   start: '2026-10',
   end: '2027-02',

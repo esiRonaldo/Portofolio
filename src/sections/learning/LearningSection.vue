@@ -22,7 +22,7 @@ function monthYear(value: string): string {
     >
       <div class="col-span-5">
         <p class="mb-2 text-sm font-medium text-accent">{{ course.provider }}</p>
-        <h3 class="text-title">{{ course.title }}</h3>
+        <h3 class="text-title">{{ localize(course.title) }}</h3>
         <div class="mt-4 flex items-center gap-3">
           <p class="text-sm text-fg-muted tabular-nums">
             <time :datetime="course.start">{{ monthYear(course.start) }}</time>
