@@ -100,11 +100,11 @@ async function submit() {
   <form
     ref="form"
     novalidate
-    class="rounded-2xl border border-line bg-surface p-8"
+    class="rounded-2xl border border-line bg-surface p-6 lg:p-8"
     @submit.prevent="submit"
   >
-    <div class="grid grid-cols-2 gap-6">
-      <div v-for="field in fields" :key="field" :class="{ 'col-span-2': field === 'message' }">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div v-for="field in fields" :key="field" :class="{ 'sm:col-span-2': field === 'message' }">
         <label :for="`contact-${field}`" class="block text-sm font-medium">
           {{ t(`contact.fields.${field}`) }}
         </label>
@@ -138,7 +138,7 @@ async function submit() {
       class="hidden"
     />
 
-    <div class="mt-8 flex items-center gap-6">
+    <div class="mt-8 flex flex-wrap items-center gap-4 sm:gap-6">
       <!-- aria-disabled (not disabled) while sending, so keyboard focus stays on the button. -->
       <button
         type="submit"
@@ -153,10 +153,11 @@ async function submit() {
           class="size-4 invert transition-transform duration-200 ease-out-soft group-hover:translate-x-0.5 motion-reduce:transition-none dark:invert-0"
         />
       </button>
-      <!-- Always rendered, so screen readers announce the text when it appears. -->
+      <!-- Always rendered, so screen readers announce the text when it appears.
+           On phones it moves to its own line below, so the button and the profile links share one row. -->
       <p
         role="status"
-        class="text-sm"
+        class="text-sm max-sm:order-last max-sm:w-full"
         :class="status === 'error' ? 'text-danger' : 'text-fg-muted'"
       >
         <template v-if="status === 'sent' || status === 'error' || status === 'unavailable'">

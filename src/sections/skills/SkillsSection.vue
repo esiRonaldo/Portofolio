@@ -55,7 +55,7 @@ const certificationsStep = 1 + skillGroups.length * 3
         </ul>
       </div>
 
-      <div class="grid grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
         <div v-for="group in otherGroups" :key="group.id">
           <h3
             data-reveal
@@ -95,7 +95,7 @@ const certificationsStep = 1 + skillGroups.length * 3
           <img src="/icons/award.svg" alt="" class="size-5 opacity-80 dark:invert" />
           {{ t('skills.certifications') }}
         </h3>
-        <ul class="mt-4 grid grid-cols-2 gap-x-12 gap-y-2 text-sm text-fg-muted">
+        <ul class="mt-4 grid grid-cols-1 gap-x-12 gap-y-2 text-sm text-fg-muted md:grid-cols-2">
           <li
             v-for="(certification, index) in certifications"
             :key="certification"

@@ -13,7 +13,7 @@ function monthYear(value: string): string {
 <template>
   <PageSection id="experience">
     <!-- Ordered list: newest first, so the order itself carries meaning. -->
-    <ol class="grid grid-cols-3 gap-16">
+    <ol class="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-16">
       <li
         v-for="(job, index) in jobs"
         :key="job.company"
@@ -21,12 +21,12 @@ function monthYear(value: string): string {
         :style="{ '--i': index + 1 }"
         class="relative flex gap-5"
       >
-        <!-- Connector from this node to the next one (across the column gap). Its own element,
-             so it can later "draw" itself with a scale-x animation. -->
+        <!-- Connector from this node to the next one: down to the next job below lg, across the column gap on lg.
+             Its own element, so it can later "draw" itself with a scale animation. -->
         <span
           v-if="index < jobs.length - 1"
           aria-hidden="true"
-          class="absolute top-7 left-14 -right-16 h-px origin-left bg-line-strong/40"
+          class="absolute top-14 -bottom-10 left-7 w-px bg-line-strong/40 lg:top-7 lg:-right-16 lg:bottom-auto lg:left-14 lg:h-px lg:w-auto lg:origin-left"
         />
 
         <div

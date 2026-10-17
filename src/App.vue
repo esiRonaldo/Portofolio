@@ -28,7 +28,7 @@ const activeSection = useActiveSection(sections)
 
   <SiteHeader :active-section="activeSection" />
 
-  <main id="main" class="mx-auto max-w-6xl px-6">
+  <main id="main" class="mx-auto max-w-6xl px-4 sm:px-6">
     <HeroSection />
 
     <AboutSection />

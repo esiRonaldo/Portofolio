@@ -17,9 +17,11 @@ const coreStack = [
   <section
     id="hero"
     aria-labelledby="hero-title"
-    class="grid grid-cols-12 items-center gap-12 pt-20 pb-6"
+    class="grid grid-cols-1 items-center gap-12 pt-12 pb-6 lg:grid-cols-12 lg:pt-20"
   >
-    <div class="col-span-7 motion-safe:animate-rise">
+    <!-- z-10: the animation gives both columns their own stacking context; this keeps the open CV menu
+         above the photo when the photo sits below the text (phones). -->
+    <div class="relative z-10 lg:col-span-7 motion-safe:animate-rise">
       <p
         class="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-subtle px-3 py-1 text-sm font-medium text-on-accent-subtle"
       >
@@ -58,7 +60,7 @@ const coreStack = [
         </div>
       </div>
 
-      <div class="mt-10 flex items-center gap-4">
+      <div class="mt-10 flex flex-wrap items-center gap-4">
         <CvDownload />
         <a
           href="#contact"
@@ -71,7 +73,10 @@ const coreStack = [
     </div>
 
     <!-- Offset accent panel behind the photo (decorative). -->
-    <div class="relative col-span-5 motion-safe:animate-rise motion-safe:[animation-delay:120ms]">
+    <!-- Below lg: under the text, narrower, with room on the right for the offset panel (no horizontal scroll). -->
+    <div
+      class="relative mr-4 max-w-sm motion-safe:animate-rise motion-safe:[animation-delay:120ms] lg:col-span-5 lg:mr-0 lg:max-w-none"
+    >
       <div
         aria-hidden="true"
         class="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-accent-subtle"

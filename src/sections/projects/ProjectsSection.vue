@@ -14,16 +14,16 @@ const { t } = useI18n()
         <article
           data-reveal
           :style="{ '--i': index + 1 }"
-          class="grid grid-cols-12 gap-10 rounded-2xl border border-line bg-surface p-8 transition duration-200 ease-out-soft hover:border-line-strong/60 hover:shadow-sm motion-safe:hover:-translate-y-0.5"
+          class="grid grid-cols-1 gap-6 rounded-2xl border border-line bg-surface p-6 transition duration-200 ease-out-soft hover:border-line-strong/60 hover:shadow-sm motion-safe:hover:-translate-y-0.5 lg:grid-cols-12 lg:gap-10 lg:p-8"
         >
           <img
             v-if="project.image"
             :src="project.image.src"
             :alt="localize(project.image.alt)"
-            class="col-span-12 rounded-xl border border-line"
+            class="rounded-xl border border-line lg:col-span-12"
           />
 
-          <div class="col-span-5 flex flex-col">
+          <div class="flex flex-col lg:col-span-5">
             <p v-if="project.industry" class="mb-2 text-sm font-medium text-accent">
               {{ localize(project.industry) }}
             </p>
@@ -57,7 +57,7 @@ const { t } = useI18n()
             </div>
           </div>
 
-          <p class="col-span-7 leading-relaxed text-fg-muted">{{ localize(project.summary) }}</p>
+          <p class="leading-relaxed text-fg-muted lg:col-span-7">{{ localize(project.summary) }}</p>
         </article>
       </li>
     </ul>

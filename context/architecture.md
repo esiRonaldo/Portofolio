@@ -33,7 +33,9 @@ src/
 on-accent, on-accent-subtle, focus, danger`. Components use `bg-canvas text-fg`, no `dark:` classes. Add roles only when needed.
 - Type scale in `@theme`: `text-display` (hero name), `text-heading` (h2), `text-title` (cards/groups),
   `text-lead` (intro prose); body `text-base`, meta `text-sm`. Font: Inter via `@fontsource-variable/inter`.
-- Spacing: section `py-20`, heading→content `mt-10`, groups 32px, items 16–24px. Radii/shadows: Tailwind defaults.
+- Spacing: section `py-16 lg:py-20`, heading→content `mt-10`, groups 32px, items 16–24px. Radii/shadows: Tailwind defaults.
+- Responsive: mobile-first. Unprefixed = phone/tablet (one column, `px-4 sm:px-6`), `sm:`/`md:` = 2 columns for short
+  content, `lg:` (≥1024px) = the desktop design. Display/heading sizes shrink under 40rem via the tokens in main.css.
 - Motion: `ease-out-soft`, hovers 150–200ms, entrance `animate-rise` (~450ms). Section reveal: `PageSection` sets
   `data-revealed` once; mark children `data-reveal` + `style="--i: n"` to stagger (CSS in main.css).
 
@@ -61,8 +63,8 @@ smooth scroll + scroll-padding only under `prefers-reduced-motion: no-preference
 `motion-safe:`; one h1; `<section aria-labelledby>` + h2; native elements over ARIA; alt text;
 translated aria-labels on icon-only buttons; reveal pre-state only under
 `prefers-reduced-motion: no-preference`, hover lifts `motion-safe:`. Toggles use `aria-pressed`
-(theme, EN | DE language switch); disclosures use `aria-expanded` and close on Escape (focus back), click
-outside and focus leaving (CV download).
+(theme, EN | DE language switch); disclosures use `aria-expanded` and close on Escape (focus back): the header menu (below `lg`) also on link
+click, the CV download also on click outside and focus leaving.
 
 ## Errors
 

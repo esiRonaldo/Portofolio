@@ -77,6 +77,7 @@ const de: typeof en = {
   },
   nav: {
     label: 'Hauptnavigation',
+    menu: 'Menü',
     about: 'Über mich',
     experience: 'Erfahrung',
     learning: 'Weiterbildung',

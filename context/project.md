@@ -66,12 +66,12 @@ Manual checks (in the browser)
 - Keyboard-only pass (skip link, nav, toggles, form errors + focus) and a screen-reader pass.
 - Contrast check (WCAG AA) of accent, muted text and `danger` in light + dark.
 - German text length: no overflow or awkward wraps.
+- Responsive: 320/375/768/1024/1280px, EN + DE, light + dark — no horizontal scroll, menu (link click, Escape),
+  vertical timeline on phones, desktop (≥1024px) unchanged.
 
 Tech
 
-- Responsive layout — decide if needed (desktop-only so far: fixed 12-column grids, header doesn't fit on phones).
-  Planned approach if yes: mobile-first classes, desktop unchanged; header menu button below `md`
-  (aria-expanded, closes on link/Escape); one-column sections below `lg`; 16px gutter; check at 320/375/768/1280px, EN + DE.
+- Responsive layout done 2026-10-17 (mobile-first, desktop = `lg:` unchanged, menu below `lg`), checked by the user on a phone width.
 - Switch to Node 24 LTS before CI (Node 25 gives EBADENGINE warnings; test `--no-experimental-webstorage` flag).
 
 ## Status

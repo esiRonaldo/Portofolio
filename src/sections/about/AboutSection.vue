@@ -12,7 +12,11 @@ const { t } = useI18n()
       <p>{{ t('about.teamwork') }}</p>
     </div>
 
-    <dl data-reveal style="--i: 2" class="mt-10 grid grid-cols-2 gap-8 text-sm leading-relaxed">
+    <dl
+      data-reveal
+      style="--i: 2"
+      class="mt-10 grid grid-cols-1 gap-8 text-sm leading-relaxed sm:grid-cols-2"
+    >
       <div>
         <dt class="font-medium text-fg-muted">{{ t('about.education.label') }}</dt>
         <!-- A term can have several descriptions: one per degree. -->

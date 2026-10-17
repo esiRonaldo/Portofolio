@@ -32,7 +32,7 @@ onUnmounted(() => observer?.disconnect())
       href="#hero"
       :aria-label="t('a11y.backToTop')"
       :title="t('a11y.backToTop')"
-      class="group fixed right-6 bottom-6 z-30 flex size-11 items-center justify-center rounded-full border border-line bg-surface-raised shadow-sm transition duration-200 ease-out-soft hover:border-accent motion-safe:hover:-translate-y-0.5"
+      class="group fixed right-4 bottom-4 sm:right-6 sm:bottom-6 z-30 flex size-11 items-center justify-center rounded-full border border-line bg-surface-raised shadow-sm transition duration-200 ease-out-soft hover:border-accent motion-safe:hover:-translate-y-0.5"
     >
       <img src="/icons/arrow-up.svg" alt="" class="size-5 dark:invert" />
     </a>

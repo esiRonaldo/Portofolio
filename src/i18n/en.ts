@@ -75,6 +75,7 @@ export default {
   },
   nav: {
     label: 'Main',
+    menu: 'Menu',
     about: 'About',
     experience: 'Experience',
     learning: 'Learning',

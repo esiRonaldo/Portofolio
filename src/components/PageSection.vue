@@ -37,7 +37,7 @@ onUnmounted(() => observer?.disconnect())
     ref="section"
     :aria-labelledby="`${id}-title`"
     :data-revealed="revealed || undefined"
-    class="py-20"
+    class="py-16 lg:py-20"
   >
     <h2 :id="`${id}-title`" data-reveal class="text-heading">
       {{ title ?? t(`nav.${id}`) }}

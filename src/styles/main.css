@@ -102,6 +102,15 @@
   }
 }
 
+/* Phones: slightly smaller display and heading sizes. The text-display / text-heading utilities read these
+   variables, so the type scale stays in one place. */
+@media (width < 40rem) {
+  :root {
+    --text-display: 2.75rem;
+    --text-heading: 1.75rem;
+  }
+}
+
 @layer base {
   /* Keep anchor targets and focused elements clear of the sticky header (h-16 = 4rem). */
   html {
