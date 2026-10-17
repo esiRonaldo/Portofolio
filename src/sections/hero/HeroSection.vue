@@ -21,7 +21,7 @@ const coreStack = [
   >
     <div class="col-span-7 motion-safe:animate-rise">
       <p
-        class="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-subtle px-3 py-1 text-sm font-medium text-accent"
+        class="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-subtle px-3 py-1 text-sm font-medium text-on-accent-subtle"
       >
         <span aria-hidden="true" class="size-2 rounded-full bg-accent ring-4 ring-accent/20"></span>
         {{ t('hero.status') }}

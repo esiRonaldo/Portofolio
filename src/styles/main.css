@@ -19,6 +19,8 @@
   --accent: var(--color-teal-700);
   --accent-hover: var(--color-teal-800);
   --on-accent: var(--color-white);
+  /* Text on accent-subtle (pills): darker than accent, so small text stays well above 4.5:1. */
+  --on-accent-subtle: var(--color-teal-800);
   --focus: var(--color-teal-600);
   --danger: var(--color-red-700);
 }
@@ -35,6 +37,7 @@
   --accent: var(--color-teal-400);
   --accent-hover: var(--color-teal-300);
   --on-accent: var(--color-zinc-950);
+  --on-accent-subtle: var(--color-teal-400);
   --focus: var(--color-teal-400);
   --danger: var(--color-red-400);
 }
@@ -52,6 +55,7 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-subtle: color-mix(in oklab, var(--accent) 10%, transparent);
   --color-on-accent: var(--on-accent);
+  --color-on-accent-subtle: var(--on-accent-subtle);
   --color-focus: var(--focus);
   --color-danger: var(--danger);
 

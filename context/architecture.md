@@ -30,7 +30,7 @@ src/
 - `@custom-variant dark (&:where(.dark, .dark *))`.
 - Semantic vars in `:root` / `.dark` built from Tailwind's zinc/teal palette; exposed via `@theme inline`
   as `canvas, surface, surface-raised, fg, fg-muted, line, line-strong, accent, accent-hover, accent-subtle,
-on-accent, focus, danger`. Components use `bg-canvas text-fg`, no `dark:` classes. Add roles only when needed.
+on-accent, on-accent-subtle, focus, danger`. Components use `bg-canvas text-fg`, no `dark:` classes. Add roles only when needed.
 - Type scale in `@theme`: `text-display` (hero name), `text-heading` (h2), `text-title` (cards/groups),
   `text-lead` (intro prose); body `text-base`, meta `text-sm`. Font: Inter via `@fontsource-variable/inter`.
 - Spacing: section `py-20`, heading→content `mt-10`, groups 32px, items 16–24px. Radii/shadows: Tailwind defaults.

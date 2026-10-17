@@ -29,7 +29,9 @@ function monthYear(value: string): string {
             –
             <time :datetime="course.end">{{ monthYear(course.end) }}</time>
           </p>
-          <span class="rounded-full bg-accent-subtle px-2.5 py-0.5 text-sm font-medium text-accent">
+          <span
+            class="rounded-full bg-accent-subtle px-2.5 py-0.5 text-sm font-medium text-on-accent-subtle"
+          >
             {{ t('learning.inProgress') }}
           </span>
         </div>

@@ -28,7 +28,9 @@ const certificationsStep = 1 + skillGroups.length * 3
         >
           <img :src="group.icon" alt="" class="size-5 opacity-80 dark:invert" />
           {{ t(`skills.groups.${group.id}`) }}
-          <span class="rounded-full bg-accent-subtle px-2.5 py-0.5 text-sm font-medium text-accent">
+          <span
+            class="rounded-full bg-accent-subtle px-2.5 py-0.5 text-sm font-medium text-on-accent-subtle"
+          >
             {{ t('skills.primary') }}
           </span>
         </h3>
