@@ -37,8 +37,8 @@ Footer: centered "© year Ehsan Fani | All rights reserved." (Impressum/Datensch
 Content & legal
 
 - Impressum + Datenschutz pages (Impressum needs an address — decide how to handle privately).
-- Contact form sends via Formspree (chosen 2026-10-17). To do: create the Formspree form, put its endpoint in
-  `.env.local` (local) and `VITE_CONTACT_ENDPOINT` on the host, accept Formspree's DPA, name Formspree (USA, SCCs) in the Datenschutz.
+- Contact form sends via Formspree (chosen 2026-10-17; form created, endpoint in `.env.local`, tested locally by the user — works).
+  To do: set `VITE_CONTACT_ENDPOINT` on the host, accept Formspree's DPA, name Formspree (USA, SCCs) in the Datenschutz.
 - CV download: Hero links to `/cv/Ehsan-Fani-CV-EN.pdf` + `/cv/Ehsan-Fani-Lebenslauf-DE.pdf`. The files contain phone number
   and email, so they are local only (`public/cv/` is gitignored, removed from all commits 2026-10-17) and must be uploaded to
   the domain at deploy time (a local build includes them in `dist/cv/`; a host that builds from GitHub won't have them).
@@ -82,4 +82,4 @@ CV download menu in the Hero, EN | DE language switch, new portrait photo. Revie
 Aligned with the latest CV (2026-10-17): role "Frontend Software Engineer (IT Technical Consultant)", German
 "B2, C1 course completed", Weiterbildung focus "TypeScript".
 Added 2026-10-16: Professional Development section (#learning) — browser check by the user pending.
-Next: browser check, then remaining a11y fixes (pill contrast, translated title, slider pause), CI, or end-of-v1 review.
+Next: browser check, then remaining a11y fix (pill contrast; tab title done 2026-10-17 — same in EN/DE, no translation needed; slider pause accepted as is), CI, or end-of-v1 review.
