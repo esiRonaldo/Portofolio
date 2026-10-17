@@ -14,6 +14,16 @@ describe('ContactSection', () => {
     expect(wrapper.find('a[href^="mailto:"]').exists()).toBe(false)
   })
 
+  it('opens the profile links safely in a new tab and says so to screen readers', () => {
+    const links = mount(ContactSection).get('form').findAll('li a')
+
+    for (const link of links) {
+      expect(link.attributes('target')).toBe('_blank')
+      expect(link.attributes('rel')).toBe('noopener noreferrer')
+      expect(link.text()).toBe('(opens in a new tab)')
+    }
+  })
+
   it('introduces the form with a short text', () => {
     expect(mount(ContactSection).text()).toContain("Let's connect.")
   })

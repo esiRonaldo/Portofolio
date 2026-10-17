@@ -5,6 +5,7 @@ const de: typeof en = {
   a11y: {
     skipToContent: 'Zum Inhalt springen',
     backToTop: 'Nach oben',
+    newTab: '(öffnet in neuem Tab)',
   },
   hero: {
     status: 'Offen für neue Positionen',

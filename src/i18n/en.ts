@@ -2,6 +2,7 @@ export default {
   a11y: {
     skipToContent: 'Skip to content',
     backToTop: 'Back to top',
+    newTab: '(opens in a new tab)',
   },
   hero: {
     status: 'Open to new roles',
