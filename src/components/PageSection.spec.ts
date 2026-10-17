@@ -11,6 +11,14 @@ describe('PageSection', () => {
     expect(wrapper.get('h2#skills-title').text()).toBe('Skills')
   })
 
+  it('uses a given title as the heading instead of the nav label', () => {
+    const wrapper = mount(PageSection, {
+      props: { id: 'learning', title: 'Professional Development' },
+    })
+
+    expect(wrapper.get('h2#learning-title').text()).toBe('Professional Development')
+  })
+
   it('renders its content', () => {
     const wrapper = mount(PageSection, {
       props: { id: 'about' },

@@ -7,12 +7,14 @@ The site itself is the main work sample (no public or shareable employer project
 
 ## Sections (single page, hash anchors)
 
-Hero → About → Experience → Projects → Skills → Contact. All sections: heading on top, content full width, no divider lines.
+Hero → About → Experience → Professional Development (nav "Learning") → Projects → Skills → Contact. All sections: heading on top, content full width, no divider lines.
 Footer: centered "© year Ehsan Fani | All rights reserved." (Impressum/Datenschutz/source links come later).
 
 - Hero: role "Frontend Software Engineer | Full-Stack Experience", "Open to new roles" line, CV download (EN/DE menu)
   and Contact button, portrait photo on the right.
 - Experience: horizontal 3-column timeline (icon, dates, role, company, one short paragraph written by the user).
+- Professional Development: one card for the ongoing neue fische / SPICED Weiterbildung (10/2026 – 02/2027, "In Progress"),
+  focus areas as chips. Not completed, not work experience; its technologies are not added to Skills.
 - Projects: four professional examples written by the user (no client names). Optional full-stack side project later.
 - Skills: four CV proficiency groups (Advanced = main focus; Proficient; Working Knowledge; Additional Exposure)
   with colorful Devicon logos, plus Certifications.
@@ -40,7 +42,8 @@ Content & legal
   user's decision 2026-10-06 — they include phone number and email). Every committed version stays in Git history.
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
 - User review of copy: German translations of the new About/Hero/Contact/Experience/Projects texts, Hero "Core stack",
-  Skills group names, Ben Hur/DFKI Experience lines (EN + DE).
+  Skills group names, Ben Hur/DFKI Experience lines (EN + DE), Professional Development description + "Schwerpunkte" (DE).
+- CV PDFs: replace with the updated CV (with the Weiterbildung) if it should be downloadable.
 - Hero facts box (Experience / Frontend / Backend / Location card, right of the hero text) removed for now —
   re-add with updated experience; old version in commit 0ac5c85 (HeroSection.vue + hero.facts in en/de.ts).
 - Location ("Cologne"/"Köln" with map-pin icon) removed from the footer for now — decide where to show it.
@@ -73,4 +76,5 @@ Tech
 Current step: content update from the CV (2026-10-06): Hero/About/Experience/Projects/Skills texts (EN + DE),
 CV download menu in the Hero, EN | DE language switch, new portrait photo. Reviewed by the user in the browser and accepted as is (2026-10-06): role
 "Technical Consultant", Projects without a contribution list, Skills as listed, German "B2".
+Added 2026-10-16: Professional Development section (#learning) — browser check by the user pending.
 Next: browser check, then remaining a11y fixes (pill contrast, translated title, slider pause), CI, or end-of-v1 review.

@@ -30,6 +30,11 @@ const de: typeof en = {
       value: 'Deutsch (B2), Englisch (fließend), Persisch (Muttersprache)',
     },
   },
+  learning: {
+    title: 'Berufliche Weiterbildung',
+    inProgress: 'Laufend',
+    focusLabel: 'Schwerpunkte',
+  },
   projects: {
     stackLabel: 'Technologien',
     source: 'Quellcode',
@@ -68,6 +73,7 @@ const de: typeof en = {
     label: 'Hauptnavigation',
     about: 'Über mich',
     experience: 'Erfahrung',
+    learning: 'Weiterbildung',
     projects: 'Projekte',
     skills: 'Kenntnisse',
     contact: 'Kontakt',

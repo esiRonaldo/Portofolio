@@ -51,7 +51,8 @@ section data file, props inline in `defineProps`. Shared file only when 2+ featu
 ## Components
 
 PascalCase multi-word; sections end in `…Section`. Split at ~150 lines or clear repetition.
-Sections wrap their content in `<PageSection id>` (labelled section + h2 from the nav label on top, content full width).
+Sections wrap their content in `<PageSection id>` (labelled section + h2 from the nav label on top, content full width;
+optional `title` when the heading is longer than the nav label, e.g. Learning → "Professional Development").
 
 ## Accessibility
 

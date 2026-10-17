@@ -8,6 +8,7 @@ import AboutSection from './sections/about/AboutSection.vue'
 import ContactSection from './sections/contact/ContactSection.vue'
 import ExperienceSection from './sections/experience/ExperienceSection.vue'
 import HeroSection from './sections/hero/HeroSection.vue'
+import LearningSection from './sections/learning/LearningSection.vue'
 import ProjectsSection from './sections/projects/ProjectsSection.vue'
 import SkillsSection from './sections/skills/SkillsSection.vue'
 import { sections } from './sections/sections'
@@ -32,6 +33,7 @@ const activeSection = useActiveSection(sections)
 
     <AboutSection />
     <ExperienceSection />
+    <LearningSection />
     <ProjectsSection />
     <SkillsSection />
     <ContactSection />
