@@ -63,7 +63,12 @@ export default {
       tooShort: 'Please write at least 10 characters.',
     },
     submit: 'Submit',
-    sent: "Thanks! Sending isn't connected yet, so please reach me on LinkedIn or XING for now.",
+    sending: 'Sending…',
+    sent: "Thanks! Your message has been sent. I'll get back to you soon.",
+    error:
+      "Sorry, your message couldn't be sent. Please try again later or reach me on LinkedIn or XING.",
+    unavailable:
+      "Thanks! Sending isn't connected yet, so please reach me on LinkedIn or XING for now.",
   },
   footer: {
     rights: 'All rights reserved.',

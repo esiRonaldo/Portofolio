@@ -67,7 +67,13 @@ outside and focus leaving (CV download).
 ## Errors
 
 Only `storage.ts` catches silently. Missing translations: type error + English fallback. Typed data, no
-runtime validation. Contact form (step 11) gets visible translated error/success states. No `console.log`.
+runtime validation. Contact form: translated `role="status"` line for sent / error (failed response or network
+error, text kept) / unavailable (no endpoint). No `console.log`.
+
+## Env
+
+`VITE_` variables only (public, copied into the build — never secrets), typed in `src/env.d.ts`, documented in
+`.env.example`; real values in `.env.local` (gitignored) or the host's settings. Code works without them (fallback).
 
 ## Do NOT abstract (yet)
 

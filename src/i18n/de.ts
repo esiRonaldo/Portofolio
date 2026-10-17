@@ -65,7 +65,12 @@ const de: typeof en = {
       tooShort: 'Bitte schreiben Sie mindestens 10 Zeichen.',
     },
     submit: 'Absenden',
-    sent: 'Danke! Der Versand ist noch nicht eingerichtet. Bitte kontaktieren Sie mich vorerst über LinkedIn oder XING.',
+    sending: 'Wird gesendet…',
+    sent: 'Danke! Ihre Nachricht wurde gesendet. Ich melde mich bald bei Ihnen.',
+    error:
+      'Ihre Nachricht konnte leider nicht gesendet werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie mich über LinkedIn oder XING.',
+    unavailable:
+      'Danke! Der Versand ist noch nicht eingerichtet. Bitte kontaktieren Sie mich vorerst über LinkedIn oder XING.',
   },
   footer: {
     rights: 'Alle Rechte vorbehalten.',

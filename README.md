@@ -16,6 +16,9 @@ npm install
 npm run dev        # dev server on http://localhost:5173
 ```
 
+To make the contact form send, copy `.env.example` to `.env.local` and add your Formspree endpoint
+(then restart `npm run dev`). Without it, the form only shows a "not connected yet" note.
+
 ## Scripts
 
 | Command                | What it does                    |

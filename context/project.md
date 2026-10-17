@@ -37,7 +37,8 @@ Footer: centered "© year Ehsan Fani | All rights reserved." (Impressum/Datensch
 Content & legal
 
 - Impressum + Datenschutz pages (Impressum needs an address — decide how to handle privately).
-- Choose contact sending service (form is validation-only until then; the service must not expose the email address).
+- Contact form sends via Formspree (chosen 2026-10-17). To do: create the Formspree form, put its endpoint in
+  `.env.local` (local) and `VITE_CONTACT_ENDPOINT` on the host, accept Formspree's DPA, name Formspree (USA, SCCs) in the Datenschutz.
 - CV download: Hero links to `/cv/Ehsan-Fani-CV-EN.pdf` + `/cv/Ehsan-Fani-Lebenslauf-DE.pdf`. The files contain phone number
   and email, so they are local only (`public/cv/` is gitignored, removed from all commits 2026-10-17) and must be uploaded to
   the domain at deploy time (a local build includes them in `dist/cv/`; a host that builds from GitHub won't have them).

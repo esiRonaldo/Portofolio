@@ -15,8 +15,9 @@ export default defineConfig({
     setupFiles: ['src/test-setup.ts'],
     // Node 25+ has its own (empty) localStorage that hides jsdom's working one. Turn it off.
     execArgv: ['--no-experimental-webstorage'],
-    // Undo vi.spyOn() mocks and vi.stubGlobal() fakes after each test, so nothing leaks into the next.
+    // Undo vi.spyOn() mocks, vi.stubGlobal() fakes and vi.stubEnv() values after each test, so nothing leaks.
     restoreMocks: true,
     unstubGlobals: true,
+    unstubEnvs: true,
   },
 })
