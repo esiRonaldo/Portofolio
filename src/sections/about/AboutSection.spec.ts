@@ -19,7 +19,9 @@ describe('AboutSection', () => {
 
     expect(education?.get('dt').text()).toBe('Education')
     expect(education?.findAll('dd')).toHaveLength(2)
-    expect(languages?.get('dd').text()).toBe('English (fluent), German (B2), Persian (native)')
+    expect(languages?.get('dd').text()).toBe(
+      'English (fluent), German (B2, C1 course completed), Persian (native)',
+    )
   })
 
   it('shows German text after switching the language', async () => {

@@ -27,7 +27,7 @@ export const course: Course = {
   focus: {
     en: [
       'AI-assisted Software Development',
-      'JavaScript/TypeScript',
+      'TypeScript',
       'Node.js',
       'NestJS',
       'React / Next.js',
@@ -35,7 +35,7 @@ export const course: Course = {
     ],
     de: [
       'KI-gestützte Softwareentwicklung',
-      'JavaScript/TypeScript',
+      'TypeScript',
       'Node.js',
       'NestJS',
       'React / Next.js',

@@ -28,7 +28,7 @@ const de: typeof en = {
     },
     languages: {
       label: 'Sprachen',
-      value: 'Deutsch (B2), Englisch (fließend), Persisch (Muttersprache)',
+      value: 'Deutsch (B2, C1-Kurs abgeschlossen), Englisch (fließend), Persisch (Muttersprache)',
     },
   },
   learning: {

@@ -26,7 +26,7 @@ export default {
     },
     languages: {
       label: 'Languages',
-      value: 'English (fluent), German (B2), Persian (native)',
+      value: 'English (fluent), German (B2, C1 course completed), Persian (native)',
     },
   },
   learning: {

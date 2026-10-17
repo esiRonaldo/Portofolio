@@ -45,7 +45,7 @@ Content & legal
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
 - User review of copy: German translations of the new About/Hero/Contact/Experience/Projects texts, Hero "Core stack",
   Skills group names, Ben Hur/DFKI Experience lines (EN + DE), Professional Development description + "Schwerpunkte" (DE).
-- CV PDFs: replace with the updated CV (with the Weiterbildung) if it should be downloadable.
+- CV PDFs: EN + DE replaced with the updated CVs (with the Weiterbildung) on 2026-10-17.
 - Hero facts box (Experience / Frontend / Backend / Location card, right of the hero text) removed for now —
   re-add with updated experience; old version in commit 0ac5c85 (HeroSection.vue + hero.facts in en/de.ts).
 - Location ("Cologne"/"Köln" with map-pin icon) removed from the footer for now — decide where to show it.
@@ -78,5 +78,7 @@ Tech
 Current step: content update from the CV (2026-10-06): Hero/About/Experience/Projects/Skills texts (EN + DE),
 CV download menu in the Hero, EN | DE language switch, new portrait photo. Reviewed by the user in the browser and accepted as is (2026-10-06): role
 "Technical Consultant", Projects without a contribution list, Skills as listed, German "B2".
+Aligned with the latest CV (2026-10-17): role "Frontend Software Engineer (IT Technical Consultant)", German
+"B2, C1 course completed", Weiterbildung focus "TypeScript".
 Added 2026-10-16: Professional Development section (#learning) — browser check by the user pending.
 Next: browser check, then remaining a11y fixes (pill contrast, translated title, slider pause), CI, or end-of-v1 review.

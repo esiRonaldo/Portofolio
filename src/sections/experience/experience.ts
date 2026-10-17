@@ -17,7 +17,10 @@ export type Job = {
 
 export const jobs: Job[] = [
   {
-    role: { en: 'Technical Consultant', de: 'Technical Consultant' },
+    role: {
+      en: 'Frontend Software Engineer (IT Technical Consultant)',
+      de: 'Frontend Software Engineer (IT Technical Consultant)',
+    },
     company: 'NTT DATA Deutschland SE',
     start: '2022-04',
     end: '2025-12',

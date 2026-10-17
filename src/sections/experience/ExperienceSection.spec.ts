@@ -13,7 +13,7 @@ describe('ExperienceSection', () => {
     const items = jobItems(mount(ExperienceSection))
 
     expect(items.map((item) => item.get('h3').text())).toEqual([
-      'Technical Consultant',
+      'Frontend Software Engineer (IT Technical Consultant)',
       'Junior Software Developer',
       'Software Development Intern',
     ])
