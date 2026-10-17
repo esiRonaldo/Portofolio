@@ -44,12 +44,9 @@ Content & legal
   the domain at deploy time (a local build includes them in `dist/cv/`; a host that builds from GitHub won't have them).
   Optional: `noindex` header for `/cv/*`. Consider a public web CV without phone number (full CV on request).
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
-- User review of copy: German translations of the new About/Hero/Contact/Experience/Projects texts, Hero "Core stack",
-  Skills group names, Ben Hur/DFKI Experience lines (EN + DE), Professional Development description + "Schwerpunkte" (DE).
 - CV PDFs: EN + DE replaced with the updated CVs (with the Weiterbildung) on 2026-10-17.
-- Hero facts box (Experience / Frontend / Backend / Location card, right of the hero text) removed for now —
-  re-add with updated experience; old version in commit 0ac5c85 (HeroSection.vue + hero.facts in en/de.ts).
-- Location ("Cologne"/"Köln" with map-pin icon) removed from the footer for now — decide where to show it.
+- Accepted as is by the user (2026-10-17): German copy, no location in the footer, no Hero facts box
+  (old version in commit 0ac5c85 if ever wanted again).
 - Repo name typo "Portofolio" — rename before sharing the link?
 
 SEO (postponed — do as one step; plan + concepts in the local session note of 2026-09-29)
@@ -60,14 +57,7 @@ SEO (postponed — do as one step; plan + concepts in the local session note of 
 - After deploy: Lighthouse (LCP, CLS, INP) and a LinkedIn/XING link-preview test.
 - Keep metadata static in index.html, no SEO library (preview bots don't run JavaScript).
 
-Manual checks (in the browser)
-
-- Nav highlights "Contact" when scrolled to the page bottom (estimated OK up to ~1450px window height, footer adds ~100px).
-- Keyboard-only pass (skip link, nav, toggles, form errors + focus) and a screen-reader pass.
-- Contrast check (WCAG AA) of accent, muted text and `danger` in light + dark.
-- German text length: no overflow or awkward wraps.
-- Responsive: 320/375/768/1024/1280px, EN + DE, light + dark — no horizontal scroll, menu (link click, Escape),
-  vertical timeline on phones, desktop (≥1024px) unchanged.
+Manual checks: accepted as fine by the user (2026-10-17) — keyboard/screen reader, contrast, German length, tablet widths.
 
 Tech
 
@@ -81,5 +71,6 @@ CV download menu in the Hero, EN | DE language switch, new portrait photo. Revie
 "Technical Consultant", Projects without a contribution list, Skills as listed, German "B2".
 Aligned with the latest CV (2026-10-17): role "Frontend Software Engineer (IT Technical Consultant)", German
 "B2, C1 course completed", Weiterbildung focus "TypeScript".
-Added 2026-10-16: Professional Development section (#learning) — browser check by the user pending.
-Next: browser check, then remaining a11y fix (pill contrast; tab title done 2026-10-17 — same in EN/DE, no translation needed; slider pause accepted as is), CI, or end-of-v1 review.
+2026-10-16/17: Professional Development section, contact form via Formspree, tab title, pill contrast, responsive
+layout — all done and checked by the user. Core Stack slider keeps hover-only pause (accepted).
+Next: SEO basics (no domain needed), Impressum + Datenschutz, repo rename/public, Node 24 + CI, hosting + deploy.
