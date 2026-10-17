@@ -17,7 +17,7 @@ const coreStack = [
   <section
     id="hero"
     aria-labelledby="hero-title"
-    class="grid grid-cols-12 items-center gap-12 pt-20 pb-16"
+    class="grid grid-cols-12 items-center gap-12 pt-20 pb-6"
   >
     <div class="col-span-7 motion-safe:animate-rise">
       <p
@@ -28,7 +28,7 @@ const coreStack = [
       </p>
 
       <h1 id="hero-title" class="mt-6 text-display">Ehsan Fani</h1>
-      <p class="mt-4 text-xl text-fg-muted">{{ t('hero.role') }}</p>
+      <p class="mt-4 text-xl font-medium text-fg-muted">{{ t('hero.role') }}</p>
       <p class="mt-6 max-w-xl text-lead">{{ t('hero.summary') }}</p>
 
       <div class="mt-8 flex max-w-xl items-center gap-4 text-sm">

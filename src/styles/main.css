@@ -60,7 +60,7 @@
 
 @theme {
   /* Type scale: use these instead of picking raw sizes in components. Body = text-base, meta = text-sm. */
-  --text-display: 3.5rem;
+  --text-display: 3.25rem;
   --text-display--line-height: 1.05;
   --text-display--letter-spacing: -0.03em;
   --text-display--font-weight: 700;
