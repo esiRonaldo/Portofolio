@@ -43,6 +43,8 @@ Content & legal
   and email, so they are local only (`public/cv/` is gitignored, removed from all commits 2026-10-17) and must be uploaded to
   the domain at deploy time (a local build includes them in `dist/cv/`; a host that builds from GitHub won't have them).
   Optional: `noindex` header for `/cv/*`. Consider a public web CV without phone number (full CV on request).
+- Cookie banner: check whether it is needed. The site only stores theme + language in localStorage (no cookies,
+  no analytics, fonts self-hosted), which is probably exempt under TTDSG §25(2); add one if tracking/embeds come later.
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
 - CV PDFs: EN + DE replaced with the updated CVs (with the Weiterbildung) on 2026-10-17.
 - Accepted as is by the user (2026-10-17): German copy, no location in the footer, no Hero facts box
