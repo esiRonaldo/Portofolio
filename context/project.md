@@ -12,9 +12,9 @@ Footer: centered "© year Ehsan Fani | All rights reserved." (Impressum/Datensch
 
 - Hero: role "Frontend Software Engineer | Full-Stack Experience", "Open to new roles" line, CV download (EN/DE menu)
   and Contact button, portrait photo on the right.
-- Experience: horizontal 4-column timeline (icon, dates, role, company, one short paragraph written by the user).
-  First entry: the ongoing neue fische / SPICED Weiterbildung (10/2026 – 02/2027, "In Progress" pill); its technologies
-  are not added to Skills.
+- Experience: vertical timeline (dates left on desktop, icon nodes, role, company, short summary; CV bullets behind
+  "Show more" for NTT DATA and Ben Hur). First entry: the ongoing neue fische / SPICED Weiterbildung, marked as
+  Professional Development (category label, "In Progress" pill, focus chips); its technologies are not added to Skills.
 - Projects: four professional examples written by the user (no client names). Optional full-stack side project later.
 - Skills: four CV proficiency groups (Advanced = main focus; Proficient; Working Knowledge; Additional Exposure)
   with colorful Devicon logos, plus Certifications.

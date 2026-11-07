@@ -33,6 +33,10 @@ const de: typeof en = {
   },
   experience: {
     inProgress: 'Laufend',
+    category: 'Berufliche Weiterbildung',
+    focusLabel: 'Schwerpunkte',
+    showMore: 'Mehr anzeigen',
+    showLess: 'Weniger anzeigen',
   },
   projects: {
     stackLabel: 'Technologien',

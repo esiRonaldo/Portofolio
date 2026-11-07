@@ -31,6 +31,10 @@ export default {
   },
   experience: {
     inProgress: 'In Progress',
+    category: 'Professional Development',
+    focusLabel: 'Focus areas',
+    showMore: 'Show more',
+    showLess: 'Show less',
   },
   projects: {
     stackLabel: 'Technologies',
