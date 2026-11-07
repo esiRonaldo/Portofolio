@@ -18,7 +18,6 @@ describe('SiteHeader', () => {
     expect(links.map((link) => link.text())).toEqual([
       'About',
       'Experience',
-      'Learning',
       'Projects',
       'Skills',
       'Contact',
@@ -26,7 +25,6 @@ describe('SiteHeader', () => {
     expect(links.map((link) => link.attributes('href'))).toEqual([
       '#about',
       '#experience',
-      '#learning',
       '#projects',
       '#skills',
       '#contact',

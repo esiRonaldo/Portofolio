@@ -7,14 +7,14 @@ The site itself is the main work sample (no public or shareable employer project
 
 ## Sections (single page, hash anchors)
 
-Hero → About → Experience → Professional Development (nav "Learning") → Projects → Skills → Contact. All sections: heading on top, content full width, no divider lines.
+Hero → About → Experience → Projects → Skills → Contact. All sections: heading on top, content full width, no divider lines.
 Footer: centered "© year Ehsan Fani | All rights reserved." (Impressum/Datenschutz/source links come later).
 
 - Hero: role "Frontend Software Engineer | Full-Stack Experience", "Open to new roles" line, CV download (EN/DE menu)
   and Contact button, portrait photo on the right.
-- Experience: horizontal 3-column timeline (icon, dates, role, company, one short paragraph written by the user).
-- Professional Development: one card for the ongoing neue fische / SPICED Weiterbildung (10/2026 – 02/2027, "In Progress"),
-  focus areas as chips. Not completed, not work experience; its technologies are not added to Skills.
+- Experience: horizontal 4-column timeline (icon, dates, role, company, one short paragraph written by the user).
+  First entry: the ongoing neue fische / SPICED Weiterbildung (10/2026 – 02/2027, "In Progress" pill); its technologies
+  are not added to Skills.
 - Projects: four professional examples written by the user (no client names). Optional full-stack side project later.
 - Skills: four CV proficiency groups (Advanced = main focus; Proficient; Working Knowledge; Additional Exposure)
   with colorful Devicon logos, plus Certifications.

@@ -31,10 +31,8 @@ const de: typeof en = {
       value: 'Deutsch (B2, C1-Kurs abgeschlossen), Englisch (fließend), Persisch (Muttersprache)',
     },
   },
-  learning: {
-    title: 'Berufliche Weiterbildung',
+  experience: {
     inProgress: 'Laufend',
-    focusLabel: 'Schwerpunkte',
   },
   projects: {
     stackLabel: 'Technologien',
@@ -80,7 +78,6 @@ const de: typeof en = {
     menu: 'Menü',
     about: 'Über mich',
     experience: 'Erfahrung',
-    learning: 'Weiterbildung',
     projects: 'Projekte',
     skills: 'Kenntnisse',
     contact: 'Kontakt',

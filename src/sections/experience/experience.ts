@@ -1,6 +1,6 @@
 import type { Localized } from '../../i18n'
 
-// Work experience from the CV (EN + DE), newest first.
+// Work experience and the ongoing Weiterbildung from the CV (EN + DE), newest first.
 // `summary` describes the work in one short paragraph; the full CV bullets are in Git history (commit 09a7e6b).
 
 export type Job = {
@@ -8,14 +8,30 @@ export type Job = {
   company: string
   /** 'YYYY-MM' */
   start: string
-  /** 'YYYY-MM' */
+  /** 'YYYY-MM' (planned end while in progress) */
   end: string
+  isInProgress?: boolean
   summary: Localized
   /** Icon file in public/icons/. */
   icon: string
 }
 
 export const jobs: Job[] = [
+  {
+    role: {
+      en: 'Advanced Software Development with AI — Weiterbildung',
+      de: 'Advanced Software Development mit KI — Weiterbildung',
+    },
+    company: 'neue fische / SPICED',
+    start: '2026-10',
+    end: '2027-02',
+    isInProgress: true,
+    summary: {
+      en: 'Ongoing advanced training in AI-assisted software development, with a focus on TypeScript, Node.js, NestJS, React/Next.js and CI/CD.',
+      de: 'Laufende Weiterbildung in KI-gestützter Softwareentwicklung mit den Schwerpunkten TypeScript, Node.js, NestJS, React/Next.js und CI/CD.',
+    },
+    icon: '/icons/award.svg',
+  },
   {
     role: {
       en: 'Frontend Software Engineer (IT Technical Consultant)',

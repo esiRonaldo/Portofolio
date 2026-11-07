@@ -4,9 +4,8 @@ import { useI18n } from 'vue-i18n'
 import type { SectionId } from '../sections/sections'
 
 // Shared layout for the page sections: heading on top, content (slot) across the full width.
-// The heading is the section's nav label, so the two can't drift apart, unless a section needs
-// a longer heading than fits in the nav (`title`).
-defineProps<{ id: SectionId; title?: string }>()
+// The heading is the section's nav label, so the two can't drift apart.
+defineProps<{ id: SectionId }>()
 
 const { t } = useI18n()
 
@@ -40,7 +39,7 @@ onUnmounted(() => observer?.disconnect())
     class="py-16 lg:py-20"
   >
     <h2 :id="`${id}-title`" data-reveal class="text-heading">
-      {{ title ?? t(`nav.${id}`) }}
+      {{ t(`nav.${id}`) }}
     </h2>
     <div class="mt-10">
       <slot />

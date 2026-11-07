@@ -29,10 +29,8 @@ export default {
       value: 'English (fluent), German (B2, C1 course completed), Persian (native)',
     },
   },
-  learning: {
-    title: 'Professional Development',
+  experience: {
     inProgress: 'In Progress',
-    focusLabel: 'Focus areas',
   },
   projects: {
     stackLabel: 'Technologies',
@@ -78,7 +76,6 @@ export default {
     menu: 'Menu',
     about: 'About',
     experience: 'Experience',
-    learning: 'Learning',
     projects: 'Projects',
     skills: 'Skills',
     contact: 'Contact',
