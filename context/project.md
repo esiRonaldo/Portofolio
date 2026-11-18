@@ -46,7 +46,8 @@ Content & legal
 - Cookie banner: check whether it is needed. The site only stores theme + language in localStorage (no cookies,
   no analytics, fonts self-hosted), which is probably exempt under TTDSG §25(2); add one if tracking/embeds come later.
 - Repo URL for the Projects "Source code" link + footer source link (repo must be public).
-- CV PDFs: EN + DE replaced with the updated CVs (with the Weiterbildung) on 2026-10-17.
+- CV PDFs: EN + DE replaced with the CVs of 4 Nov on 2026-11-18. To update later: save the new PDFs into `public/cv/`
+  under exactly the two names above (overwrite the old ones), no code change or commit needed; upload them again at deploy.
 - Accepted as is by the user (2026-10-17): German copy, no location in the footer, no Hero facts box
   (old version in commit 0ac5c85 if ever wanted again).
 - Repo name typo "Portofolio" — rename before sharing the link?
