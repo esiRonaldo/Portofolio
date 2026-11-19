@@ -12,6 +12,17 @@ describe('HeroSection', () => {
     expect(wrapper.text()).toContain('Open to new roles')
   })
 
+  it('places the photo between the role and the summary (phone reading order)', () => {
+    const html = mount(HeroSection).html()
+    const role = html.indexOf('Frontend Software Engineer')
+    const photo = html.indexOf('alt="Ehsan Fani"')
+    const summary = html.indexOf('I build modern')
+
+    expect(role).toBeGreaterThan(-1)
+    expect(role).toBeLessThan(photo)
+    expect(photo).toBeLessThan(summary)
+  })
+
   it('offers the CV download next to the contact button', () => {
     expect(mount(HeroSection).get('button[aria-expanded]').text()).toBe('Download CV')
   })

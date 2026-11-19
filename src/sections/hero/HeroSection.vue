@@ -17,11 +17,12 @@ const coreStack = [
   <section
     id="hero"
     aria-labelledby="hero-title"
-    class="grid grid-cols-1 items-center gap-12 pt-12 pb-6 lg:grid-cols-12 lg:pt-20"
+    class="grid grid-cols-1 gap-8 pt-12 pb-6 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-0 lg:pt-20"
   >
-    <!-- z-10: the animation gives both columns their own stacking context; this keeps the open CV menu
-         above the photo when the photo sits below the text (phones). -->
-    <div class="relative z-10 lg:col-span-7 motion-safe:animate-rise">
+    <!-- Source order = phone order: intro, photo, rest. On lg the intro and rest stack in the left
+         columns and the photo spans both rows; the spanned rows grow equally, so self-end/self-start
+         keep the text block vertically centered next to the photo. -->
+    <div class="lg:col-span-7 lg:self-end motion-safe:animate-rise">
       <p
         class="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent-subtle px-3 py-1 text-sm font-medium text-on-accent-subtle"
       >
@@ -31,7 +32,32 @@ const coreStack = [
 
       <h1 id="hero-title" class="mt-6 text-display">Ehsan Fani</h1>
       <p class="mt-4 text-xl font-medium text-fg-muted">{{ t('hero.role') }}</p>
-      <p class="mt-6 max-w-xl text-lead">{{ t('hero.summary') }}</p>
+    </div>
+
+    <!-- Offset accent panel behind the photo (decorative). -->
+    <!-- Below lg: between role and summary, narrower, with room on the right for the offset panel (no horizontal scroll). -->
+    <div
+      class="relative mr-4 max-w-sm self-center motion-safe:animate-rise motion-safe:[animation-delay:120ms] lg:col-span-5 lg:row-span-2 lg:mr-0 lg:max-w-none"
+    >
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-accent-subtle"
+      ></div>
+      <!-- width/height reserve the space before the image loads (no layout shift); high priority: it's the main image. -->
+      <img
+        src="/images/portrait.jpg"
+        alt="Ehsan Fani"
+        width="860"
+        height="717"
+        fetchpriority="high"
+        class="relative w-full rounded-3xl border border-line"
+      />
+    </div>
+
+    <!-- z-10: the animation gives each block its own stacking context; this keeps the open CV menu
+         above the photo. -->
+    <div class="relative z-10 lg:col-span-7 lg:mt-6 lg:self-start motion-safe:animate-rise">
+      <p class="max-w-xl text-lead">{{ t('hero.summary') }}</p>
 
       <div class="mt-8 flex max-w-xl items-center gap-4 text-sm">
         <p id="hero-core" class="shrink-0 text-fg-muted">{{ t('hero.coreLabel') }}</p>
@@ -70,26 +96,6 @@ const coreStack = [
           {{ t('hero.contact') }}
         </a>
       </div>
-    </div>
-
-    <!-- Offset accent panel behind the photo (decorative). -->
-    <!-- Below lg: under the text, narrower, with room on the right for the offset panel (no horizontal scroll). -->
-    <div
-      class="relative mr-4 max-w-sm motion-safe:animate-rise motion-safe:[animation-delay:120ms] lg:col-span-5 lg:mr-0 lg:max-w-none"
-    >
-      <div
-        aria-hidden="true"
-        class="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-accent-subtle"
-      ></div>
-      <!-- width/height reserve the space before the image loads (no layout shift); high priority: it's the main image. -->
-      <img
-        src="/images/portrait.jpg"
-        alt="Ehsan Fani"
-        width="860"
-        height="717"
-        fetchpriority="high"
-        class="relative w-full rounded-3xl border border-line"
-      />
     </div>
   </section>
 </template>
