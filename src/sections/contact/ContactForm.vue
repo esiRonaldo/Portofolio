@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { nextTick, reactive, ref, useTemplateRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { socialLinks } from '../../profile'
+import ProfileLinks from './ProfileLinks.vue'
 
 // Sends through Formspree, to the endpoint in VITE_CONTACT_ENDPOINT (see .env.example). Without it, a valid
 // form only shows a "not connected yet" note, so the site works before the service is set up.
@@ -55,6 +55,20 @@ function controlAttrs(field: Field) {
   }
 }
 
+/** Posts the form to Formspree. A network error counts as a failure, just like an error response. */
+async function send(endpoint: string): Promise<boolean> {
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...values, _gotcha: gotcha.value }),
+    })
+    return response.ok
+  } catch {
+    return false
+  }
+}
+
 async function submit() {
   if (status.value === 'sending') return
   status.value = 'idle'
@@ -73,19 +87,7 @@ async function submit() {
   }
 
   status.value = 'sending'
-  let isSuccessful = false
-  try {
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...values, _gotcha: gotcha.value }),
-    })
-    isSuccessful = response.ok
-  } catch {
-    // A network error counts as a failure, just like an error response.
-    isSuccessful = false
-  }
-
+  const isSuccessful = await send(endpoint)
   status.value = isSuccessful ? 'sent' : 'error'
   // On failure the text stays, so nothing typed is lost.
   if (isSuccessful) {
@@ -165,27 +167,7 @@ async function submit() {
         </template>
       </p>
 
-      <!-- Profile links, icon-only: the img alt names each link. Only GitHub's logo is black → inverted in dark.
-           They open in a new tab, so a half-filled form isn't lost; screen readers hear that via the sr-only text. -->
-      <ul class="ml-auto flex gap-2">
-        <li v-for="link in socialLinks" :key="link.name">
-          <a
-            :href="link.href"
-            :title="link.name"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex size-11 items-center justify-center rounded-lg border border-line bg-canvas transition duration-200 ease-out-soft hover:border-line-strong/60 motion-safe:hover:-translate-y-0.5"
-          >
-            <img
-              :src="link.icon"
-              :alt="link.name"
-              class="size-5"
-              :class="{ 'dark:invert': link.name === 'GitHub' }"
-            />
-            <span class="sr-only">{{ t('a11y.newTab') }}</span>
-          </a>
-        </li>
-      </ul>
+      <ProfileLinks class="ml-auto" />
     </div>
   </form>
 </template>

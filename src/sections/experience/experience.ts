@@ -3,11 +3,12 @@ import type { Localized } from '../../i18n'
 // Work experience and the ongoing Weiterbildung from the CVs of 4 Nov 2026 (EN + DE), newest first.
 // `summary` is always visible; `details` (CV bullets) make an entry expandable; `focus` shows as chips.
 
-export type Job = {
+export type ExperienceEntry = {
   /** 'course' = professional development, shown with a category label instead of looking like an employer. */
   kind: 'job' | 'course'
   role: Localized
-  company: string
+  /** Employer, or the provider of a course. */
+  organization: string
   /** 'YYYY-MM' */
   start: string
   /** 'YYYY-MM' (planned end while in progress) */
@@ -20,14 +21,14 @@ export type Job = {
   icon: string
 }
 
-export const jobs: Job[] = [
+export const experienceEntries: ExperienceEntry[] = [
   {
     kind: 'course',
     role: {
       en: 'Advanced Software Development with AI — Weiterbildung',
       de: 'Advanced Software Development mit KI — Weiterbildung',
     },
-    company: 'neue fische / SPICED',
+    organization: 'neue fische / SPICED',
     start: '2026-10',
     end: '2027-02',
     isInProgress: true,
@@ -61,7 +62,7 @@ export const jobs: Job[] = [
       en: 'Frontend Software Engineer (IT Technical Consultant)',
       de: 'Frontend Software Engineer (IT Technical Consultant)',
     },
-    company: 'NTT DATA Deutschland SE',
+    organization: 'NTT DATA Deutschland SE',
     start: '2022-04',
     end: '2025-12',
     summary: {
@@ -89,7 +90,7 @@ export const jobs: Job[] = [
   {
     kind: 'job',
     role: { en: 'Junior Software Developer', de: 'Junior Softwareentwickler' },
-    company: 'Ben Hur GmbH',
+    organization: 'Ben Hur GmbH',
     start: '2020-11',
     end: '2022-03',
     summary: {
@@ -113,7 +114,7 @@ export const jobs: Job[] = [
   {
     kind: 'job',
     role: { en: 'Software Development Intern', de: 'Praktikum Softwareentwicklung' },
-    company: 'DFKI',
+    organization: 'DFKI',
     start: '2018-06',
     end: '2018-11',
     summary: {

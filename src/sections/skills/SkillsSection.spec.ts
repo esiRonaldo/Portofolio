@@ -45,7 +45,9 @@ describe('SkillsSection', () => {
   it('lists every certification', () => {
     const text = mount(SkillsSection).text()
 
-    for (const certification of certifications) expect(text).toContain(certification)
+    for (const certification of certifications) {
+      expect(text).toContain(certification)
+    }
   })
 
   it('shows no ratings or percentages', () => {

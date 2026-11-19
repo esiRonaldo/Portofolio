@@ -12,19 +12,21 @@ const { t } = useI18n()
 // Reveal once: when the section first comes on screen, data-revealed starts the entrance animation
 // of every [data-reveal] element inside (CSS in main.css).
 const section = useTemplateRef('section')
-const revealed = ref(false)
+const isRevealed = ref(false)
 let observer: IntersectionObserver | undefined
 
 onMounted(() => {
   observer = new IntersectionObserver(
     ([entry]) => {
       if (!entry?.isIntersecting) return
-      revealed.value = true
+      isRevealed.value = true
       observer?.disconnect()
     },
     { threshold: 0.15 },
   )
-  if (section.value) observer.observe(section.value)
+  if (section.value) {
+    observer.observe(section.value)
+  }
 })
 
 onUnmounted(() => observer?.disconnect())
@@ -35,7 +37,7 @@ onUnmounted(() => observer?.disconnect())
     :id="id"
     ref="section"
     :aria-labelledby="`${id}-title`"
-    :data-revealed="revealed || undefined"
+    :data-revealed="isRevealed || undefined"
     class="py-16 lg:py-20"
   >
     <h2 :id="`${id}-title`" data-reveal class="text-heading">

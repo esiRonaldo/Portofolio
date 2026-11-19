@@ -102,6 +102,11 @@
   }
 }
 
+/* Page width and side gutters, shared by the header bar, main and footer. */
+@utility page-container {
+  @apply mx-auto max-w-6xl px-4 sm:px-6;
+}
+
 /* Phones: slightly smaller display and heading sizes. The text-display / text-heading utilities read these
    variables, so the type scale stays in one place. */
 @media (width < 40rem) {

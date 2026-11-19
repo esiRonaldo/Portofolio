@@ -36,24 +36,28 @@ on-accent, on-accent-subtle, focus, danger`. Components use `bg-canvas text-fg`,
 - Spacing: section `py-16 lg:py-20`, heading→content `mt-10`, groups 32px, items 16–24px. Radii/shadows: Tailwind defaults.
 - Responsive: mobile-first. Unprefixed = phone/tablet (one column, `px-4 sm:px-6`), `sm:`/`md:` = 2 columns for short
   content, `lg:` (≥1024px) = the desktop design. Display/heading sizes shrink under 40rem via the tokens in main.css.
+  Page width + gutters = `page-container` (`@utility` in main.css), used by the header bar, main and footer.
 - Motion: `ease-out-soft`, hovers 150–200ms, entrance `animate-rise` (~450ms). Section reveal: `PageSection` sets
   `data-revealed` once; mark children `data-reveal` + `style="--i: n"` to stagger (CSS in main.css).
 
 ## i18n
 
 - UI strings → `en.ts`/`de.ts`, `de` typed as `typeof en`.
-- Structured content (jobs, projects) → section data files with `Localized<string>` = `{ en; de }` fields,
+- Structured content (experience entries, projects) → section data files with `Localized<string>` = `{ en; de }` fields,
   rendered with `localize(value)` from `i18n/index.ts` (reactive: re-renders on language change).
 
 ## Types
 
-Type lives where it's used: `Locale`/`Localized` in i18n, `Theme` in useTheme, `Experience` etc. in the
+Type lives where it's used: `Locale`/`Localized` in i18n, `Theme` in useTheme, `ExperienceEntry` etc. in the
 section data file, props inline in `defineProps`. Shared file only when 2+ features need it.
 
 ## Components
 
 PascalCase multi-word; sections end in `…Section`. Split at ~150 lines or clear repetition.
 Sections wrap their content in `<PageSection id>` (labelled section + h2 from the nav label on top, content full width).
+Section children: `TimelineItem` (one Experience entry, own expand state, ids via `useId()`), `ProfileLinks` +
+`ContactForm`, `CvDownload`, `SkillLogo` (skill logo from `skillLogos`, used by Skills and the Hero core stack).
+Black logos carry an `invertInDark` flag in their data (skills, profile links) instead of name checks in templates.
 
 ## Accessibility
 

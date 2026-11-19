@@ -43,30 +43,34 @@ export const skillGroups: SkillGroup[] = [
   },
 ]
 
-// Colorful logos (Devicon, MIT) in public/icons/skills/, keyed by the skill name.
-// Skills without a logo are shown as text only.
-export const skillIcons: Record<string, string> = {
-  'Vue.js': 'vuejs',
-  Vuetify: 'vuetify',
-  Angular: 'angular',
-  Ionic: 'ionic',
-  'JavaScript/TypeScript': 'typescript',
-  HTML: 'html5',
-  CSS: 'css3',
-  'Node.js': 'nodejs',
-  NestJS: 'nestjs',
-  'Express.js': 'express',
-  'Next.js': 'nextjs',
-  Python: 'python',
-  Django: 'django',
-  MongoDB: 'mongodb',
-  Git: 'git',
-  Java: 'java',
-  'Spring Boot': 'spring',
+export type SkillLogo = {
+  /** File name in public/icons/skills/, without `.svg`. */
+  file: string
+  /** The logo is (almost) black: inverted in the dark theme so it stays visible. */
+  invertInDark?: boolean
 }
 
-/** Logos that are (almost) black; inverted in the dark theme so they stay visible. */
-export const darkLogos = ['Express.js', 'Django', 'Next.js']
+// Colorful logos (Devicon, MIT), keyed by the skill name. Used by the Skills section and the Hero core stack.
+// Skills without a logo are shown as text only.
+export const skillLogos: Partial<Record<string, SkillLogo>> = {
+  'Vue.js': { file: 'vuejs' },
+  Vuetify: { file: 'vuetify' },
+  Angular: { file: 'angular' },
+  Ionic: { file: 'ionic' },
+  'JavaScript/TypeScript': { file: 'typescript' },
+  HTML: { file: 'html5' },
+  CSS: { file: 'css3' },
+  'Node.js': { file: 'nodejs' },
+  NestJS: { file: 'nestjs' },
+  'Express.js': { file: 'express', invertInDark: true },
+  'Next.js': { file: 'nextjs', invertInDark: true },
+  Python: { file: 'python' },
+  Django: { file: 'django', invertInDark: true },
+  MongoDB: { file: 'mongodb' },
+  Git: { file: 'git' },
+  Java: { file: 'java' },
+  'Spring Boot': { file: 'spring' },
+}
 
 export const certifications: string[] = [
   'Microsoft Certified: Power Platform Fundamentals (PL-900)',

@@ -10,12 +10,12 @@ defineProps<{ activeSection: SectionId | null }>()
 const { t } = useI18n()
 
 // Below lg the nav links don't fit (especially in German), so they open from a menu button.
-const menuOpen = ref(false)
+const isMenuOpen = ref(false)
 const menuButton = useTemplateRef('menuButton')
 
 function closeMenu(returnFocus = false) {
-  if (!menuOpen.value) return
-  menuOpen.value = false
+  if (!isMenuOpen.value) return
+  isMenuOpen.value = false
   if (returnFocus) {
     menuButton.value?.focus()
   }
@@ -27,7 +27,7 @@ function closeMenu(returnFocus = false) {
     class="sticky top-0 z-40 border-b border-line bg-canvas/80 backdrop-blur"
     @keydown.esc="closeMenu(true)"
   >
-    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+    <div class="page-container flex h-16 items-center justify-between">
       <a href="#hero" class="font-semibold tracking-tight">Ehsan Fani</a>
 
       <div class="flex items-center gap-1 lg:gap-8">
@@ -35,7 +35,7 @@ function closeMenu(returnFocus = false) {
         <nav
           id="site-menu"
           :aria-label="t('nav.label')"
-          :class="{ hidden: !menuOpen }"
+          :class="{ hidden: !isMenuOpen }"
           class="absolute inset-x-0 top-16 border-b border-line bg-canvas lg:static lg:block lg:border-0 lg:bg-transparent"
         >
           <ul class="flex flex-col px-4 py-2 text-sm sm:px-6 lg:flex-row lg:gap-6 lg:p-0">
@@ -67,13 +67,13 @@ function closeMenu(returnFocus = false) {
           ref="menuButton"
           type="button"
           :aria-label="t('nav.menu')"
-          :aria-expanded="menuOpen"
+          :aria-expanded="isMenuOpen"
           aria-controls="site-menu"
           class="inline-flex size-9 items-center justify-center rounded-md transition-colors duration-200 hover:bg-surface-raised lg:hidden"
-          @click="menuOpen = !menuOpen"
+          @click="isMenuOpen = !isMenuOpen"
         >
           <img
-            :src="menuOpen ? '/icons/x.svg' : '/icons/menu.svg'"
+            :src="isMenuOpen ? '/icons/x.svg' : '/icons/menu.svg'"
             alt=""
             class="size-5 dark:invert"
           />

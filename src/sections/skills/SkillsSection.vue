@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import PageSection from '../../components/PageSection.vue'
-import { certifications, darkLogos, skillGroups, skillIcons, type SkillGroup } from './skills'
+import SkillLogo from './SkillLogo.vue'
+import { certifications, skillGroups, type SkillGroup } from './skills'
 
 const { t } = useI18n()
 
@@ -43,12 +44,9 @@ const certificationsStep = 1 + skillGroups.length * 3
             :style="{ '--i': groupStep(group) + 1 + index }"
             class="group flex items-center gap-2.5 rounded-lg border border-accent/30 bg-accent-subtle px-4 py-2 font-medium transition duration-200 ease-out-soft hover:border-accent/60 hover:bg-accent/15 motion-safe:hover:-translate-y-0.5"
           >
-            <img
-              v-if="skillIcons[skill]"
-              :src="`/icons/skills/${skillIcons[skill]}.svg`"
-              alt=""
+            <SkillLogo
+              :skill="skill"
               class="size-5 transition-transform duration-200 ease-out-soft motion-safe:group-hover:scale-110"
-              :class="{ 'dark:invert': darkLogos.includes(skill) }"
             />
             {{ skill }}
           </li>
@@ -73,12 +71,9 @@ const certificationsStep = 1 + skillGroups.length * 3
               :style="{ '--i': groupStep(group) + 1 + index }"
               class="group flex items-center gap-2 rounded-md border border-line bg-surface px-3 py-1.5 transition duration-200 ease-out-soft hover:border-line-strong/60 hover:bg-surface-raised motion-safe:hover:-translate-y-0.5"
             >
-              <img
-                v-if="skillIcons[skill]"
-                :src="`/icons/skills/${skillIcons[skill]}.svg`"
-                alt=""
+              <SkillLogo
+                :skill="skill"
                 class="size-4 transition-transform duration-200 ease-out-soft motion-safe:group-hover:scale-110"
-                :class="{ 'dark:invert': darkLogos.includes(skill) }"
               />
               {{ skill }}
             </li>

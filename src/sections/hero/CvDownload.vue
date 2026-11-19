@@ -11,23 +11,33 @@ const cvFiles = [
   { lang: 'de', name: 'Deutsch', file: 'Ehsan-Fani-Lebenslauf-DE.pdf' },
 ] as const
 
-const open = ref(false)
+const isOpen = ref(false)
 const root = useTemplateRef('root')
 const toggle = useTemplateRef('toggle')
 
 function close(returnFocus = false) {
-  open.value = false
-  if (returnFocus) toggle.value?.focus()
+  isOpen.value = false
+  if (returnFocus) {
+    toggle.value?.focus()
+  }
+}
+
+function isInside(target: EventTarget | null): boolean {
+  return target instanceof Node && (root.value?.contains(target) ?? false)
 }
 
 // Close when focus moves outside (Tab) or on a click outside. The click check is needed too:
 // Safari doesn't focus buttons on click, so there may be no focusout.
 function onFocusOut(event: FocusEvent) {
-  if (!root.value?.contains(event.relatedTarget as Node | null)) close()
+  if (!isInside(event.relatedTarget)) {
+    close()
+  }
 }
 
 function onPointerDown(event: PointerEvent) {
-  if (open.value && !root.value?.contains(event.target as Node)) close()
+  if (isOpen.value && !isInside(event.target)) {
+    close()
+  }
 }
 
 onMounted(() => document.addEventListener('pointerdown', onPointerDown))
@@ -39,10 +49,10 @@ onBeforeUnmount(() => document.removeEventListener('pointerdown', onPointerDown)
     <button
       ref="toggle"
       type="button"
-      :aria-expanded="open"
+      :aria-expanded="isOpen"
       aria-controls="cv-options"
       class="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 font-medium text-on-accent transition duration-200 ease-out-soft hover:bg-accent-hover motion-safe:hover:-translate-y-0.5"
-      @click="open = !open"
+      @click="isOpen = !isOpen"
     >
       <img src="/icons/download.svg" alt="" class="size-4 invert dark:invert-0" />
       {{ t('hero.cv') }}
@@ -50,7 +60,7 @@ onBeforeUnmount(() => document.removeEventListener('pointerdown', onPointerDown)
         src="/icons/chevron-down.svg"
         alt=""
         class="size-4 invert transition-transform duration-200 ease-out-soft motion-reduce:transition-none dark:invert-0"
-        :class="{ 'rotate-180': open }"
+        :class="{ 'rotate-180': isOpen }"
       />
     </button>
 
@@ -61,7 +71,7 @@ onBeforeUnmount(() => document.removeEventListener('pointerdown', onPointerDown)
       leave-active-class="motion-safe:transition motion-safe:duration-100 motion-safe:ease-out-soft"
     >
       <ul
-        v-show="open"
+        v-show="isOpen"
         id="cv-options"
         class="absolute top-full left-0 z-10 mt-2 min-w-full rounded-lg border border-line bg-surface-raised p-1 shadow-lg"
       >

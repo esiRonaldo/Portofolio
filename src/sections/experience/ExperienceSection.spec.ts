@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { setLocale } from '../../i18n'
 import ExperienceSection from './ExperienceSection.vue'
-import { jobs } from './experience'
+import { experienceEntries } from './experience'
 
 function entries(wrapper: ReturnType<typeof mount>) {
   return wrapper.findAll('ol > li')
@@ -19,11 +19,11 @@ describe('ExperienceSection', () => {
       'Software Development Intern',
     ])
 
-    const starts = jobs.map((job) => job.start)
+    const starts = experienceEntries.map((entry) => entry.start)
     expect(starts).toEqual([...starts].sort().reverse())
   })
 
-  it('shows company, summary and machine-readable dates', () => {
+  it('shows organization, summary and machine-readable dates', () => {
     const job = entries(mount(ExperienceSection))[1]
     const times = job?.findAll('time') ?? []
 

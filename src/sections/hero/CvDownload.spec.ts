@@ -34,7 +34,9 @@ describe('CvDownload', () => {
       ['English PDF', '/cv/Ehsan-Fani-CV-EN.pdf', 'en'],
       ['Deutsch PDF', '/cv/Ehsan-Fani-Lebenslauf-DE.pdf', 'de'],
     ])
-    for (const link of links) expect(link.attributes('download')).toBeDefined()
+    for (const link of links) {
+      expect(link.attributes('download')).toBeDefined()
+    }
   })
 
   it('closes after a language is chosen', async () => {

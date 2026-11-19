@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import SkillLogo from '../skills/SkillLogo.vue'
 import CvDownload from './CvDownload.vue'
 
 const { t } = useI18n()
 
-// The core technologies, with the logos from the Skills section.
-const coreStack = [
-  { name: 'Vue.js', icon: 'vuejs' },
-  { name: 'Angular', icon: 'angular' },
-  { name: 'JavaScript/TypeScript', icon: 'typescript' },
-  { name: 'Node.js', icon: 'nodejs' },
-]
+// The core technologies, shown with their logos from the Skills section.
+const coreStack = ['Vue.js', 'Angular', 'JavaScript/TypeScript', 'Node.js']
 </script>
 
 <template>
@@ -66,20 +62,20 @@ const coreStack = [
         <div class="overflow-hidden mask-x-from-85% mask-x-to-100% motion-reduce:mask-none">
           <div class="flex w-max motion-safe:animate-marquee hover:[animation-play-state:paused]">
             <ul
-              v-for="copy in [false, true]"
-              :key="String(copy)"
-              :aria-labelledby="copy ? undefined : 'hero-core'"
-              :aria-hidden="copy || undefined"
+              v-for="isCopy in [false, true]"
+              :key="String(isCopy)"
+              :aria-labelledby="isCopy ? undefined : 'hero-core'"
+              :aria-hidden="isCopy || undefined"
               class="flex"
-              :class="{ 'motion-reduce:hidden': copy }"
+              :class="{ 'motion-reduce:hidden': isCopy }"
             >
               <li
                 v-for="tech in coreStack"
-                :key="tech.name"
+                :key="tech"
                 class="mr-2 flex items-center gap-2 rounded-md border border-line bg-surface px-2.5 py-1 font-medium whitespace-nowrap"
               >
-                <img :src="`/icons/skills/${tech.icon}.svg`" alt="" class="size-4" />
-                {{ tech.name }}
+                <SkillLogo :skill="tech" class="size-4" />
+                {{ tech }}
               </li>
             </ul>
           </div>

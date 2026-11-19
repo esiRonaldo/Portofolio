@@ -5,10 +5,17 @@ export type SocialLink = {
   href: string
   /** Icon file in public/icons/. */
   icon: string
+  /** The logo is black: inverted in the dark theme so it stays visible. */
+  invertInDark?: boolean
 }
 
 export const socialLinks: SocialLink[] = [
-  { name: 'GitHub', href: 'https://github.com/esiRonaldo', icon: '/icons/github.svg' },
+  {
+    name: 'GitHub',
+    href: 'https://github.com/esiRonaldo',
+    icon: '/icons/github.svg',
+    invertInDark: true,
+  },
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/ehsan-fani-92ba5a52',

@@ -4,14 +4,16 @@ import { useI18n } from 'vue-i18n'
 
 // Floating link back to the hero, shown only once the hero has left the viewport.
 const { t } = useI18n()
-const visible = ref(false)
+const isVisible = ref(false)
 let observer: IntersectionObserver | undefined
 
 onMounted(() => {
   const hero = document.getElementById('hero')
   if (!hero) return
   observer = new IntersectionObserver(([entry]) => {
-    if (entry) visible.value = !entry.isIntersecting
+    if (entry) {
+      isVisible.value = !entry.isIntersecting
+    }
   })
   observer.observe(hero)
 })
@@ -28,7 +30,7 @@ onUnmounted(() => observer?.disconnect())
     leave-active-class="transition duration-200 ease-out-soft"
   >
     <a
-      v-if="visible"
+      v-if="isVisible"
       href="#hero"
       :aria-label="t('a11y.backToTop')"
       :title="t('a11y.backToTop')"
