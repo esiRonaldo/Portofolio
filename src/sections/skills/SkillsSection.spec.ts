@@ -32,6 +32,16 @@ describe('SkillsSection', () => {
     expect(advancedItems).toContain('JavaScript/TypeScript')
   })
 
+  it('shows the logos of the Node.js, NestJS, Express.js and Next.js skills', () => {
+    const logos = mount(SkillsSection)
+      .findAll('li img')
+      .map((img) => img.attributes('src'))
+
+    for (const name of ['nodejs', 'nestjs', 'express', 'nextjs']) {
+      expect(logos).toContain(`/icons/skills/${name}.svg`)
+    }
+  })
+
   it('lists every certification', () => {
     const text = mount(SkillsSection).text()
 

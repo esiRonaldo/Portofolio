@@ -14,17 +14,27 @@ export const skillGroups: SkillGroup[] = [
     id: 'advanced',
     primary: true,
     icon: '/icons/code-xml.svg',
-    items: ['Vue.js', 'JavaScript/TypeScript', 'HTML', 'CSS', 'Vuetify', 'Vuex', 'Pinia'],
+    items: [
+      'Vue.js',
+      'JavaScript/TypeScript',
+      'Node.js',
+      'NestJS',
+      'HTML',
+      'CSS',
+      'Vuetify',
+      'Vuex',
+      'Pinia',
+    ],
   },
   {
     id: 'proficient',
     icon: '/icons/check.svg',
-    items: ['Angular', 'REST APIs', 'Git'],
+    items: ['Angular', 'Express.js', 'REST APIs', 'Git'],
   },
   {
     id: 'working',
     icon: '/icons/server.svg',
-    items: ['Node.js', 'Express.js', 'Python', 'Django', 'SQL', 'MongoDB', 'Ionic'],
+    items: ['Next.js', 'Python', 'Django', 'SQL', 'MongoDB', 'Ionic'],
   },
   {
     id: 'exposure',
@@ -44,7 +54,9 @@ export const skillIcons: Record<string, string> = {
   HTML: 'html5',
   CSS: 'css3',
   'Node.js': 'nodejs',
+  NestJS: 'nestjs',
   'Express.js': 'express',
+  'Next.js': 'nextjs',
   Python: 'python',
   Django: 'django',
   MongoDB: 'mongodb',
@@ -54,7 +66,7 @@ export const skillIcons: Record<string, string> = {
 }
 
 /** Logos that are (almost) black; inverted in the dark theme so they stay visible. */
-export const darkLogos = ['Express.js', 'Django']
+export const darkLogos = ['Express.js', 'Django', 'Next.js']
 
 export const certifications: string[] = [
   'Microsoft Certified: Power Platform Fundamentals (PL-900)',
